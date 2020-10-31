@@ -18,10 +18,26 @@ class API {
         }
     }
     
-    func getJSON(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
+    func getJSONPagination(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)/\(endPoint).json?offset=\(offset ?? 0)&limit=\(limit ?? 0)"
         
+        Alamofire.request(request, method: .get).responseJSON { response in
+            if response.result.isSuccess == false {
+                print("ERROR GET JSON Pagination")
+                return
+            }
+            if let data = response.data {
+                let json = JSON(data)
+                completion(json)
+            }
+        }
+    }
+    
+    func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
+        
+        let request = "https://\(user):\(password)@\(path)\(endPoint).json"
+        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")

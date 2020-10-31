@@ -28,7 +28,7 @@ class ProjectsViewController: UIViewController {
     
     func getProjects(offset: Int) {
         
-        API.shared.getJSON(endPoint: "projects", offset: offset, limit: 1000, completion: { (json) in
+        API.shared.getJSONPagination(endPoint: "projects", offset: offset, limit: 1000, completion: { (json) in
             
             self.totalProjects = json["total_count"].intValue
 

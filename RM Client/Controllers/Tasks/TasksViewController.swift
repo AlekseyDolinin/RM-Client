@@ -24,17 +24,14 @@ class TasksViewController: UIViewController {
             getTasks(offset: offset)
         }
     }
-
+    
     func getTasks(offset: Int) {
-        
-        API.shared.getJSON(endPoint: "issues", offset: offset, limit: 1000, completion: { (json) in
+        API.shared.getJSONPagination(endPoint: "/issues.json?assigned_to_id=\(StartViewController.userData.id)", offset: offset, limit: 1000, completion: { (json) in
             self.totalTasks = json["total_count"].intValue
             print("всего задач: \(self.totalTasks)")
 
             for i in json["issues"] {
-
                 let taskData = i.1
-                print(taskData)
                 var listCustomFields = [CustomField]()
 
                 for i in taskData["custom_fields"] {
@@ -42,7 +39,6 @@ class TasksViewController: UIViewController {
                     let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
                     listCustomFields.append(customField)
                 }
-
                 let task = Task(doneRatio: taskData["done_ratio"].intValue,
                                 startDate: taskData["start_date"].stringValue,
                                 createdOn: taskData["created_on"].stringValue,
@@ -65,7 +61,6 @@ class TasksViewController: UIViewController {
                                 project: taskData["project"]["name"].stringValue)
 
                 self.listTasks.append(task)
-
 //                self.listIssues = self.listIssues.sorted(by: {$0.name < $1.name})
             }
             self.tasksView.tableTasks.reloadData()

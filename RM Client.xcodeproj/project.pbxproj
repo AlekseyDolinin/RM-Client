@@ -25,6 +25,7 @@
 		10737586254DD20E006D1956 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737585254DD20E006D1956 /* TasksView.swift */; };
 		10737588254DD2B5006D1956 /* TasksDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737587254DD2B5006D1956 /* TasksDelegates.swift */; };
 		1073758A254DD30E006D1956 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737589254DD30E006D1956 /* TaskCell.swift */; };
+		1073758C254DF5EF006D1956 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073758B254DF5EF006D1956 /* User.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		10737585254DD20E006D1956 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		10737587254DD2B5006D1956 /* TasksDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDelegates.swift; sourceTree = "<group>"; };
 		10737589254DD30E006D1956 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1073758B254DF5EF006D1956 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		10737564254DA6CE006D1956 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1073758B254DF5EF006D1956 /* User.swift */,
 				10737583254DD0CF006D1956 /* Task.swift */,
 				1073756D254DA79D006D1956 /* Project.swift */,
 				1073757C254DB0D6006D1956 /* CustomField.swift */,
@@ -330,6 +333,7 @@
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
+				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				10737570254DA89E006D1956 /* ProjectsView.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
