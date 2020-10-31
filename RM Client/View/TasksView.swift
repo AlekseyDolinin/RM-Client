@@ -9,9 +9,5 @@ class TasksView: UIView {
         
         
     }
-    
-    
-    
-    
-    
+
 }

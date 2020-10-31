@@ -4,9 +4,7 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         checkAuth()
-
     }
     
     func checkAuth() {

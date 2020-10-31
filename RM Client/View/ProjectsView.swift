@@ -9,9 +9,5 @@ class ProjectsView: UIView {
         
         
     }
-    
-    
-    
-    
-    
+
 }

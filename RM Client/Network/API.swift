@@ -18,7 +18,6 @@ class API {
         }
     }
     
-    
     func getJSON(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)/\(endPoint).json?offset=\(offset ?? 0)&limit=\(limit ?? 0)"

@@ -2,7 +2,6 @@ import UIKit
 
 extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listProjects.count
     }
@@ -16,7 +15,6 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         projectCell.descriptionLabel.text = listProjects[indexPath.row].description
         projectCell.createdOnLabel.text = listProjects[indexPath.row].created_on
         projectCell.statusLabel.text = String(listProjects[indexPath.row].status)
-
         
         if indexPath.row == listProjects.count - 1 { // last cell
             print("подзагрузка")
@@ -25,11 +23,7 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
                 getProjects(offset: offset)
             }
         }
-        
         return projectCell
     }
-    
-    
-    
-    
+ 
 }

@@ -14,10 +14,8 @@ class ProjectsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         projectsView.tableProjects.delegate = self
         projectsView.tableProjects.dataSource = self
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +43,6 @@ class ProjectsViewController: UIViewController {
                 for i in projectData["custom_fields"] {
                     let customFieldData = i.1
                     let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
-                    
                     listCustomFields.append(customField)
                 }
                 
@@ -62,7 +59,6 @@ class ProjectsViewController: UIViewController {
                     status: projectData["status"].intValue)
                 
                 self.listProjects.append(project)
-                
                 self.listProjects = self.listProjects.sorted(by: {$0.name < $1.name})
             }
             self.projectsView.tableProjects.reloadData()

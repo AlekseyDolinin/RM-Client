@@ -2,7 +2,6 @@ import UIKit
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listTasks.count
     }
@@ -15,10 +14,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.descriptionLabel.text = listTasks[indexPath.row].description
         taskCell.createdOnLabel.text = listTasks[indexPath.row].createdOn
         taskCell.statusLabel.text = String(listTasks[indexPath.row].status)
-        
-        
-        
-        
+
         if indexPath.row == listTasks.count - 1 { // last cell
             print("подзагрузка")
             if totalTasks > listTasks.count { // more items to fetch
@@ -26,11 +22,6 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
                 getTasks(offset: offset)
             }
         }
-        
         return taskCell
     }
-    
-    
-    
-    
 }

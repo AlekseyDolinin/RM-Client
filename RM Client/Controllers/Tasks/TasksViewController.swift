@@ -13,10 +13,8 @@ class TasksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tasksView.tableTasks.delegate = self
         tasksView.tableTasks.dataSource = self
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,23 +28,18 @@ class TasksViewController: UIViewController {
     func getTasks(offset: Int) {
         
         API.shared.getJSON(endPoint: "issues", offset: offset, limit: 1000, completion: { (json) in
-            
             self.totalTasks = json["total_count"].intValue
-            
             print("всего задач: \(self.totalTasks)")
 
             for i in json["issues"] {
 
                 let taskData = i.1
-                
                 print(taskData)
-
                 var listCustomFields = [CustomField]()
 
                 for i in taskData["custom_fields"] {
                     let customFieldData = i.1
                     let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
-
                     listCustomFields.append(customField)
                 }
 
