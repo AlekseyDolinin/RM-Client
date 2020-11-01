@@ -91,8 +91,7 @@ class TasksViewController: UIViewController {
                 self.listFilteredTasks = self.listTasks.filter{ $0.status == self.currentStatus}
             }
             
-            self.tasksView.tableTasks.reloadData()
-            self.tasksView.collectionStatusButton.reloadData()
+            self.tasksView.reloadContent()
             self.tasksView.showContent()
         })
     }

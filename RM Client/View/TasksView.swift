@@ -28,5 +28,10 @@ class TasksView: UIView {
         loader.stopAnimating()
     }
     
-
+    func reloadContent() {
+        UIView.transition(with: tableTasks, duration: 0.35, options: .transitionCrossDissolve, animations: { [weak self] in
+            self?.tableTasks.reloadData()
+        })
+        collectionStatusButton.reloadData()
+    }
 }

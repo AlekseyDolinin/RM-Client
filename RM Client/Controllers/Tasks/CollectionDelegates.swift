@@ -26,7 +26,6 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
             
             return cellStatus
         }
-        
         return UICollectionViewCell()
     }
     
@@ -34,9 +33,7 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         currentStatus = titlesStatusArray[indexPath.row]
         self.listFilteredTasks = self.listTasks.filter{ $0.status == currentStatus}
-        
-        tasksView.collectionStatusButton.reloadData()
-        tasksView.tableTasks.reloadData()
+        self.tasksView.reloadContent()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
