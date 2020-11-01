@@ -10,11 +10,15 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         
         let taskCell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
         
-        taskCell.nameLabel.text = "\(indexPath.row + 1) " + listTasks[indexPath.row].subject
-        taskCell.descriptionLabel.text = listTasks[indexPath.row].description
-        taskCell.createdOnLabel.text = listTasks[indexPath.row].createdOn
-        taskCell.statusLabel.text = String(listTasks[indexPath.row].status)
+        taskCell.projectNameLabel.text = listTasks[indexPath.row].project
+        taskCell.priorityLabel.text = "test"
+        taskCell.idTaskLabel.text = "#\(listTasks[indexPath.row].id): "
+        taskCell.trackerLabel.text = listTasks[indexPath.row].tracker
+        taskCell.nameTaskLabel.text = listTasks[indexPath.row].subject
+        taskCell.nameAuthorTaskLabel.text = listTasks[indexPath.row].author
+        taskCell.createdDateLabel.text = listTasks[indexPath.row].createdOn
 
+        
         if indexPath.row == listTasks.count - 1 { // last cell
             print("подзагрузка")
             if totalTasks > listTasks.count { // more items to fetch

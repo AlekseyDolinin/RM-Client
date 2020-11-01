@@ -26,6 +26,11 @@
 		10737588254DD2B5006D1956 /* TasksDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737587254DD2B5006D1956 /* TasksDelegates.swift */; };
 		1073758A254DD30E006D1956 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737589254DD30E006D1956 /* TaskCell.swift */; };
 		1073758C254DF5EF006D1956 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073758B254DF5EF006D1956 /* User.swift */; };
+		1073758E254F28B0006D1956 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073758D254F28B0006D1956 /* UIColor.swift */; };
+		10737594254F2A30006D1956 /* PT Root UI_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737590254F2A30006D1956 /* PT Root UI_Bold.ttf */; };
+		10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */; };
+		10737597254F2A30006D1956 /* PT Root UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737593254F2A30006D1956 /* PT Root UI_Light.ttf */; };
+		10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +56,11 @@
 		10737587254DD2B5006D1956 /* TasksDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDelegates.swift; sourceTree = "<group>"; };
 		10737589254DD30E006D1956 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1073758B254DF5EF006D1956 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1073758D254F28B0006D1956 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		10737590254F2A30006D1956 /* PT Root UI_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Bold.ttf"; sourceTree = "<group>"; };
+		10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Regular.ttf"; sourceTree = "<group>"; };
+		10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
+		10737593254F2A30006D1956 /* PT Root UI_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Light.ttf"; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 		1073756B254DA70C006D1956 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				1073758D254F28B0006D1956 /* UIColor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 		1073756C254DA717006D1956 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				1073758F254F2A14006D1956 /* Fonts */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -191,6 +203,17 @@
 				10737587254DD2B5006D1956 /* TasksDelegates.swift */,
 			);
 			path = Tasks;
+			sourceTree = "<group>";
+		};
+		1073758F254F2A14006D1956 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				10737590254F2A30006D1956 /* PT Root UI_Bold.ttf */,
+				10737593254F2A30006D1956 /* PT Root UI_Light.ttf */,
+				10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */,
+				10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		13ED4A22209854D391326851 /* Frameworks */ = {
@@ -271,8 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1073755D254DA60D006D1956 /* LaunchScreen.storyboard in Resources */,
+				10737594254F2A30006D1956 /* PT Root UI_Bold.ttf in Resources */,
+				10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */,
 				1073755A254DA60D006D1956 /* Assets.xcassets in Resources */,
+				10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */,
 				10737558254DA60B006D1956 /* Main.storyboard in Resources */,
+				10737597254F2A30006D1956 /* PT Root UI_Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +358,7 @@
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
 				10737578254DA9D5006D1956 /* ProjectsDelegates.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
+				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,

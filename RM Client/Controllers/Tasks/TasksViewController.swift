@@ -27,13 +27,16 @@ class TasksViewController: UIViewController {
     
     func getTasks(offset: Int) {
         API.shared.getJSONPagination(endPoint: "/issues.json?assigned_to_id=\(StartViewController.userData.id)", offset: offset, limit: 1000, completion: { (json) in
+            
             self.totalTasks = json["total_count"].intValue
-            print("всего задач: \(self.totalTasks)")
-
+            self.tasksView.countAllTasks.text = json["total_count"].stringValue
+            
             for i in json["issues"] {
                 let taskData = i.1
                 var listCustomFields = [CustomField]()
 
+                print(taskData)
+                
                 for i in taskData["custom_fields"] {
                     let customFieldData = i.1
                     let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
