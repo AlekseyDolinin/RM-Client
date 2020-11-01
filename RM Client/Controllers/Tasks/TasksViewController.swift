@@ -2,26 +2,50 @@ import UIKit
 
 class TasksViewController: UIViewController {
 
-    private var tasksView: TasksView! {
+    var tasksView: TasksView! {
         guard isViewLoaded else {return nil}
         return (view as! TasksView)
     }
     
     var listTasks = [Task]()
+    var listFilteredTasks = [Task]()
+    
     var totalTasks = Int()
     var offset = 0
     
+    var titlesStatusArray = ["Новая", "В работе", "Обратная связь", "Решеные", "Закрытые"]
+    var colorsStatusArray = ["_pinkStatus", "_violetStatus", "_orangeStatus", "_greenStatus", "_yellowStatus"]
+    
+    var currentStatus = "Новая"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tasksView.configure()
+        
         tasksView.tableTasks.delegate = self
         tasksView.tableTasks.dataSource = self
+        
+        tasksView.collectionStatusButton.delegate = self
+        tasksView.collectionStatusButton.dataSource = self
+        
+        currentStatus = titlesStatusArray[0]
+        
+        registerNib()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(12)
         if listTasks.isEmpty {
             print("запрос задач")
             getTasks(offset: offset)
+        }
+    }
+    
+    func registerNib() {
+        let nib = UINib(nibName: StatusCell.nibName, bundle: nil)
+        tasksView.collectionStatusButton?.register(nib, forCellWithReuseIdentifier: StatusCell.reuseIdentifier)
+        if let flowLayout = tasksView.collectionStatusButton?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
     
@@ -35,7 +59,7 @@ class TasksViewController: UIViewController {
                 let taskData = i.1
                 var listCustomFields = [CustomField]()
 
-                print(taskData)
+//                print(taskData)
                 
                 for i in taskData["custom_fields"] {
                     let customFieldData = i.1
@@ -64,9 +88,12 @@ class TasksViewController: UIViewController {
                                 project: taskData["project"]["name"].stringValue)
 
                 self.listTasks.append(task)
-//                self.listIssues = self.listIssues.sorted(by: {$0.name < $1.name})
+                self.listFilteredTasks = self.listTasks.filter{ $0.status == self.currentStatus}
             }
+            
             self.tasksView.tableTasks.reloadData()
+            self.tasksView.collectionStatusButton.reloadData()
+            self.tasksView.showContent()
         })
     }
 }

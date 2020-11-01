@@ -23,7 +23,7 @@
 		10737581254DCC77006D1956 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737580254DCC77006D1956 /* TasksViewController.swift */; };
 		10737584254DD0CF006D1956 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737583254DD0CF006D1956 /* Task.swift */; };
 		10737586254DD20E006D1956 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737585254DD20E006D1956 /* TasksView.swift */; };
-		10737588254DD2B5006D1956 /* TasksDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737587254DD2B5006D1956 /* TasksDelegates.swift */; };
+		10737588254DD2B5006D1956 /* TableDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737587254DD2B5006D1956 /* TableDelegates.swift */; };
 		1073758A254DD30E006D1956 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737589254DD30E006D1956 /* TaskCell.swift */; };
 		1073758C254DF5EF006D1956 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073758B254DF5EF006D1956 /* User.swift */; };
 		1073758E254F28B0006D1956 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073758D254F28B0006D1956 /* UIColor.swift */; };
@@ -31,6 +31,9 @@
 		10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */; };
 		10737597254F2A30006D1956 /* PT Root UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737593254F2A30006D1956 /* PT Root UI_Light.ttf */; };
 		10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */; };
+		108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB01C254F475600BF89C4 /* CollectionDelegates.swift */; };
+		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
+		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +56,7 @@
 		10737580254DCC77006D1956 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		10737583254DD0CF006D1956 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		10737585254DD20E006D1956 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
-		10737587254DD2B5006D1956 /* TasksDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDelegates.swift; sourceTree = "<group>"; };
+		10737587254DD2B5006D1956 /* TableDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegates.swift; sourceTree = "<group>"; };
 		10737589254DD30E006D1956 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1073758B254DF5EF006D1956 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1073758D254F28B0006D1956 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Regular.ttf"; sourceTree = "<group>"; };
 		10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
 		10737593254F2A30006D1956 /* PT Root UI_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Light.ttf"; sourceTree = "<group>"; };
+		108CB01C254F475600BF89C4 /* CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegates.swift; sourceTree = "<group>"; };
+		108CB020254F6BD000BF89C4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		108CB021254F6BD000BF89C4 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 			children = (
 				10737589254DD30E006D1956 /* TaskCell.swift */,
 				1073757A254DAE23006D1956 /* ProjectCell.swift */,
+				108CB020254F6BD000BF89C4 /* StatusCell.swift */,
+				108CB021254F6BD000BF89C4 /* StatusCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -200,7 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				10737580254DCC77006D1956 /* TasksViewController.swift */,
-				10737587254DD2B5006D1956 /* TasksDelegates.swift */,
+				10737587254DD2B5006D1956 /* TableDelegates.swift */,
+				108CB01C254F475600BF89C4 /* CollectionDelegates.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 				1073755D254DA60D006D1956 /* LaunchScreen.storyboard in Resources */,
 				10737594254F2A30006D1956 /* PT Root UI_Bold.ttf in Resources */,
 				10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */,
+				108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */,
 				1073755A254DA60D006D1956 /* Assets.xcassets in Resources */,
 				10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */,
 				10737558254DA60B006D1956 /* Main.storyboard in Resources */,
@@ -352,7 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10737588254DD2B5006D1956 /* TasksDelegates.swift in Sources */,
+				10737588254DD2B5006D1956 /* TableDelegates.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
 				10737577254DA9D3006D1956 /* ProjectsViewController.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
@@ -364,7 +374,9 @@
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				10737570254DA89E006D1956 /* ProjectsView.swift in Sources */,
+				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
+				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				1073757F254DC9E7006D1956 /* TabViewController.swift in Sources */,
@@ -526,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alekseydolinin.RM-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -546,7 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alekseydolinin.RM-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
