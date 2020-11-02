@@ -19,7 +19,6 @@
 		10737579254DA9EA006D1956 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737575254DA8CB006D1956 /* API.swift */; };
 		1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757A254DAE23006D1956 /* ProjectCell.swift */; };
 		1073757D254DB0D6006D1956 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757C254DB0D6006D1956 /* CustomField.swift */; };
-		1073757F254DC9E7006D1956 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757E254DC9E7006D1956 /* TabViewController.swift */; };
 		10737581254DCC77006D1956 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737580254DCC77006D1956 /* TasksViewController.swift */; };
 		10737584254DD0CF006D1956 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737583254DD0CF006D1956 /* Task.swift */; };
 		10737586254DD20E006D1956 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737585254DD20E006D1956 /* TasksView.swift */; };
@@ -34,6 +33,7 @@
 		108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB01C254F475600BF89C4 /* CollectionDelegates.swift */; };
 		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
 		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
+		108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB0242550899300BF89C4 /* TabbarViewController.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		10737575254DA8CB006D1956 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1073757A254DAE23006D1956 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		1073757C254DB0D6006D1956 /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
-		1073757E254DC9E7006D1956 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		10737580254DCC77006D1956 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		10737583254DD0CF006D1956 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		10737585254DD20E006D1956 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		108CB01C254F475600BF89C4 /* CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegates.swift; sourceTree = "<group>"; };
 		108CB020254F6BD000BF89C4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		108CB021254F6BD000BF89C4 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
+		108CB0242550899300BF89C4 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				10737574254DA8C6006D1956 /* StartViewController.swift */,
-				1073757E254DC9E7006D1956 /* TabViewController.swift */,
+				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
 				10737571254DA8B6006D1956 /* Projects */,
 			);
@@ -370,6 +370,7 @@
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
 				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
+				108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
@@ -379,7 +380,6 @@
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
-				1073757F254DC9E7006D1956 /* TabViewController.swift in Sources */,
 				10737579254DA9EA006D1956 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
