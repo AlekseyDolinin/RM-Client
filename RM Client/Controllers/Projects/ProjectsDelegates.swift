@@ -10,8 +10,9 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let projectCell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         
-        projectCell.nameProjectLabel.text = "\(indexPath.row + 1) " + listProjects[indexPath.row].name
-    
+        projectCell.nameProjectLabel.text = listProjects[indexPath.row].name
+        projectCell.idProjectLabel.text = "#\(listProjects[indexPath.row].id)"
+        projectCell.createdProjectLabel.text = listProjects[indexPath.row].created_on
         
         
         if indexPath.row == listProjects.count - 1 { // last cell

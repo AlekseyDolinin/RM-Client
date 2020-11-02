@@ -1,18 +1,16 @@
 import UIKit
 
 class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
-
-
     
     private var rootProjectsView: RootProjectsView! {
         guard isViewLoaded else {return nil}
         return (view as! RootProjectsView)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rootProjectsView.configure()
         
         let scrollView = rootProjectsView.scrollVew!
         
@@ -37,6 +35,8 @@ class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: self.view.frame.width * 2, height: scrollView.frame.height)
         
         NotificationCenter.default.addObserver(self, selector: #selector(moveTopView), name: NSNotification.Name(rawValue: "offset"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showContent), name: NSNotification.Name(rawValue: "showContent"), object: nil)
     }
     
 
@@ -49,14 +49,16 @@ class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    @objc private func showContent() {
+        rootProjectsView.showContent()
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
             self.rootProjectsView.indicatorView.transform = CGAffineTransform(translationX: scrollView.contentOffset.x / 2, y: 0)
         })
     }
-    
-    
-    
+
     
     @IBAction func selectTab(_ sender: UIButton) {
         if sender.tag == 1 {

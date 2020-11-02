@@ -12,6 +12,8 @@ class Project {
     var created_on: String
     var is_public: Bool
     var status: Int
+    /// id родительского проекта
+    var parentID: Int?
     
     init(id: Int,
          name: String,
@@ -22,7 +24,8 @@ class Project {
          custom_fields: [CustomField],
          created_on: String,
          is_public: Bool,
-         status: Int){
+         status: Int,
+         parentID: Int? = nil){
         
         self.id = id
         self.name = name
@@ -34,5 +37,6 @@ class Project {
         self.created_on = created_on
         self.is_public = is_public
         self.status = status
+        self.parentID = parentID
     }
 }

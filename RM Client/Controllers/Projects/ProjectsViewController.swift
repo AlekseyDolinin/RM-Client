@@ -35,16 +35,17 @@ class ProjectsViewController: UIViewController {
             self.totalProjects = json["total_count"].intValue
             
             print("всего проектов: \(self.totalProjects)")
-            
+//            print(json)
             for i in json["projects"] {
                 
                 let projectData = i.1
-                
                 var listCustomFields = [CustomField]()
                 
                 for i in projectData["custom_fields"] {
                     let customFieldData = i.1
-                    let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
+                    let customField = CustomField(id: customFieldData["id"].intValue,
+                                                  name: customFieldData["name"].stringValue,
+                                                  value: customFieldData["value"].stringValue)
                     listCustomFields.append(customField)
                 }
                 
@@ -58,11 +59,21 @@ class ProjectsViewController: UIViewController {
                     custom_fields: listCustomFields,
                     created_on: projectData["created_on"].stringValue,
                     is_public: projectData["is_public"].boolValue,
-                    status: projectData["status"].intValue)
+                    status: projectData["status"].intValue,
+                    parentID: projectData["parent"]["id"].int)
                 
-                self.listProjects.append(project)
+                
+                if project.parentID == nil {
+                    self.listProjects.append(project)
+                }
+                
+//                print("~~~~~~~~~~")
+//                print(project.name)
+//                print(project.parentID)
+                
                 self.listProjects = self.listProjects.sorted(by: {$0.name < $1.name})
             }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showContent"), object: nil)
             self.projectsView.tableProjects.reloadData()
         })
     }
