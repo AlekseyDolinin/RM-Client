@@ -12,10 +12,9 @@
 		1073755A254DA60D006D1956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10737559254DA60D006D1956 /* Assets.xcassets */; };
 		1073755D254DA60D006D1956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1073755B254DA60D006D1956 /* LaunchScreen.storyboard */; };
 		1073756E254DA79D006D1956 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073756D254DA79D006D1956 /* Project.swift */; };
-		10737570254DA89E006D1956 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073756F254DA89E006D1956 /* ProjectsView.swift */; };
 		10737576254DA9D0006D1956 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737574254DA8C6006D1956 /* StartViewController.swift */; };
-		10737577254DA9D3006D1956 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737572254DA8BC006D1956 /* ProjectsViewController.swift */; };
-		10737578254DA9D5006D1956 /* ProjectsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737573254DA8BF006D1956 /* ProjectsDelegates.swift */; };
+		10737577254DA9D3006D1956 /* ProjectsViewController_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737572254DA8BC006D1956 /* ProjectsViewController_.swift */; };
+		10737578254DA9D5006D1956 /* ProjectsDelegates_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737573254DA8BF006D1956 /* ProjectsDelegates_.swift */; };
 		10737579254DA9EA006D1956 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737575254DA8CB006D1956 /* API.swift */; };
 		1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757A254DAE23006D1956 /* ProjectCell.swift */; };
 		1073757D254DB0D6006D1956 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757C254DB0D6006D1956 /* CustomField.swift */; };
@@ -34,6 +33,11 @@
 		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
 		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
 		108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB0242550899300BF89C4 /* TabbarViewController.swift */; };
+		10DF2A0B255094CF0098B832 /* RootProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0A255094CF0098B832 /* RootProjectsViewController.swift */; };
+		10DF2A0D2550969D0098B832 /* RootProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0C2550969D0098B832 /* RootProjectsView.swift */; };
+		10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0E255097CD0098B832 /* ProjectsView.swift */; };
+		10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */; };
+		10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +49,8 @@
 		1073755C254DA60D006D1956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1073755E254DA60D006D1956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1073756D254DA79D006D1956 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		1073756F254DA89E006D1956 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
-		10737572254DA8BC006D1956 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
-		10737573254DA8BF006D1956 /* ProjectsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegates.swift; sourceTree = "<group>"; };
+		10737572254DA8BC006D1956 /* ProjectsViewController_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController_.swift; sourceTree = "<group>"; };
+		10737573254DA8BF006D1956 /* ProjectsDelegates_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegates_.swift; sourceTree = "<group>"; };
 		10737574254DA8C6006D1956 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		10737575254DA8CB006D1956 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1073757A254DAE23006D1956 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
@@ -67,6 +70,11 @@
 		108CB020254F6BD000BF89C4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		108CB021254F6BD000BF89C4 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
 		108CB0242550899300BF89C4 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegates.swift; sourceTree = "<group>"; };
+		10DF2A0A255094CF0098B832 /* RootProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProjectsViewController.swift; sourceTree = "<group>"; };
+		10DF2A0C2550969D0098B832 /* RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProjectsView.swift; sourceTree = "<group>"; };
+		10DF2A0E255097CD0098B832 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +145,8 @@
 			children = (
 				10737566254DA6DB006D1956 /* Cell */,
 				10737585254DD20E006D1956 /* TasksView.swift */,
-				1073756F254DA89E006D1956 /* ProjectsView.swift */,
+				10DF2A0C2550969D0098B832 /* RootProjectsView.swift */,
+				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,8 +207,10 @@
 		10737571254DA8B6006D1956 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				10737572254DA8BC006D1956 /* ProjectsViewController.swift */,
-				10737573254DA8BF006D1956 /* ProjectsDelegates.swift */,
+				10DF2A0A255094CF0098B832 /* RootProjectsViewController.swift */,
+				108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */,
+				108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */,
+				10DF2A102550984F0098B832 /* temp */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -223,6 +234,15 @@
 				10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		10DF2A102550984F0098B832 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				10737572254DA8BC006D1956 /* ProjectsViewController_.swift */,
+				10737573254DA8BF006D1956 /* ProjectsDelegates_.swift */,
+			);
+			path = temp;
 			sourceTree = "<group>";
 		};
 		13ED4A22209854D391326851 /* Frameworks */ = {
@@ -363,10 +383,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				10737588254DD2B5006D1956 /* TableDelegates.swift in Sources */,
+				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
-				10737577254DA9D3006D1956 /* ProjectsViewController.swift in Sources */,
+				10737577254DA9D3006D1956 /* ProjectsViewController_.swift in Sources */,
+				10DF2A0D2550969D0098B832 /* RootProjectsView.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
-				10737578254DA9D5006D1956 /* ProjectsDelegates.swift in Sources */,
+				10737578254DA9D5006D1956 /* ProjectsDelegates_.swift in Sources */,
+				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
+				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
 				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
@@ -374,9 +398,9 @@
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
-				10737570254DA89E006D1956 /* ProjectsView.swift in Sources */,
 				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
+				10DF2A0B255094CF0098B832 /* RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,

@@ -2,14 +2,14 @@ import UIKit
 
 class ProjectCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var createdOnLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var nameProjectLabel: UILabel!
         
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backView.layer.cornerRadius = 8
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

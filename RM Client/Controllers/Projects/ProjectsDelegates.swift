@@ -10,11 +10,9 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let projectCell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         
-        projectCell.nameLabel.text = "\(indexPath.row + 1) " + listProjects[indexPath.row].name
+        projectCell.nameProjectLabel.text = "\(indexPath.row + 1) " + listProjects[indexPath.row].name
+    
         
-        projectCell.descriptionLabel.text = listProjects[indexPath.row].description
-        projectCell.createdOnLabel.text = listProjects[indexPath.row].created_on
-        projectCell.statusLabel.text = String(listProjects[indexPath.row].status)
         
         if indexPath.row == listProjects.count - 1 { // last cell
             print("подзагрузка")
@@ -25,5 +23,6 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return projectCell
     }
- 
+    
 }
+

@@ -3,7 +3,7 @@ import SwiftyJSON
 
 class ProjectsViewController: UIViewController {
     
-    private var projectsView: ProjectsView! {
+    var projectsView: ProjectsView! {
         guard isViewLoaded else {return nil}
         return (view as! ProjectsView)
     }
@@ -14,12 +14,14 @@ class ProjectsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        projectsView.configure()
+        
         projectsView.tableProjects.delegate = self
         projectsView.tableProjects.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         if listProjects.isEmpty {
             print("запрос проектов")
             getProjects(offset: offset)
@@ -31,7 +33,7 @@ class ProjectsViewController: UIViewController {
         API.shared.getJSONPagination(endPoint: "projects", offset: offset, limit: 1000, completion: { (json) in
             
             self.totalProjects = json["total_count"].intValue
-
+            
             print("всего проектов: \(self.totalProjects)")
             
             for i in json["projects"] {
@@ -64,5 +66,11 @@ class ProjectsViewController: UIViewController {
             self.projectsView.tableProjects.reloadData()
         })
     }
+    
+    
+    
+    
+    
+    
+    
 }
-
