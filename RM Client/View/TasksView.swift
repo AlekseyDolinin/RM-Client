@@ -8,13 +8,15 @@ class TasksView: UIView {
     @IBOutlet weak var countAllTasks: UILabel!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    @IBOutlet weak var emptyView: UIView!
+    
     func configure() {
         
         hideContent()
-        
     }
     
     func hideContent() {
+        emptyView.alpha = 0
         topView.alpha = 0
         tableTasks.alpha = 0
         loader.startAnimating()
@@ -33,5 +35,11 @@ class TasksView: UIView {
             self?.tableTasks.reloadData()
         })
         collectionStatusButton.reloadData()
+    }
+    
+    func stateEmtyView(_ alpha: CGFloat) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.emptyView.alpha = alpha
+        }
     }
 }

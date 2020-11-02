@@ -89,6 +89,10 @@ class TasksViewController: UIViewController {
 
                 self.listTasks.append(task)
                 self.listFilteredTasks = self.listTasks.filter{ $0.status == self.currentStatus}
+                
+                let alpha = self.listFilteredTasks.isEmpty ? 1 : 0
+                self.tasksView.stateEmtyView(CGFloat(alpha))
+                
             }
             
             self.tasksView.reloadContent()

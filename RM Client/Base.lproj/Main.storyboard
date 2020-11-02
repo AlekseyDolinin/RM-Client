@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="_white"/>
                         <color key="tintColor" name="_blue"/>
-                        <color key="barTintColor" name="_backgroundDark"/>
+                        <color key="barTintColor" name="_dark"/>
                     </tabBar>
                     <connections>
                         <segue destination="JJz-TZ-yCb" kind="relationship" relationship="viewControllers" id="E33-Kj-uDP"/>
@@ -288,6 +288,24 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wu0-gl-0LY">
                                 <rect key="frame" x="141.5" y="241" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UF-qG-ies">
+                                <rect key="frame" x="48" y="147" width="224" height="225"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folderEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-ff-oUB">
+                                        <rect key="frame" x="67" y="101.5" width="90" height="89.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6SZ-ff-oUB" secondAttribute="height" multiplier="1:1" id="kvU-uJ-Hd8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6SZ-ff-oUB" firstAttribute="centerX" secondItem="8UF-qG-ies" secondAttribute="centerX" id="Czh-8E-K8q"/>
+                                    <constraint firstItem="6SZ-ff-oUB" firstAttribute="centerY" secondItem="8UF-qG-ies" secondAttribute="centerY" multiplier="1.3" id="ctz-rS-o1d"/>
+                                    <constraint firstItem="6SZ-ff-oUB" firstAttribute="width" secondItem="8UF-qG-ies" secondAttribute="width" multiplier="0.4" id="h1O-ub-cSE"/>
+                                    <constraint firstAttribute="width" secondItem="8UF-qG-ies" secondAttribute="height" multiplier="239:240" id="pLB-2g-N3N"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-7k-ac9">
                                 <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -475,17 +493,21 @@
                             <constraint firstItem="tS8-7k-ac9" firstAttribute="leading" secondItem="HfE-Rr-GYo" secondAttribute="leading" id="79O-ne-O2L"/>
                             <constraint firstItem="jfE-SQ-mHs" firstAttribute="trailing" secondItem="HfE-Rr-GYo" secondAttribute="trailing" id="8wb-dY-A8U"/>
                             <constraint firstItem="HfE-Rr-GYo" firstAttribute="trailing" secondItem="tS8-7k-ac9" secondAttribute="trailing" id="Avm-ZQ-NMv"/>
+                            <constraint firstItem="8UF-qG-ies" firstAttribute="centerY" secondItem="xlb-wU-CjD" secondAttribute="centerY" id="B8X-8c-5Gg"/>
                             <constraint firstItem="jfE-SQ-mHs" firstAttribute="leading" secondItem="HfE-Rr-GYo" secondAttribute="leading" id="DDA-ts-216"/>
                             <constraint firstItem="tS8-7k-ac9" firstAttribute="top" secondItem="HfE-Rr-GYo" secondAttribute="top" id="DlD-VL-OLh"/>
+                            <constraint firstItem="8UF-qG-ies" firstAttribute="centerX" secondItem="xlb-wU-CjD" secondAttribute="centerX" id="ENz-ZA-wyF"/>
                             <constraint firstItem="Wu0-gl-0LY" firstAttribute="centerX" secondItem="xlb-wU-CjD" secondAttribute="centerX" id="MH5-kK-1Zg"/>
                             <constraint firstItem="HfE-Rr-GYo" firstAttribute="bottom" secondItem="tS8-7k-ac9" secondAttribute="bottom" id="N5D-0q-zbZ"/>
                             <constraint firstItem="Wu0-gl-0LY" firstAttribute="centerY" secondItem="xlb-wU-CjD" secondAttribute="centerY" id="NE0-FV-Sag"/>
+                            <constraint firstItem="8UF-qG-ies" firstAttribute="width" secondItem="xlb-wU-CjD" secondAttribute="width" multiplier="0.7" id="fOF-ox-zWT"/>
                             <constraint firstItem="jfE-SQ-mHs" firstAttribute="top" secondItem="HfE-Rr-GYo" secondAttribute="top" id="xek-eI-MoV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HfE-Rr-GYo"/>
                         <connections>
                             <outlet property="collectionStatusButton" destination="wSb-8C-Nyq" id="0Rq-pA-Rv0"/>
                             <outlet property="countAllTasks" destination="QT5-Pl-wtx" id="dWb-Dy-DYk"/>
+                            <outlet property="emptyView" destination="8UF-qG-ies" id="vSB-fI-qdu"/>
                             <outlet property="loader" destination="Wu0-gl-0LY" id="PZd-sI-B0K"/>
                             <outlet property="tableTasks" destination="tS8-7k-ac9" id="vI4-cZ-V4u"/>
                             <outlet property="topView" destination="jfE-SQ-mHs" id="GLe-dG-aYl"/>
@@ -500,6 +522,7 @@
     </scenes>
     <resources>
         <image name="attachIcon" width="18" height="18"/>
+        <image name="folderEmpty" width="96" height="96"/>
         <image name="projectIconTabBar" width="24" height="24"/>
         <image name="taskIconTabBar" width="24" height="24"/>
         <namedColor name="_backgroundDark">
@@ -510,6 +533,9 @@
         </namedColor>
         <namedColor name="_blue">
             <color red="0.69411764705882351" green="0.7803921568627451" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="_dark">
+            <color red="0.035294117647058823" green="0.066666666666666666" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="_white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

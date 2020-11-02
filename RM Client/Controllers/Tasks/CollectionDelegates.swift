@@ -30,10 +30,12 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         currentStatus = titlesStatusArray[indexPath.row]
         self.listFilteredTasks = self.listTasks.filter{ $0.status == currentStatus}
         self.tasksView.reloadContent()
+        
+        let alpha = self.listFilteredTasks.isEmpty ? 1 : 0
+        self.tasksView.stateEmtyView(CGFloat(alpha))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
