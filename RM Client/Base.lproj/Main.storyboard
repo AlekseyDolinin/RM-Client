@@ -439,7 +439,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="304" height="167.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12a-BZ-5H2">
-                                                            <rect key="frame" x="12" y="16" width="216" height="14"/>
+                                                            <rect key="frame" x="12" y="16" width="29.5" height="14"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="12"/>
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
@@ -484,6 +484,23 @@
                                                                 <constraint firstAttribute="width" constant="18" id="vjr-qF-8FW"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puI-OM-Lmg">
+                                                            <rect key="frame" x="161.5" y="12" width="92.5" height="22"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нормальный" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONg-LS-snQ">
+                                                                    <rect key="frame" x="12" y="5" width="60.5" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
+                                                                    <color key="textColor" name="_blue"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="_backgroundDark"/>
+                                                            <constraints>
+                                                                <constraint firstItem="ONg-LS-snQ" firstAttribute="centerY" secondItem="puI-OM-Lmg" secondAttribute="centerY" id="6g2-6I-eNi"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ONg-LS-snQ" secondAttribute="trailing" constant="20" id="Nx7-Qq-8jc"/>
+                                                                <constraint firstItem="ONg-LS-snQ" firstAttribute="leading" secondItem="puI-OM-Lmg" secondAttribute="leading" constant="12" id="hDn-no-RU4"/>
+                                                            </constraints>
+                                                        </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-3T-F1D">
                                                             <rect key="frame" x="244" y="13" width="52" height="20"/>
                                                             <subviews>
@@ -509,12 +526,15 @@
                                                         <constraint firstItem="12a-BZ-5H2" firstAttribute="leading" secondItem="uhp-2S-ZVA" secondAttribute="leading" constant="12" id="8BS-e6-nph"/>
                                                         <constraint firstItem="Sv1-fY-Pka" firstAttribute="leading" secondItem="hS0-d1-LIb" secondAttribute="leading" id="8YB-V9-0Tb"/>
                                                         <constraint firstItem="Sv1-fY-Pka" firstAttribute="top" secondItem="hS0-d1-LIb" secondAttribute="bottom" constant="16" id="FuY-hd-1kU"/>
+                                                        <constraint firstItem="puI-OM-Lmg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="12a-BZ-5H2" secondAttribute="trailing" constant="8" symbolic="YES" id="H2Q-03-CnZ"/>
                                                         <constraint firstItem="GNG-V5-k23" firstAttribute="top" secondItem="ISl-sA-4vz" secondAttribute="top" id="Hih-GO-AH2"/>
                                                         <constraint firstItem="7Cl-Te-7jq" firstAttribute="width" secondItem="Sv1-fY-Pka" secondAttribute="width" id="Jog-XF-ajN"/>
                                                         <constraint firstItem="ISl-sA-4vz" firstAttribute="top" secondItem="12a-BZ-5H2" secondAttribute="bottom" constant="8" id="LXf-QQ-nvI"/>
+                                                        <constraint firstItem="puI-OM-Lmg" firstAttribute="height" secondItem="JYA-3T-F1D" secondAttribute="height" multiplier="1.1" id="V71-VD-QQE"/>
                                                         <constraint firstAttribute="trailing" secondItem="JYA-3T-F1D" secondAttribute="trailing" constant="8" id="YJ1-Cs-jSZ"/>
                                                         <constraint firstItem="P8s-wx-zbs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Cl-Te-7jq" secondAttribute="trailing" constant="8" symbolic="YES" id="aBp-Lu-uvG"/>
                                                         <constraint firstItem="7Cl-Te-7jq" firstAttribute="top" secondItem="Sv1-fY-Pka" secondAttribute="bottom" constant="4" id="azj-de-Fcl"/>
+                                                        <constraint firstItem="JYA-3T-F1D" firstAttribute="leading" secondItem="puI-OM-Lmg" secondAttribute="trailing" constant="-10" id="dDQ-09-0kz"/>
                                                         <constraint firstAttribute="trailing" secondItem="hS0-d1-LIb" secondAttribute="trailing" constant="12" id="fGq-p1-8mv"/>
                                                         <constraint firstItem="7Cl-Te-7jq" firstAttribute="leading" secondItem="Sv1-fY-Pka" secondAttribute="leading" id="gxl-vh-t9b"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GNG-V5-k23" secondAttribute="trailing" constant="20" symbolic="YES" id="hHq-GW-NjU"/>
@@ -528,7 +548,7 @@
                                                         <constraint firstItem="hS0-d1-LIb" firstAttribute="top" secondItem="ISl-sA-4vz" secondAttribute="bottom" constant="16" id="sW3-8Q-69R"/>
                                                         <constraint firstAttribute="bottom" secondItem="7Cl-Te-7jq" secondAttribute="bottom" constant="14" id="sXV-Fs-yIr"/>
                                                         <constraint firstAttribute="bottom" secondItem="P8s-wx-zbs" secondAttribute="bottom" constant="16" id="uqu-xc-lZ6"/>
-                                                        <constraint firstItem="JYA-3T-F1D" firstAttribute="leading" secondItem="12a-BZ-5H2" secondAttribute="trailing" constant="16" id="vTh-YO-DqG"/>
+                                                        <constraint firstItem="puI-OM-Lmg" firstAttribute="centerY" secondItem="JYA-3T-F1D" secondAttribute="centerY" id="uqv-dm-unf"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -547,6 +567,8 @@
                                             <outlet property="idTaskLabel" destination="ISl-sA-4vz" id="HVD-hD-ZvM"/>
                                             <outlet property="nameAuthorTaskLabel" destination="Sv1-fY-Pka" id="8xX-2d-yDt"/>
                                             <outlet property="nameTaskLabel" destination="hS0-d1-LIb" id="JJT-dR-Hn9"/>
+                                            <outlet property="priorityLabel" destination="ONg-LS-snQ" id="PFv-il-o1q"/>
+                                            <outlet property="priorityView" destination="puI-OM-Lmg" id="gls-88-7jt"/>
                                             <outlet property="projectNameLabel" destination="12a-BZ-5H2" id="t1p-U3-wlX"/>
                                             <outlet property="sequenceLabel" destination="Ga4-PA-1ML" id="14H-gW-Ndq"/>
                                             <outlet property="sequenceView" destination="JYA-3T-F1D" id="GBl-IC-kHQ"/>

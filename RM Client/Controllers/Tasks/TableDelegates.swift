@@ -16,6 +16,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.nameTaskLabel.text = listFilteredTasks[indexPath.row].subject
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
         taskCell.createdDateLabel.text = listFilteredTasks[indexPath.row].createdOn
+        taskCell.priorityLabel.text = listFilteredTasks[indexPath.row].priority
         
         for field in listFilteredTasks[indexPath.row].customFields {
             if field.name == "Порядок" {
