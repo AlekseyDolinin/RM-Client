@@ -32,10 +32,13 @@
 		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
 		108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB0242550899300BF89C4 /* TabbarViewController.swift */; };
 		10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */; };
-		10DF2A0D2550969D0098B832 /* RootProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0C2550969D0098B832 /* RootProjectsView.swift */; };
+		10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */; };
 		10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0E255097CD0098B832 /* ProjectsView.swift */; };
 		10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */; };
 		10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */; };
+		10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1525524E6D0098B832 /* _RootTasksView.swift */; };
+		10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */; };
+		10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A19255265310098B832 /* UIScrollView.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +72,11 @@
 		108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegates.swift; sourceTree = "<group>"; };
 		10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsViewController.swift; sourceTree = "<group>"; };
-		10DF2A0C2550969D0098B832 /* RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProjectsView.swift; sourceTree = "<group>"; };
+		10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsView.swift; sourceTree = "<group>"; };
 		10DF2A0E255097CD0098B832 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		10DF2A1525524E6D0098B832 /* _RootTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksView.swift; sourceTree = "<group>"; };
+		10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksViewController.swift; sourceTree = "<group>"; };
+		10DF2A19255265310098B832 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,9 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				10737566254DA6DB006D1956 /* Cell */,
-				10737585254DD20E006D1956 /* TasksView.swift */,
-				10DF2A0C2550969D0098B832 /* RootProjectsView.swift */,
+				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
+				10DF2A1525524E6D0098B832 /* _RootTasksView.swift */,
+				10737585254DD20E006D1956 /* TasksView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				1073758D254F28B0006D1956 /* UIColor.swift */,
+				10DF2A19255265310098B832 /* UIScrollView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -213,9 +221,10 @@
 		10737582254DCC83006D1956 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */,
+				108CB01C254F475600BF89C4 /* CollectionDelegates.swift */,
 				10737580254DCC77006D1956 /* TasksViewController.swift */,
 				10737587254DD2B5006D1956 /* TableDelegates.swift */,
-				108CB01C254F475600BF89C4 /* CollectionDelegates.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -371,7 +380,7 @@
 				10737588254DD2B5006D1956 /* TableDelegates.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
-				10DF2A0D2550969D0098B832 /* RootProjectsView.swift in Sources */,
+				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
 				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
 				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
@@ -380,13 +389,16 @@
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
 				108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
+				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
 				10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
+				10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
+				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10737579254DA9EA006D1956 /* API.swift in Sources */,
 			);

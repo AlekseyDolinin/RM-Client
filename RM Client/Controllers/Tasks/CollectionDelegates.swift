@@ -1,6 +1,6 @@
 import UIKit
 
-extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titlesStatusArray.count
@@ -15,8 +15,8 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
             let currentColor = UIColor(named: colorsStatusArray[indexPath.row])
             cellStatus.backView.layer.borderColor = currentColor?.cgColor
             
-            // set cerrent Cell Status
-            if titlesStatusArray[indexPath.row] == currentStatus {
+            // set current Cell Status
+            if indexPath.row == currentIndexFilter {
                 cellStatus.nameStatus.textColor = ._white
                 cellStatus.backView.backgroundColor = currentColor
             } else {
@@ -30,16 +30,10 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        currentStatus = titlesStatusArray[indexPath.row]
-        self.listFilteredTasks = self.listTasks.filter{ $0.status == currentStatus}
-        self.tasksView.reloadContent()
-        
-        let alpha = self.listFilteredTasks.isEmpty ? 1 : 0
-        self.tasksView.stateEmtyView(CGFloat(alpha))
+        selectFilterTasks(indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: collectionView.frame.height)
     }
-    
 }
