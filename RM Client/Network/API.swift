@@ -49,4 +49,27 @@ class API {
             }
         }
     }
+    
+    func getDataTask(endPoint: String, completion: @escaping (JSON) -> Void) {
+        
+        let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=attachments"
+        print(request)
+        Alamofire.request(request, method: .get).responseJSON { response in
+            if response.result.isSuccess == false {
+                print("ERROR GET JSON")
+                return
+            }
+            if let data = response.data {
+                let json = JSON(data)
+                completion(json)
+            }
+        }
+    }
 }
+
+
+
+
+
+
+

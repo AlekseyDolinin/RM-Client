@@ -15,8 +15,15 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.trackerLabel.text = listFilteredTasks[indexPath.row].tracker
         taskCell.nameTaskLabel.text = listFilteredTasks[indexPath.row].subject
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
-        
         taskCell.priorityLabel.text = listFilteredTasks[indexPath.row].priority
+        
+        print(listFilteredTasks[indexPath.row].attachments)
+        
+        if listFilteredTasks[indexPath.row].attachments.isEmpty {
+            taskCell.iconAttachFile.isHidden = true
+        } else {
+            taskCell.iconAttachFile.isHidden = false
+        }
         
         for field in listFilteredTasks[indexPath.row].customFields {
             if field.name == "Порядок" {

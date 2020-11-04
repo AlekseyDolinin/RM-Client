@@ -85,41 +85,68 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
                 self.rootTasksView.countAllTasks.text = json["total_count"].stringValue
                 
                 for i in json["issues"] {
-                    let taskData = i.1
+                    let idTask = i.1["id"].intValue
                     
-                    var listCustomFields = [CustomField]()
-                    
-                    for i in taskData["custom_fields"] {
-                        let customFieldData = i.1
-                        let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
-                        listCustomFields.append(customField)
-                    }
-                    let task = Task(doneRatio: taskData["done_ratio"].intValue,
-                                    startDate: taskData["start_date"].stringValue,
-                                    createdOn: taskData["created_on"].stringValue,
-                                    tracker: taskData["tracker"]["name"].stringValue,
-                                    author: taskData["author"]["name"].stringValue,
-                                    dueDate: taskData["due_date"].stringValue,
-                                    subject: taskData["subject"].stringValue,
-                                    isPrivate: taskData["is_private"].boolValue,
-                                    assignedTo: taskData["assigned_to"]["name"].stringValue,
-                                    category: taskData["category"]["name"].stringValue,
-                                    estimatedHours: taskData["estimated_hours"].doubleValue,
-                                    customFields: listCustomFields,
-                                    priority: taskData["priority"]["name"].stringValue,
-                                    id: taskData["id"].intValue,
-                                    parent: taskData["parent"]["id"].intValue,
-                                    updatedOn: taskData["updated_on"].stringValue,
-                                    closedOn: taskData["closed_on"].boolValue,
-                                    status: taskData["status"]["name"].stringValue,
-                                    description: taskData["description"].stringValue,
-                                    project: taskData["project"]["name"].stringValue)
-                    
-                    self.listAllTasks.append(task)
+                    API.shared.getDataTask(endPoint: "/issues/\(idTask)", completion: { (json) in
+                        
+                        let dataTask = json["issue"]
+                        
+                        var listCustomFields = [CustomField]()
+                        
+                        for i in dataTask["custom_fields"] {
+                            let customFieldData = i.1
+                            let customField = CustomField(id: customFieldData["id"].intValue,
+                                                          name: customFieldData["name"].stringValue,
+                                                          value: customFieldData["value"].stringValue)
+                            listCustomFields.append(customField)
+                        }
+                        
+                        var listAttachments = [Attachment]()
+                        
+                        for i in dataTask["attachments"] {
+                            let attachmentData = i.1
+                            let attachment = Attachment(id: attachmentData["id"].intValue,
+                                                        fileName: attachmentData["filename"].stringValue,
+                                                        createdOn: attachmentData["created_on"].stringValue,
+                                                        thumbnail_url: attachmentData["thumbnail_url"].stringValue,
+                                                        author: attachmentData["author"]["name"].stringValue,
+                                                        filesize: attachmentData["filesize"].intValue,
+                                                        description: attachmentData["description"].stringValue,
+                                                        content_type: attachmentData["content_type"].stringValue,
+                                                        content_url: attachmentData["content_url"].stringValue)
+                            listAttachments.append(attachment)
+                        }
+                        
+                        let task = Task(doneRatio: dataTask["done_ratio"].intValue,
+                                        startDate: dataTask["start_date"].stringValue,
+                                        createdOn: dataTask["created_on"].stringValue,
+                                        tracker: dataTask["tracker"]["name"].stringValue,
+                                        author: dataTask["author"]["name"].stringValue,
+                                        dueDate: dataTask["due_date"].stringValue,
+                                        subject: dataTask["subject"].stringValue,
+                                        isPrivate: dataTask["is_private"].boolValue,
+                                        assignedTo: dataTask["assigned_to"]["name"].stringValue,
+                                        category: dataTask["category"]["name"].stringValue,
+                                        estimatedHours: dataTask["estimated_hours"].doubleValue,
+                                        customFields: listCustomFields,
+                                        priority: dataTask["priority"]["name"].stringValue,
+                                        id: dataTask["id"].intValue,
+                                        parent: dataTask["parent"]["id"].intValue,
+                                        updatedOn: dataTask["updated_on"].stringValue,
+                                        closedOn: dataTask["closed_on"].boolValue,
+                                        status: dataTask["status"]["name"].stringValue,
+                                        description: dataTask["description"].stringValue,
+                                        project: dataTask["project"]["name"].stringValue,
+                                        attachments: listAttachments)
+                        
+                        self.listAllTasks.append(task)
+                        if self.listAllTasks.count == self.totalTasks {
+                            self.separateTasks(self.listAllTasks)
+                            self.selectFilterTasks(0)
+                            self.rootTasksView.showContent()
+                        }
+                    })
                 }
-                self.separateTasks(self.listAllTasks)
-                self.selectFilterTasks(0)
-                self.rootTasksView.showContent()
         })
     }
     

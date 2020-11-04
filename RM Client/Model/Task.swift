@@ -20,6 +20,7 @@ class Task {
     var status: String
     var description: String
     var project: String
+    var attachments: [Attachment]
     
     init(doneRatio: Int,
          startDate: String,
@@ -40,7 +41,9 @@ class Task {
          closedOn: Bool?,
          status: String,
          description: String,
-         project: String){
+         project: String,
+         attachments: [Attachment]
+         ){
         
         self.doneRatio = doneRatio
         self.startDate = startDate
@@ -62,5 +65,6 @@ class Task {
         self.status = status
         self.description = description
         self.project = project
+        self.attachments = attachments
     }
 }

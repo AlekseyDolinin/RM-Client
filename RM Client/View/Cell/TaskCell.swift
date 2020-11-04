@@ -20,7 +20,6 @@ class TaskCell: UITableViewCell {
         // Initialization code
         
         backView.layer.cornerRadius = 8
-        iconAttachFile.isHidden = true
         
         sequenceView.layer.cornerRadius = sequenceView.frame.height / 2
         priorityView.layer.cornerRadius = priorityView.frame.height / 2
