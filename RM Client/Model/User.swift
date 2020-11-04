@@ -1,24 +1,24 @@
 class User {
     
-    var admin: Bool
-    var api_key: String
-    var login: String
-    var last_login_on: String
-    var mail: String
-    var lastname: String
-    var firstname: String
-    var id: Int
-    var created_on: String
+    var admin: Bool?
+    var api_key: String?
+    var login: String?
+    var last_login_on: String?
+    var mail: String?
+    var lastname: String?
+    var firstname: String?
+    var id: Int?
+    var created_on: String?
     
-    init(admin: Bool,
-         api_key: String,
-         login: String,
-         last_login_on: String,
-         mail: String,
-         lastname: String,
-         firstname: String,
-         id: Int,
-         created_on: String){
+    init(admin: Bool? = nil,
+         api_key: String? = nil,
+         login: String? = nil,
+         last_login_on: String? = nil,
+         mail: String? = nil,
+         lastname: String? = nil,
+         firstname: String? = nil,
+         id: Int? = nil,
+         created_on: String? = nil){
         
         self.admin = admin
         self.api_key = api_key

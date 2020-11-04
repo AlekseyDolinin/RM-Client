@@ -2,14 +2,19 @@ import UIKit
 
 class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     
+    static let shared = RootTasksViewController()
+    
     var rootTasksView: RootTasksView! {
         guard isViewLoaded else {return nil}
         return (view as! RootTasksView)
     }
     
-    var titlesStatusArray = ["Новая", "В работе", "Обратная связь", "Решеные", "Закрытые"]
-    var colorsStatusArray = ["_pinkStatus", "_violetStatus", "_orangeStatus", "_greenStatus", "_yellowStatus"]
-    
+    let listStatusTasks: [[String: Any]] = [["tagFilter": "Новая",              "name": "Новые",            "color": UIColor._pinkStatus],
+                                            ["tagFilter": "В работе",           "name": "В работе",         "color": UIColor._violetStatus],
+                                            ["tagFilter": "Обратная связь",     "name": "Обратная связь",   "color": UIColor._orangeStatus],
+                                            ["tagFilter": "Решённые",           "name": "Решённые",         "color": UIColor._greenStatus],
+                                            ["tagFilter": "Закрытые",           "name": "Закрытые",         "color": UIColor._yellowStatus]]
+        
     var currentIndexFilter = 0
     
     var listAllTasks = [Task]()
@@ -27,63 +32,9 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         
         registerNib()
         
-        let scrollView = rootTasksView.scrollView!
-        
-        scrollView.delegate = self
-        
-        //
-        let vcOneTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
-        addChild(vcOneTab!)
-        scrollView.addSubview((vcOneTab?.view)!)
-        vcOneTab?.didMove(toParent: self)
-        vcOneTab?.view.frame = scrollView.bounds
-        
-        //
-        let vcTwoTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
-        addChild(vcTwoTab!)
-        scrollView.addSubview((vcTwoTab?.view)!)
-        vcTwoTab?.didMove(toParent: self)
-        vcTwoTab?.view.frame = scrollView.bounds
-        
-        var vcTwoFrame: CGRect = vcTwoTab!.view.frame
-        vcTwoFrame.origin.x = self.view.frame.width
-        vcTwoTab?.view.frame = vcTwoFrame
-        
-        //
-        let vcThreeTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
-        addChild(vcThreeTab!)
-        scrollView.addSubview((vcThreeTab?.view)!)
-        vcThreeTab?.didMove(toParent: self)
-        vcThreeTab?.view.frame = scrollView.bounds
-        
-        var vcThreeFrame: CGRect = vcThreeTab!.view.frame
-        vcThreeFrame.origin.x = self.view.frame.width * 2
-        vcThreeTab?.view.frame = vcThreeFrame
-        
-        //
-        let vcFourTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
-        addChild(vcFourTab!)
-        scrollView.addSubview((vcFourTab?.view)!)
-        vcFourTab?.didMove(toParent: self)
-        vcFourTab?.view.frame = scrollView.bounds
-        
-        var vcFourFrame: CGRect = vcFourTab!.view.frame
-        vcFourFrame.origin.x = self.view.frame.width * 3
-        vcFourTab?.view.frame = vcFourFrame
-        
-        //
-        let vcFiveTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
-        addChild(vcFiveTab!)
-        scrollView.addSubview((vcFiveTab?.view)!)
-        vcFiveTab?.didMove(toParent: self)
-        vcFiveTab?.view.frame = scrollView.bounds
-        
-        var vcFiveFrame: CGRect = vcFiveTab!.view.frame
-        vcFiveFrame.origin.x = self.view.frame.width * 4
-        vcFiveTab?.view.frame = vcFiveFrame
-        
-        scrollView.contentSize = CGSize(width: self.view.frame.width * 5, height: scrollView.frame.height)
-        
+        rootTasksView.scrollView.delegate = self
+
+        createVC()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +42,24 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
             print("запрос задач")
             getTasks(offset: offset)
         }
+    }
+    
+    func createVC() {
+        let scroll = rootTasksView.scrollView!
+        for i in 1...listStatusTasks.count {
+            let vcTab = self.storyboard?.instantiateViewController(withIdentifier: "TasksVC") as UIViewController?
+            addChild(vcTab!)
+            scroll.addSubview((vcTab?.view)!)
+            vcTab?.didMove(toParent: self)
+            vcTab?.view.frame = scroll.bounds
+            
+            if i != 1 {
+                var vcFrame: CGRect = vcTab!.view.frame
+                vcFrame.origin.x = (self.view.frame.width) * CGFloat(i - 1)
+                vcTab?.view.frame = vcFrame
+            }
+        }
+        scroll.contentSize = CGSize(width: self.view.frame.width * CGFloat(listStatusTasks.count), height: scroll.frame.height)
     }
     
     func registerNib() {
@@ -102,8 +71,12 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func getTasks(offset: Int) {
-        API.shared.getJSONPagination(endPoint: "/issues.json?assigned_to_id=\(StartViewController.userData.id)", offset: offset, limit: 1000, completion: { (json) in
-            
+        API.shared.getJSONPagination(
+            endPoint: "/issues.json?assigned_to_id=\(StartViewController.userData.id!)",
+            offset: offset,
+            limit: 1000,
+            completion: { (json) in
+                                
             self.totalTasks = json["total_count"].intValue
             self.rootTasksView.countAllTasks.text = json["total_count"].stringValue
             
@@ -146,7 +119,7 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func selectFilterTasks(_ index: Int) {
-        print("выбрана фильтрация: \(titlesStatusArray[index])")
+        print("выбрана фильтрация: \(listStatusTasks[index]["name"])")
         
         // переключение таблиц с тасками (скрол)
         let width = view.frame.width
@@ -160,8 +133,10 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         filteredArrayTasks(index)
     }
     
+    // фильтрация массива с задачами
     func filteredArrayTasks(_ indexFilter: Int) {
-        let listFilteredTasks = self.listAllTasks.filter{ $0.status == self.titlesStatusArray[indexFilter]}
+        let tagFilter: String = self.listStatusTasks[indexFilter]["tagFilter"] as! String
+        let listFilteredTasks = self.listAllTasks.filter{ $0.status == tagFilter}
         let message: [String: [Task]] = ["tasks": listFilteredTasks]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTasks"), object: nil, userInfo: message)
     }

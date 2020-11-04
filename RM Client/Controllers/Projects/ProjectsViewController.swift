@@ -35,7 +35,7 @@ class ProjectsViewController: UIViewController {
             self.totalProjects = json["total_count"].intValue
             
             print("всего проектов: \(self.totalProjects)")
-//            print(json)
+            
             for i in json["projects"] {
                 
                 let projectData = i.1

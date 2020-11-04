@@ -9,6 +9,8 @@ class TasksViewController: UIViewController {
     
     var listFilteredTasks = [Task]()
     
+    let rootVC = RootTasksViewController.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +36,12 @@ class TasksViewController: UIViewController {
     }
     
     @objc func reloadTasks(_ notification: NSNotification) {
-        
         listFilteredTasks = (notification.userInfo?["tasks"] as? [Task])!
+        if listFilteredTasks.isEmpty {
+            tasksView.emptyView.isHidden = false
+        } else {
+            tasksView.emptyView.isHidden = true
+        }
         tasksView.tableTasks.reloadData()
     }
 }

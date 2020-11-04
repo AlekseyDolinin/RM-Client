@@ -17,15 +17,14 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.nameTaskLabel.text = listFilteredTasks[indexPath.row].subject
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
         taskCell.createdDateLabel.text = listFilteredTasks[indexPath.row].createdOn
-
         
-//        if indexPath.row == listTasks.count - 1 { // last cell
-//            print("подзагрузка")
-//            if totalTasks > listTasks.count { // more items to fetch
-//                offset = offset + 1
-//                getTasks(offset: offset)
-//            }
-//        }
+        if indexPath.row == listFilteredTasks.count - 1 { // last cell
+            print("подзагрузка")
+            if rootVC.totalTasks > listFilteredTasks.count { // more items to fetch
+                rootVC.offset = RootTasksViewController.shared.offset + 1
+                rootVC.getTasks(offset: rootVC.offset)
+            }
+        }
         
         return taskCell
     }

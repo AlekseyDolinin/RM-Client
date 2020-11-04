@@ -7,7 +7,6 @@ class RootProjectsView: UIView {
     @IBOutlet weak var butonTabTwo: UIButton!
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var scrollVew: UIScrollView!
-
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     func configure() {

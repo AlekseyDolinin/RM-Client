@@ -2,8 +2,7 @@ import UIKit
 
 class StartViewController: UIViewController {
     
-    
-    static var userData = User(admin: Bool(), api_key: "", login: "", last_login_on: "", mail: "", lastname: "", firstname: "", id: Int(), created_on: "")
+    static var userData = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()

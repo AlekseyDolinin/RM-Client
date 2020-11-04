@@ -21,7 +21,7 @@ class API {
     func getJSONPagination(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)/\(endPoint).json?offset=\(offset ?? 0)&limit=\(limit ?? 0)"
-        
+        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON Pagination")

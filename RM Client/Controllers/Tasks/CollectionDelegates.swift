@@ -3,17 +3,17 @@ import UIKit
 extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titlesStatusArray.count
+        return listStatusTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cellStatus = collectionView.dequeueReusableCell(withReuseIdentifier: StatusCell.reuseIdentifier, for: indexPath) as? StatusCell {
             
-            cellStatus.nameStatus.text = titlesStatusArray[indexPath.row]
+            cellStatus.nameStatus.text = listStatusTasks[indexPath.row]["name"] as? String
             
-            let currentColor = UIColor(named: colorsStatusArray[indexPath.row])
-            cellStatus.backView.layer.borderColor = currentColor?.cgColor
+            let currentColor = listStatusTasks[indexPath.row]["color"] as! UIColor
+            cellStatus.backView.layer.borderColor = currentColor.cgColor
             
             // set current Cell Status
             if indexPath.row == currentIndexFilter {
