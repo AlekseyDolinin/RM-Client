@@ -16,14 +16,14 @@ class StatusCell: UICollectionViewCell {
         backView.layer.borderWidth = 1
         
         badgeView.layer.cornerRadius = badgeView.frame.height / 2
-        badgeView.layer.borderWidth = 1
+//        badgeView.layer.borderWidth = 1
         
         badgeLabel.textColor = ._white
         
-        badgeView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        badgeView.layer.shadowColor = UIColor._backgroundDark.cgColor
-        badgeView.layer.shadowRadius = 1
-        badgeView.layer.shadowOpacity = 0.75
+//        badgeView.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        badgeView.layer.shadowColor = UIColor._backgroundDark.cgColor
+//        badgeView.layer.shadowRadius = 1
+//        badgeView.layer.shadowOpacity = 0.75
     }
     
     class var reuseIdentifier: String {

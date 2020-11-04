@@ -15,7 +15,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.trackerLabel.text = listFilteredTasks[indexPath.row].tracker
         taskCell.nameTaskLabel.text = listFilteredTasks[indexPath.row].subject
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
-        taskCell.createdDateLabel.text = listFilteredTasks[indexPath.row].createdOn
+        
         taskCell.priorityLabel.text = listFilteredTasks[indexPath.row].priority
         
         for field in listFilteredTasks[indexPath.row].customFields {
@@ -24,6 +24,11 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        let date = Date().convertStringToDate(dataString: listFilteredTasks[indexPath.row].createdOn)
+        taskCell.createdDateLabel.text = Date().convertDateToString(date: date)
+        
+        
+        // дозагрузка задач
         if indexPath.row == listFilteredTasks.count - 1 { // last cell
             print("подзагрузка")
             if rootVC.totalTasks > listFilteredTasks.count { // more items to fetch
