@@ -86,6 +86,7 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
                 
                 for i in json["issues"] {
                     let taskData = i.1
+                    
                     var listCustomFields = [CustomField]()
                     
                     for i in taskData["custom_fields"] {

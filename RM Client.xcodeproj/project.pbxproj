@@ -39,6 +39,7 @@
 		10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1525524E6D0098B832 /* _RootTasksView.swift */; };
 		10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */; };
 		10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A19255265310098B832 /* UIScrollView.swift */; };
+		10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1B25533D4F0098B832 /* MenuViewController.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		10DF2A1525524E6D0098B832 /* _RootTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksView.swift; sourceTree = "<group>"; };
 		10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksViewController.swift; sourceTree = "<group>"; };
 		10DF2A19255265310098B832 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		10DF2A1B25533D4F0098B832 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
 				10737571254DA8B6006D1956 /* Projects */,
+				10DF2A1B25533D4F0098B832 /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
+				10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
 				10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
