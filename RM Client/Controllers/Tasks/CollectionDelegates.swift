@@ -12,8 +12,15 @@ extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDat
             
             cellStatus.nameStatus.text = listStatusTasks[indexPath.row]["name"] as? String
             
+            let arrayTasks: [Task] = listStatusTasks[indexPath.row]["tasks"] as! [Task]
+            cellStatus.badgeLabel.text = String(arrayTasks.count)
+            
+            
             let currentColor = listStatusTasks[indexPath.row]["color"] as! UIColor
             cellStatus.backView.layer.borderColor = currentColor.cgColor
+            
+            cellStatus.badgeView.backgroundColor = currentColor
+            cellStatus.badgeView.layer.borderColor = currentColor.cgColor
             
             // set current Cell Status
             if indexPath.row == currentIndexFilter {

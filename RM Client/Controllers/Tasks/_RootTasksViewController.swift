@@ -9,12 +9,16 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         return (view as! RootTasksView)
     }
     
-    let listStatusTasks: [[String: Any]] = [["tagFilter": "Новая",              "name": "Новые",            "color": UIColor._pinkStatus],
-                                            ["tagFilter": "В работе",           "name": "В работе",         "color": UIColor._violetStatus],
-                                            ["tagFilter": "Обратная связь",     "name": "Обратная связь",   "color": UIColor._orangeStatus],
-                                            ["tagFilter": "Решённые",           "name": "Решённые",         "color": UIColor._greenStatus],
-                                            ["tagFilter": "Закрытые",           "name": "Закрытые",         "color": UIColor._yellowStatus]]
-        
+    var listStatusTasks: [[String: Any]] = [
+        ["tagFilter": "Новая",          "name": "Новые",            "color": UIColor._pinkStatus,   "tasks": [Task]()],
+        ["tagFilter": "В работе",       "name": "В работе",         "color": UIColor._violetStatus, "tasks": [Task]()],
+        ["tagFilter": "Обратная связь", "name": "Обратная связь",   "color": UIColor._orangeStatus, "tasks": [Task]()],
+        ["tagFilter": "Решённые",       "name": "Решённые",         "color": UIColor._greenStatus,  "tasks": [Task]()],
+        ["tagFilter": "Закрытые",       "name": "Закрытые",         "color": UIColor._yellowStatus, "tasks": [Task]()]
+    ]
+    
+    var countTaskByStatus = [[String: Int]]()
+    
     var currentIndexFilter = 0
     
     var listAllTasks = [Task]()
@@ -33,7 +37,7 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         registerNib()
         
         rootTasksView.scrollView.delegate = self
-
+        
         createVC()
     }
     
@@ -69,51 +73,52 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
-
+    
     func getTasks(offset: Int) {
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\(StartViewController.userData.id!)",
             offset: offset,
             limit: 1000,
             completion: { (json) in
-                                
-            self.totalTasks = json["total_count"].intValue
-            self.rootTasksView.countAllTasks.text = json["total_count"].stringValue
-            
-            for i in json["issues"] {
-                let taskData = i.1
-                var listCustomFields = [CustomField]()
                 
-                for i in taskData["custom_fields"] {
-                    let customFieldData = i.1
-                    let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
-                    listCustomFields.append(customField)
+                self.totalTasks = json["total_count"].intValue
+                self.rootTasksView.countAllTasks.text = json["total_count"].stringValue
+                
+                for i in json["issues"] {
+                    let taskData = i.1
+                    var listCustomFields = [CustomField]()
+                    
+                    for i in taskData["custom_fields"] {
+                        let customFieldData = i.1
+                        let customField = CustomField(id: customFieldData["id"].intValue, name: customFieldData["name"].stringValue, value: customFieldData["value"].stringValue)
+                        listCustomFields.append(customField)
+                    }
+                    let task = Task(doneRatio: taskData["done_ratio"].intValue,
+                                    startDate: taskData["start_date"].stringValue,
+                                    createdOn: taskData["created_on"].stringValue,
+                                    tracker: taskData["tracker"]["name"].stringValue,
+                                    author: taskData["author"]["name"].stringValue,
+                                    dueDate: taskData["due_date"].stringValue,
+                                    subject: taskData["subject"].stringValue,
+                                    isPrivate: taskData["is_private"].boolValue,
+                                    assignedTo: taskData["assigned_to"]["name"].stringValue,
+                                    category: taskData["category"]["name"].stringValue,
+                                    estimatedHours: taskData["estimated_hours"].doubleValue,
+                                    customFields: listCustomFields,
+                                    priority: taskData["priority"]["name"].stringValue,
+                                    id: taskData["id"].intValue,
+                                    parent: taskData["parent"]["id"].intValue,
+                                    updatedOn: taskData["updated_on"].stringValue,
+                                    closedOn: taskData["closed_on"].boolValue,
+                                    status: taskData["status"]["name"].stringValue,
+                                    description: taskData["description"].stringValue,
+                                    project: taskData["project"]["name"].stringValue)
+                    
+                    self.listAllTasks.append(task)
                 }
-                let task = Task(doneRatio: taskData["done_ratio"].intValue,
-                                startDate: taskData["start_date"].stringValue,
-                                createdOn: taskData["created_on"].stringValue,
-                                tracker: taskData["tracker"]["name"].stringValue,
-                                author: taskData["author"]["name"].stringValue,
-                                dueDate: taskData["due_date"].stringValue,
-                                subject: taskData["subject"].stringValue,
-                                isPrivate: taskData["is_private"].boolValue,
-                                assignedTo: taskData["assigned_to"]["name"].stringValue,
-                                category: taskData["category"]["name"].stringValue,
-                                estimatedHours: taskData["estimated_hours"].doubleValue,
-                                customFields: listCustomFields,
-                                priority: taskData["priority"]["name"].stringValue,
-                                id: taskData["id"].intValue,
-                                parent: taskData["parent"]["id"].intValue,
-                                updatedOn: taskData["updated_on"].stringValue,
-                                closedOn: taskData["closed_on"].boolValue,
-                                status: taskData["status"]["name"].stringValue,
-                                description: taskData["description"].stringValue,
-                                project: taskData["project"]["name"].stringValue)
-                
-                self.listAllTasks.append(task)
-            }
-            self.filteredArrayTasks(0)
-            self.rootTasksView.showContent()
+                self.separateTasks(self.listAllTasks)
+                self.selectFilterTasks(0)
+                self.rootTasksView.showContent()
         })
     }
     
@@ -129,16 +134,18 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         rootTasksView.collectionStatusButton.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         rootTasksView.collectionStatusButton.reloadData()
         
-        filteredArrayTasks(index)
+        let message: [String: [Task]] = ["tasks": listStatusTasks[index]["tasks"] as! Array<Task>]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTasks"), object: nil, userInfo: message)
+        
     }
     
-    // фильтрация массива с задачами
-    func filteredArrayTasks(_ indexFilter: Int) {
-        let tagFilter: String = self.listStatusTasks[indexFilter]["tagFilter"] as! String
-        let listFilteredTasks = self.listAllTasks.filter{ $0.status == tagFilter}
-        let message: [String: [Task]] = ["tasks": listFilteredTasks]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTasks"), object: nil, userInfo: message)
+    func separateTasks(_ tasks: [Task]) {
+        for i in 0..<listStatusTasks.count {
+            let tagFilter: String = listStatusTasks[i]["tagFilter"] as! String
+            listStatusTasks[i]["tasks"] = tasks.filter{ $0.status == tagFilter}
+        }
     }
+    
 }
 
 extension RootTasksViewController {
