@@ -11,7 +11,12 @@ class MenuViewController: UIViewController {
         
         
        
-        API.shared.getJSON(endPoint: "/groups") { (json) in
+//        API.shared.getJSON(endPoint: "/issues/74899") { (json) in
+//            print(json)
+//        }
+        
+        
+        API.shared.getJSONPagination(endPoint: "/issues/74899", offset: 1, limit: 100) { (json) in
             print(json)
         }
     }
