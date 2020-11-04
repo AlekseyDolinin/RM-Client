@@ -112,9 +112,8 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
                 
                 self.listAllTasks.append(task)
             }
-            
             self.filteredArrayTasks(0)
-            self.rootTasksView.collectionStatusButton.reloadData()
+            self.rootTasksView.showContent()
         })
     }
     

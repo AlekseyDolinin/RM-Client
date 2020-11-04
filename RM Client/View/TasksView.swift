@@ -7,6 +7,8 @@ class TasksView: UIView {
     
     func configure() {
         
+//        emptyView.isHidden = true
+//        tableTasks.isHidden = true
     }
 
 }

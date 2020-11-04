@@ -8,26 +8,22 @@ class RootTasksView: UIView {
     @IBOutlet weak var collectionStatusButton: UICollectionView!
     @IBOutlet weak var countAllTasks: UILabel!
     
-    
     func configure() {
-        
-//        hideContent()
+        hideContent()
     }
     
-//    func hideContent() {
-//        viewTop.alpha = 0
-//        scrollView.alpha = 0
-//        loader.startAnimating()
-//    }
+    func hideContent() {
+        viewTop.alpha = 0
+        scrollView.alpha = 0
+        loader.startAnimating()
+    }
     
-//    func showContent() {
-//        UIView.animate(withDuration: 0.3) { [weak self] in
-//            self?.viewTop.alpha = 1
-//            self?.scrollView.alpha = 1
-//        }
-//        loader.stopAnimating()
-//    }
-
-
-    
+    func showContent() {
+        collectionStatusButton.reloadData()
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.viewTop.alpha = 1
+            self?.scrollView.alpha = 1
+        }
+        loader.stopAnimating()
+    }
 }
