@@ -34,7 +34,6 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLayoutSubviews() {
         selectFilterTasks(currentIndexFilter)
-        rootTasksView.collectionStatusButton.reloadData()
     }
     
     func createVC() {

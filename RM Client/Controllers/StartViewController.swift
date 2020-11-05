@@ -7,16 +7,6 @@ class StartViewController: UIViewController, StoreSubscriber {
     
     static let shared = StartViewController()
     
-//    var totalTasks = Int()
-    
-//    var offset = 0
-    
-//    var userData = User()
-    
-//    var statusLoaded = false
-//    var taskLoaded = false
-//    var tasksSorted = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkAuth()
