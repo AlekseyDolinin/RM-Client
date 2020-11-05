@@ -9,7 +9,7 @@ class RootTasksView: UIView {
     @IBOutlet weak var countAllTasks: UILabel!
     
     func configure() {
-        hideContent()
+//        hideContent()
     }
     
     func hideContent() {
@@ -24,6 +24,7 @@ class RootTasksView: UIView {
             self?.viewTop.alpha = 1
             self?.scrollView.alpha = 1
         }
+        
         loader.stopAnimating()
     }
 }

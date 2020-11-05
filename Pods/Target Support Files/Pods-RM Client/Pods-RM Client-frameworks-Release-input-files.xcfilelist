@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-RM Client/Pods-RM Client-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

@@ -38,9 +38,10 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         // дозагрузка задач
         if indexPath.row == listFilteredTasks.count - 1 { // last cell
             print("подзагрузка")
-            if rootVC.totalTasks > listFilteredTasks.count { // more items to fetch
+            if rootVC.countAllTasks > listFilteredTasks.count { // more items to fetch
                 rootVC.offset = RootTasksViewController.shared.offset + 1
-                rootVC.getTasks(offset: rootVC.offset)
+                
+                StartViewController.shared.getTasks(offset: rootVC.offset)
             }
         }
         

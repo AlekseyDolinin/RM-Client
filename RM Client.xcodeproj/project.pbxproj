@@ -42,6 +42,11 @@
 		10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1B25533D4F0098B832 /* MenuViewController.swift */; };
 		10DF2A1E255360DE0098B832 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1D255360DE0098B832 /* Date.swift */; };
 		10DF2A2025536AB50098B832 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1F25536AB40098B832 /* Attachment.swift */; };
+		10DF2A2225546CC40098B832 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2125546CC40098B832 /* Status.swift */; };
+		10DF2A28255482050098B832 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A27255482000098B832 /* AppActions.swift */; };
+		10DF2A29255482080098B832 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A26255482000098B832 /* AppReducer.swift */; };
+		10DF2A2A2554820A0098B832 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A25255482000098B832 /* AppState.swift */; };
+		10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A24255482000098B832 /* AppStore.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +88,11 @@
 		10DF2A1B25533D4F0098B832 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		10DF2A1D255360DE0098B832 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		10DF2A1F25536AB40098B832 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
+		10DF2A2125546CC40098B832 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		10DF2A24255482000098B832 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		10DF2A25255482000098B832 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		10DF2A26255482000098B832 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		10DF2A27255482000098B832 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 				10737559254DA60D006D1956 /* Assets.xcassets */,
 				1073756B254DA70C006D1956 /* Extentions */,
 				1073756A254DA704006D1956 /* Utils */,
+				10DF2A23255481E70098B832 /* Store */,
 				1073756C254DA717006D1956 /* Resourses */,
 				1073755B254DA60D006D1956 /* LaunchScreen.storyboard */,
 				1073755E254DA60D006D1956 /* Info.plist */,
@@ -145,6 +156,7 @@
 				1073756D254DA79D006D1956 /* Project.swift */,
 				10DF2A1F25536AB40098B832 /* Attachment.swift */,
 				1073757C254DB0D6006D1956 /* CustomField.swift */,
+				10DF2A2125546CC40098B832 /* Status.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,9 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				10737566254DA6DB006D1956 /* Cell */,
+				10DF2A1525524E6D0098B832 /* _RootTasksView.swift */,
 				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
-				10DF2A1525524E6D0098B832 /* _RootTasksView.swift */,
 				10737585254DD20E006D1956 /* TasksView.swift */,
 			);
 			path = View;
@@ -247,6 +259,17 @@
 				10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		10DF2A23255481E70098B832 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				10DF2A25255482000098B832 /* AppState.swift */,
+				10DF2A27255482000098B832 /* AppActions.swift */,
+				10DF2A26255482000098B832 /* AppReducer.swift */,
+				10DF2A24255482000098B832 /* AppStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		13ED4A22209854D391326851 /* Frameworks */ = {
@@ -395,9 +418,11 @@
 				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
 				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
+				10DF2A28255482050098B832 /* AppActions.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
 				108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */,
 				10DF2A1E255360DE0098B832 /* Date.swift in Sources */,
+				10DF2A2A2554820A0098B832 /* AppState.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
@@ -407,8 +432,11 @@
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
 				10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
+				10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */,
 				10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
+				10DF2A29255482080098B832 /* AppReducer.swift in Sources */,
+				10DF2A2225546CC40098B832 /* Status.swift in Sources */,
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10DF2A2025536AB50098B832 /* Attachment.swift in Sources */,

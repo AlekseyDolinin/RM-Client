@@ -21,7 +21,6 @@ class TasksViewController: UIViewController {
         tasksView.tableTasks.delegate = self
         tasksView.tableTasks.dataSource = self
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTasks), name: NSNotification.Name(rawValue: "reloadTasks"), object: nil)
     }
     

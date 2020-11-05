@@ -3,20 +3,21 @@ import UIKit
 extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listStatusTasks.count
+        print("количество статусов задач: \(mainStore.state.statusTasks.count)")
+        return mainStore.state.statusTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cellStatus = collectionView.dequeueReusableCell(withReuseIdentifier: StatusCell.reuseIdentifier, for: indexPath) as? StatusCell {
             
-            cellStatus.nameStatus.text = listStatusTasks[indexPath.row]["name"] as? String
+            cellStatus.nameStatus.text = mainStore.state.statusTasks[indexPath.row].name
             
-            let arrayTasks: [Task] = listStatusTasks[indexPath.row]["tasks"] as! [Task]
+            let arrayTasks: [Task] = mainStore.state.statusTasks[indexPath.row].arrayTasks
             cellStatus.badgeLabel.text = String(arrayTasks.count)
             
             
-            let currentColor = listStatusTasks[indexPath.row]["color"] as! UIColor
+            let currentColor = mainStore.state.statusTasks[indexPath.row].color
             cellStatus.backView.layer.borderColor = currentColor.cgColor
             
 //            cellStatus.badgeView.backgroundColor = currentColor

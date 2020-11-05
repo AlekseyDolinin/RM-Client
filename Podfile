@@ -9,5 +9,6 @@ target 'RM Client' do
 
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.0'
+pod 'ReSwift'
 
 end
