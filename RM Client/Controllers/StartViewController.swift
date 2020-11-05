@@ -26,10 +26,8 @@ class StartViewController: UIViewController, StoreSubscriber {
     
     func checkAuth() {
         API.shared.authentication { (resultAuth) in
-            
             // если пользователь авторизован скачиваем данные по пользователю
             if resultAuth == true {
-                print("получение данных по аккаунту")
                 // данные по аккаунту
                 API.shared.getJSON(endPoint: "/my/account", completion: { (json) in
                     let data = json["user"]
@@ -58,9 +56,6 @@ class StartViewController: UIViewController, StoreSubscriber {
     
     // получение задач пользователя
     func getTasks(offset: Int) {
-        
-        print("getTasks")
-        
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)",
             offset: offset,
@@ -74,12 +69,7 @@ class StartViewController: UIViewController, StoreSubscriber {
                 for i in json["issues"] {
                     let idTask = i.1["id"].intValue
                     
-                    
-                    
                     API.shared.getDataTask(endPoint: "/issues/\(idTask)", completion: { (json) in
-                        
-                        
-                        
                         let dataTask = json["issue"]
                         var listCustomFields = [CustomField]()
                         
@@ -142,7 +132,6 @@ class StartViewController: UIViewController, StoreSubscriber {
     }
     
     func getStatusesTaskInCompany() {
-        print("getStatusesTaskInCompany")
         // список статусов задач
         API.shared.getJSON(endPoint: "/issue_statuses") { (json) in
             
@@ -162,8 +151,6 @@ class StartViewController: UIViewController, StoreSubscriber {
     }
     
     func separateTasks() {
-        print("separateTasks")
-        
         let listStatusTasks = mainStore.state.statusTasks
         let listAllTasks = mainStore.state.userTasks
         
@@ -171,20 +158,10 @@ class StartViewController: UIViewController, StoreSubscriber {
             let nameFilter = listStatusTasks[i].name
             let listStatusTasksFiltered = listAllTasks.filter{ $0.status == nameFilter}
             listStatusTasks[i].arrayTasks = listStatusTasksFiltered
-            
-            print("переход на следующий корнтроллер после авторизации и сортировки задач по статусам")
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
-            self.navigationController?.pushViewController(vc!, animated: false)
-            
-//            if i == listAllStatuses.count - 1 {
-//                print("__\(self.listAllStatuses.count)")
-//                print("переход на следующий корнтроллер после авторизации и сортировки задач по статусам")
-//                
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
-//                self.navigationController?.pushViewController(vc!, animated: false)
-//            }
         }
+        print("переход на следующий контроллер после авторизации и сортировки задач по статусам")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func newState(state: AppState) {

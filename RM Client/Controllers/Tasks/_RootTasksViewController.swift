@@ -10,12 +10,11 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     }
     
     var currentIndexFilter = 0
-    var countAllTasks = Int()
     var offset = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         rootTasksView.configure()
         
         rootTasksView.collectionStatusButton.delegate = self
@@ -25,15 +24,14 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
         rootTasksView.scrollView.delegate = self
         createVC()
         
-        for status in mainStore.state.statusTasks {
-            countAllTasks = countAllTasks + status.arrayTasks.count
-        }
-        
-        rootTasksView.countAllTasks.text = String(countAllTasks)
+        rootTasksView.countAllTasks.text = String(mainStore.state.userTasks.count)
+        selectFilterTasks(currentIndexFilter)
     }
     
-    override func viewDidLayoutSubviews() {
-        selectFilterTasks(currentIndexFilter)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        rootTasksView.collectionStatusButton.reloadData()
+        rootTasksView.showContent()
     }
     
     func createVC() {

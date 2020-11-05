@@ -3,7 +3,6 @@ import UIKit
 extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("количество статусов задач: \(mainStore.state.statusTasks.count)")
         return mainStore.state.statusTasks.count
     }
     
@@ -32,7 +31,6 @@ extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDat
                 cellStatus.nameStatus.textColor = currentColor
                 cellStatus.backView.backgroundColor = .clear
             }
-            
             return cellStatus
         }
         return UICollectionViewCell()

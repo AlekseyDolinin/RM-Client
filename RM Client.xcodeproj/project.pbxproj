@@ -47,6 +47,8 @@
 		10DF2A29255482080098B832 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A26255482000098B832 /* AppReducer.swift */; };
 		10DF2A2A2554820A0098B832 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A25255482000098B832 /* AppState.swift */; };
 		10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A24255482000098B832 /* AppStore.swift */; };
+		10DF2A2D2554A0550098B832 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */; };
+		10DF2A2F2554A0CF0098B832 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2E2554A0CF0098B832 /* TaskDetailView.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		10DF2A25255482000098B832 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		10DF2A26255482000098B832 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		10DF2A27255482000098B832 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		10DF2A2E2554A0CF0098B832 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
 				10737585254DD20E006D1956 /* TasksView.swift */,
+				10DF2A2E2554A0CF0098B832 /* TaskDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				10737574254DA8C6006D1956 /* StartViewController.swift */,
 				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
+				10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */,
 				10737571254DA8B6006D1956 /* Projects */,
 				10DF2A1B25533D4F0098B832 /* MenuViewController.swift */,
 			);
@@ -415,6 +421,7 @@
 				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
 				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
+				10DF2A2D2554A0550098B832 /* TaskDetailViewController.swift in Sources */,
 				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
 				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
@@ -440,6 +447,7 @@
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10DF2A2025536AB50098B832 /* Attachment.swift in Sources */,
+				10DF2A2F2554A0CF0098B832 /* TaskDetailView.swift in Sources */,
 				10737579254DA9EA006D1956 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ class RootTasksView: UIView {
     @IBOutlet weak var countAllTasks: UILabel!
     
     func configure() {
-//        hideContent()
+        hideContent()
     }
     
     func hideContent() {
