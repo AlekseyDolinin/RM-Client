@@ -374,7 +374,7 @@
         <scene sceneID="eC8-GY-kHl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="7JB-dL-V6Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Меню" image="iconMenu" id="lwv-kT-a8c"/>
+                    <tabBarItem key="tabBarItem" title="Меню" image="menuIconTabBar" id="lwv-kT-a8c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ICo-fI-bOm">
                         <autoresizingMask key="autoresizingMask"/>
@@ -808,7 +808,7 @@
     <resources>
         <image name="attachIcon" width="18" height="18"/>
         <image name="folderEmpty" width="96" height="96"/>
-        <image name="iconMenu" width="56" height="56"/>
+        <image name="menuIconTabBar" width="24" height="24"/>
         <image name="projectIconTabBar" width="24" height="24"/>
         <image name="taskIconTabBar" width="24" height="24"/>
         <namedColor name="_backgroundDark">

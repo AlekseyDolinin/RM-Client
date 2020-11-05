@@ -17,7 +17,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
         taskCell.priorityLabel.text = listFilteredTasks[indexPath.row].priority
         
-        print(listFilteredTasks[indexPath.row].attachments)
+//        print(listFilteredTasks[indexPath.row].attachments)
         
         if listFilteredTasks[indexPath.row].attachments.isEmpty {
             taskCell.iconAttachFile.isHidden = true
