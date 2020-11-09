@@ -1,6 +1,6 @@
 import UIKit
 
-class RootTasksViewController: UIViewController, UIScrollViewDelegate {
+class RootTasksViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
     static let shared = RootTasksViewController()
     
@@ -15,6 +15,8 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.interactivePopGestureRecognizer!.delegate = self
+        
         rootTasksView.configure()
         
         rootTasksView.collectionStatusButton.delegate = self
