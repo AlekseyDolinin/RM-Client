@@ -52,7 +52,7 @@ class API {
     
     func getDataTask(endPoint: String, completion: @escaping (JSON) -> Void) {
         
-        let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=attachments"
+        let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=children, attachments, relations, changesets, journals, watchers"
         print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {

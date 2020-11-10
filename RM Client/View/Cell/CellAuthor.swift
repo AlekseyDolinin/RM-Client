@@ -1,10 +1,10 @@
 import UIKit
 
-class CellDescription: UITableViewCell {
+class CellAuthor: UITableViewCell {
 
     @IBOutlet weak var titleCellLabel: UILabel!
-    @IBOutlet weak var textDescriptionLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var nameAuthorLabel: UILabel!
+    @IBOutlet weak var timingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

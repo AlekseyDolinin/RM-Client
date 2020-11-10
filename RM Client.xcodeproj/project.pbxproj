@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		100648EF2559C8B100C7490E /* TaskDetailView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648EE2559C8B100C7490E /* TaskDetailView copy.swift */; };
+		100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648EE2559C8B100C7490E /* TaskDetailView.swift */; };
 		100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */; };
 		100648F52559CED400C7490E /* CellDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F42559CED400C7490E /* CellDescription.swift */; };
+		104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */; };
+		104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */; };
 		10737553254DA60B006D1956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737552254DA60B006D1956 /* AppDelegate.swift */; };
 		10737558254DA60B006D1956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10737556254DA60B006D1956 /* Main.storyboard */; };
 		1073755A254DA60D006D1956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10737559254DA60D006D1956 /* Assets.xcassets */; };
@@ -55,9 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		100648EE2559C8B100C7490E /* TaskDetailView copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskDetailView copy.swift"; sourceTree = "<group>"; };
+		100648EE2559C8B100C7490E /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTaskDetail.swift; sourceTree = "<group>"; };
 		100648F42559CED400C7490E /* CellDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescription.swift; sourceTree = "<group>"; };
+		104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthor.swift; sourceTree = "<group>"; };
+		104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAssignedTo.swift; sourceTree = "<group>"; };
 		1073754F254DA60B006D1956 /* RM Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RM Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10737552254DA60B006D1956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10737557254DA60B006D1956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,7 +190,7 @@
 				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
 				10737585254DD20E006D1956 /* TasksView.swift */,
-				100648EE2559C8B100C7490E /* TaskDetailView copy.swift */,
+				100648EE2559C8B100C7490E /* TaskDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +202,8 @@
 				1073757A254DAE23006D1956 /* ProjectCell.swift */,
 				108CB020254F6BD000BF89C4 /* StatusCell.swift */,
 				108CB021254F6BD000BF89C4 /* StatusCell.xib */,
+				104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */,
+				104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */,
 				100648F42559CED400C7490E /* CellDescription.swift */,
 			);
 			path = Cell;
@@ -431,7 +437,9 @@
 			files = (
 				10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
-				100648EF2559C8B100C7490E /* TaskDetailView copy.swift in Sources */,
+				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
+				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,
+				100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
 				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,

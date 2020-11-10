@@ -61,7 +61,7 @@ class StartViewController: UIViewController, StoreSubscriber {
             offset: offset,
             limit: 1000,
             completion: { (json) in
-                print(json)
+
                 let totalTasks = json["issues"].count
                 
                 var listAllTasks = [Task]()

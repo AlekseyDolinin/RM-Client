@@ -1,10 +1,9 @@
 import UIKit
 
-class CellDescription: UITableViewCell {
+class CellAssignedTo: UITableViewCell {
 
     @IBOutlet weak var titleCellLabel: UILabel!
-    @IBOutlet weak var textDescriptionLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
