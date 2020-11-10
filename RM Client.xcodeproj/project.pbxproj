@@ -11,6 +11,11 @@
 		100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */; };
 		100648F52559CED400C7490E /* CellOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F42559CED400C7490E /* CellOther.swift */; };
 		1048BFD0255A7B1500896D05 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFCF255A7B1500896D05 /* UIString.swift */; };
+		1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD1255B187200896D05 /* AttachmentsViewController.swift */; };
+		1048BFD4255B18CC00896D05 /* AttachmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD3255B18CC00896D05 /* AttachmentsView.swift */; };
+		1048BFD7255B272A00896D05 /* CellAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD6255B272A00896D05 /* CellAttachment.swift */; };
+		1048BFD9255B281300896D05 /* AttachmentsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD8255B281300896D05 /* AttachmentsDelegates.swift */; };
+		1048BFDB255B2C5600896D05 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFDA255B2C5600896D05 /* Converters.swift */; };
 		104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */; };
 		104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */; };
 		104FAD14255A7032006BB4B7 /* CellDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD13255A7032006BB4B7 /* CellDescription.swift */; };
@@ -66,6 +71,11 @@
 		100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTaskDetail.swift; sourceTree = "<group>"; };
 		100648F42559CED400C7490E /* CellOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOther.swift; sourceTree = "<group>"; };
 		1048BFCF255A7B1500896D05 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
+		1048BFD1255B187200896D05 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
+		1048BFD3255B18CC00896D05 /* AttachmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsView.swift; sourceTree = "<group>"; };
+		1048BFD6255B272A00896D05 /* CellAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAttachment.swift; sourceTree = "<group>"; };
+		1048BFD8255B281300896D05 /* AttachmentsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsDelegates.swift; sourceTree = "<group>"; };
+		1048BFDA255B2C5600896D05 /* Converters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converters.swift; sourceTree = "<group>"; };
 		104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthor.swift; sourceTree = "<group>"; };
 		104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAssignedTo.swift; sourceTree = "<group>"; };
 		104FAD13255A7032006BB4B7 /* CellDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescription.swift; sourceTree = "<group>"; };
@@ -141,6 +151,15 @@
 			path = TaskDetail;
 			sourceTree = "<group>";
 		};
+		1048BFD5255B195800896D05 /* Attachments */ = {
+			isa = PBXGroup;
+			children = (
+				1048BFD1255B187200896D05 /* AttachmentsViewController.swift */,
+				1048BFD8255B281300896D05 /* AttachmentsDelegates.swift */,
+			);
+			path = Attachments;
+			sourceTree = "<group>";
+		};
 		10737546254DA60B006D1956 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +220,7 @@
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
 				10737585254DD20E006D1956 /* TasksView.swift */,
 				100648EE2559C8B100C7490E /* TaskDetailView.swift */,
+				1048BFD3255B18CC00896D05 /* AttachmentsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +239,7 @@
 				104FAD17255A703E006BB4B7 /* CellTiming.swift */,
 				104FAD19255A7040006BB4B7 /* CellHistory.swift */,
 				100648F42559CED400C7490E /* CellOther.swift */,
+				1048BFD6255B272A00896D05 /* CellAttachment.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -230,6 +251,7 @@
 				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
 				100648ED2559C84300C7490E /* TaskDetail */,
+				1048BFD5255B195800896D05 /* Attachments */,
 				10737571254DA8B6006D1956 /* Projects */,
 				10DF2A1B25533D4F0098B832 /* MenuViewController.swift */,
 			);
@@ -247,6 +269,7 @@
 		1073756A254DA704006D1956 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1048BFDA255B2C5600896D05 /* Converters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -454,6 +477,7 @@
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
 				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,
+				1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */,
 				100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
 				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
@@ -463,7 +487,9 @@
 				104FAD1A255A7040006BB4B7 /* CellHistory.swift in Sources */,
 				10DF2A2D2554A0550098B832 /* TaskDetailViewController.swift in Sources */,
 				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
+				1048BFD7255B272A00896D05 /* CellAttachment.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
+				1048BFD4255B18CC00896D05 /* AttachmentsView.swift in Sources */,
 				1073758E254F28B0006D1956 /* UIColor.swift in Sources */,
 				10DF2A28255482050098B832 /* AppActions.swift in Sources */,
 				1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */,
@@ -485,6 +511,7 @@
 				10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */,
 				10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */,
 				100648F52559CED400C7490E /* CellOther.swift in Sources */,
+				1048BFDB255B2C5600896D05 /* Converters.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				10DF2A29255482080098B832 /* AppReducer.swift in Sources */,
 				10DF2A2225546CC40098B832 /* Status.swift in Sources */,
@@ -492,6 +519,7 @@
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10DF2A2025536AB50098B832 /* Attachment.swift in Sources */,
+				1048BFD9255B281300896D05 /* AttachmentsDelegates.swift in Sources */,
 				10737579254DA9EA006D1956 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

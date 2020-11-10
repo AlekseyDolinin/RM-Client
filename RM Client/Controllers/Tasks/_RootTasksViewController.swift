@@ -63,7 +63,7 @@ class RootTasksViewController: UIViewController, UIScrollViewDelegate, UIGesture
     }
     
     func selectFilterTasks(_ index: Int) {
-        print("выбрана фильтрация: \(mainStore.state.statusTasks[index].name)")
+//        print("выбрана фильтрация: \(mainStore.state.statusTasks[index].name)")
         
         // переключение таблиц с тасками (скрол)
         let width = view.frame.width

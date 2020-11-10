@@ -66,23 +66,23 @@ class TaskDetailView: UIView {
             }
         }
         
-        print("category:\(task.category)")
-        print("doneRatio:\(task.doneRatio)")
-        
-        print("~~~~~~~~~~~~~~~~~~")
-        
-        print("assignedTo:\(task.assignedTo)")
-        print("closedOn:\(task.closedOn)")
-        print("createdOn:\(task.createdOn)")
-        print("updatedOn:\(task.updatedOn)")
-        print("dueDate:\(task.dueDate)")
-        print("estimatedHours:\(task.estimatedHours)")
-        print("startDate:\(task.startDate)")
-        
-        print("~~~~~~~~~~~~~~~~~~")
-        
-        print("isPrivate:\(task.isPrivate)")
-        print("description:\(task.description)")
+//        print("category:\(task.category)")
+//        print("doneRatio:\(task.doneRatio)")
+//        
+//        print("~~~~~~~~~~~~~~~~~~")
+//        
+//        print("assignedTo:\(task.assignedTo)")
+//        print("closedOn:\(task.closedOn)")
+//        print("createdOn:\(task.createdOn)")
+//        print("updatedOn:\(task.updatedOn)")
+//        print("dueDate:\(task.dueDate)")
+//        print("estimatedHours:\(task.estimatedHours)")
+//        print("startDate:\(task.startDate)")
+//        
+//        print("~~~~~~~~~~~~~~~~~~")
+//        
+//        print("isPrivate:\(task.isPrivate)")
+//        print("description:\(task.description)")
         
     }
 

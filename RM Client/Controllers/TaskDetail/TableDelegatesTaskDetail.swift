@@ -71,4 +71,36 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+        switch indexPath.row {
+        case 2:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+            vc.selectTask = selectTask
+//            self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            if selectTask?.attachments.isEmpty == false {
+                let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+                vc.selectTask = selectTask
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        case 4:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+            vc.selectTask = selectTask
+//            self.navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+            vc.selectTask = selectTask
+//            self.navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+            vc.selectTask = selectTask
+//            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            print("not row")
+        }
+        
+        
+    }
+    
 }

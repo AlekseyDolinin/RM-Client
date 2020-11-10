@@ -21,7 +21,7 @@ class API {
     func getJSONPagination(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)\(endPoint).json?offset=\(offset ?? 0)&limit=\(limit ?? 0)"
-        print(request)
+//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON Pagination")
@@ -37,7 +37,7 @@ class API {
     func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)\(endPoint).json"
-        print(request)
+//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
@@ -53,7 +53,7 @@ class API {
     func getDataTask(endPoint: String, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=attachments"
-        print(request)
+//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
@@ -65,11 +65,20 @@ class API {
             }
         }
     }
+    
+    func getImage(id: Int, completion: @escaping (UIImage) -> Void) {
+        
+        let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(id)"
+        print(request)
+        
+        Alamofire.request(request, method: .get).response { response in
+
+            if let dataEncodedString = response.data {
+                guard  let decodedimage = UIImage(data: dataEncodedString) else {return}
+                completion(decodedimage)
+            } else {
+                print("ERROR GET IMAGE")
+            }
+        }
+    }
 }
-
-
-
-
-
-
-
