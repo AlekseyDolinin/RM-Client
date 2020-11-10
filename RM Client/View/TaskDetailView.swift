@@ -10,7 +10,7 @@ class TaskDetailView: UIView {
     @IBOutlet weak var titleParentTask: UILabel!
     @IBOutlet weak var idParentTask: UILabel!
     
-    @IBOutlet weak var backViewStatusLabel: UIView!
+    @IBOutlet weak var backViewStatus: UIView!
     @IBOutlet weak var nameStatusLabel: UILabel!
     
     @IBOutlet weak var backViewPriorityLabel: UIView!
@@ -24,18 +24,20 @@ class TaskDetailView: UIView {
     @IBOutlet weak var nameTrackerLabel: UILabel!
     @IBOutlet weak var subjectTaskLabel: UILabel!
     
+    @IBOutlet weak var stackParentInfo: UIStackView!    
+    
     func configure() {
         
-        
-        
-    }
-    
-    
-    func setParametersHeader(_ task: Task) {
-        
-        backViewStatusLabel.layer.cornerRadius = backViewStatusLabel.frame.height / 2
+        backViewStatus.layer.cornerRadius = backViewStatus.frame.height / 2
         backViewPriorityLabel.layer.cornerRadius = backViewPriorityLabel.frame.height / 2
         backViewSequenceLabel.layer.cornerRadius = backViewSequenceLabel.frame.height / 2
+        
+        let showParenTaskTap = UITapGestureRecognizer(target: self, action: #selector(showParenTask))
+        stackParentInfo.isUserInteractionEnabled = true
+        stackParentInfo.addGestureRecognizer(showParenTaskTap)
+    }
+    
+    func setParametersHeader(_ task: Task) {
         
         nameStatusLabel.text = task.status
         namePriorityLabel.text = task.priority
@@ -60,12 +62,8 @@ class TaskDetailView: UIView {
         
         for status in mainStore.state.statusTasks {
             if task.status == status.name {
-                print("СОВПАДЕНИЕ")
-                backViewStatusLabel.backgroundColor = status.color
-                backViewStatusLabel.tintColor = status.color
-                layoutIfNeeded()
+                backViewStatus.backgroundColor = status.color
             }
-            
         }
         
         print("category:\(task.category)")
@@ -86,8 +84,12 @@ class TaskDetailView: UIView {
         print("isPrivate:\(task.isPrivate)")
         print("description:\(task.description)")
         
-        
-        
     }
 
+    
+    @objc func showParenTask() {
+        print("showParenTask")
+    }
+    
+    
 }

@@ -39,5 +39,10 @@ class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate {
             taskDetailView.tableDetailInfoTask.layoutIfNeeded()
         }
     }
+    
+    @IBAction func back(_ sender: UIButton) {
+        print("BACK")
+        navigationController?.popViewController(animated: true)
+    }
   
 }
