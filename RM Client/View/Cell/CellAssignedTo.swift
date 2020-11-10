@@ -7,7 +7,9 @@ class CellAssignedTo: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        titleCellLabel.text = "Назначена".uppercased()
+        titleCellLabel.addCharacterSpacing(kernValue: 1.3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

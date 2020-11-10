@@ -4,11 +4,12 @@ class CellDescription: UITableViewCell {
 
     @IBOutlet weak var titleCellLabel: UILabel!
     @IBOutlet weak var textDescriptionLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        titleCellLabel.text = "Описание".uppercased()
+        titleCellLabel.addCharacterSpacing(kernValue: 1.3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

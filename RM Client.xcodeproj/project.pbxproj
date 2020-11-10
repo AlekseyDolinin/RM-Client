@@ -10,6 +10,7 @@
 		100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648EE2559C8B100C7490E /* TaskDetailView.swift */; };
 		100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */; };
 		100648F52559CED400C7490E /* CellOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F42559CED400C7490E /* CellOther.swift */; };
+		1048BFD0255A7B1500896D05 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFCF255A7B1500896D05 /* UIString.swift */; };
 		104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */; };
 		104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */; };
 		104FAD14255A7032006BB4B7 /* CellDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FAD13255A7032006BB4B7 /* CellDescription.swift */; };
@@ -64,6 +65,7 @@
 		100648EE2559C8B100C7490E /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTaskDetail.swift; sourceTree = "<group>"; };
 		100648F42559CED400C7490E /* CellOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOther.swift; sourceTree = "<group>"; };
+		1048BFCF255A7B1500896D05 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAuthor.swift; sourceTree = "<group>"; };
 		104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAssignedTo.swift; sourceTree = "<group>"; };
 		104FAD13255A7032006BB4B7 /* CellDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescription.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				1073758D254F28B0006D1956 /* UIColor.swift */,
 				10DF2A19255265310098B832 /* UIScrollView.swift */,
 				10DF2A1D255360DE0098B832 /* Date.swift */,
+				1048BFCF255A7B1500896D05 /* UIString.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
+				1048BFD0255A7B1500896D05 /* UIString.swift in Sources */,
 				104FAD16255A703C006BB4B7 /* CellFiles.swift in Sources */,
 				100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */,
 				10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */,

@@ -9,7 +9,8 @@ class CellTiming: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleCellLabel.text = "ТАЙМИНГ"
+        titleCellLabel.text = "Тайминг".uppercased()
+        titleCellLabel.addCharacterSpacing(kernValue: 1.5)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -3,7 +3,7 @@ import UIKit
 extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,39 +41,34 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if indexPath.row == 3 {
-            cellAssignedTo.nameLabel.text = selectTask?.assignedTo
+            // нет прикрепленных файлов
+            if (selectTask?.attachments.isEmpty)! {
+                cellFiles.titleCellLabel.text = "Файлы".uppercased()
+                cellFiles.descriptionLabel.text = "Отсутствуют"
+                cellFiles.arrowImageView.isHidden = true
+            } else {
+                cellFiles.titleCellLabel.text = "Файлы (\(selectTask!.attachments.count))".uppercased()
+                cellFiles.descriptionLabel.isHidden = true
+            }
             return cellFiles
         }
         
         if indexPath.row == 4 {
-            cellAssignedTo.nameLabel.text = selectTask?.assignedTo
+//            cellTiming.nameLabel.text = selectTask?.assignedTo
             return cellTiming
         }
         
         if indexPath.row == 5 {
-            cellAssignedTo.nameLabel.text = selectTask?.assignedTo
+//            cellHistory.nameLabel.text = selectTask?.assignedTo
             return cellHistory
         }
         
         if indexPath.row == 6 {
-            cellAssignedTo.nameLabel.text = selectTask?.assignedTo
+//            cellOther.nameLabel.text = selectTask?.assignedTo
             return cellOther
         }
         
         return UITableViewCell()
     }
-}
-
-extension String {
-    var htmlToAttributedString: NSAttributedString? {
-        guard let data = data(using: .utf8) else { return nil }
-        do {
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
-        } catch {
-            return nil
-        }
-    }
-    var htmlToString: String {
-        return htmlToAttributedString?.string ?? ""
-    }
+    
 }

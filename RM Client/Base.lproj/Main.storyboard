@@ -937,12 +937,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" name="_backgroundDark"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="66" id="397-V0-c72"/>
                                                         <constraint firstItem="I78-dc-Msl" firstAttribute="leading" secondItem="HSj-D3-pFO" secondAttribute="leading" constant="12" id="4HW-zw-e4F"/>
-                                                        <constraint firstAttribute="bottom" secondItem="I78-dc-Msl" secondAttribute="bottom" constant="16" id="ExQ-1y-AiJ"/>
                                                         <constraint firstItem="hXj-ci-6DM" firstAttribute="centerY" secondItem="HSj-D3-pFO" secondAttribute="centerY" id="UnE-dZ-WV5"/>
+                                                        <constraint firstItem="I78-dc-Msl" firstAttribute="centerY" secondItem="HSj-D3-pFO" secondAttribute="centerY" id="WsV-WG-Sew"/>
                                                         <constraint firstItem="hXj-ci-6DM" firstAttribute="leading" secondItem="I78-dc-Msl" secondAttribute="trailing" constant="12" id="l9V-F1-VLj"/>
                                                         <constraint firstAttribute="trailing" secondItem="hXj-ci-6DM" secondAttribute="trailing" id="oFz-bg-3Qz"/>
-                                                        <constraint firstItem="I78-dc-Msl" firstAttribute="top" secondItem="HSj-D3-pFO" secondAttribute="top" constant="16" id="oaB-HE-reL"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -980,7 +980,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-L0-EP9">
                                                             <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Файлы (3)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-I1-7an">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Тайминг" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-I1-7an">
                                                                     <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
@@ -999,10 +999,10 @@
                                                     <constraints>
                                                         <constraint firstItem="sQu-L0-EP9" firstAttribute="leading" secondItem="Hwd-cJ-tUg" secondAttribute="leading" constant="12" id="8Ai-JM-fQC"/>
                                                         <constraint firstItem="QDg-U5-ofr" firstAttribute="centerY" secondItem="Hwd-cJ-tUg" secondAttribute="centerY" id="Dnd-vJ-sUc"/>
-                                                        <constraint firstAttribute="bottom" secondItem="sQu-L0-EP9" secondAttribute="bottom" constant="16" id="aav-o9-F4Y"/>
-                                                        <constraint firstItem="sQu-L0-EP9" firstAttribute="top" secondItem="Hwd-cJ-tUg" secondAttribute="top" constant="16" id="bbR-Ji-kgC"/>
                                                         <constraint firstItem="QDg-U5-ofr" firstAttribute="leading" secondItem="sQu-L0-EP9" secondAttribute="trailing" constant="12" id="bzs-Tr-0kk"/>
                                                         <constraint firstAttribute="trailing" secondItem="QDg-U5-ofr" secondAttribute="trailing" id="fzC-Y4-5tS"/>
+                                                        <constraint firstAttribute="height" constant="66" id="qLS-fL-zYH"/>
+                                                        <constraint firstItem="sQu-L0-EP9" firstAttribute="centerY" secondItem="Hwd-cJ-tUg" secondAttribute="centerY" id="sAS-oV-nKU"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1040,7 +1040,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-O2-8zI">
                                                             <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Файлы (3)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xad-Pp-1lN">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="История" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xad-Pp-1lN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
@@ -1059,10 +1059,10 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="SwZ-rO-y20" secondAttribute="trailing" id="4NP-cg-cKt"/>
                                                         <constraint firstItem="SwZ-rO-y20" firstAttribute="leading" secondItem="jNG-O2-8zI" secondAttribute="trailing" constant="12" id="88I-ea-NZC"/>
-                                                        <constraint firstItem="jNG-O2-8zI" firstAttribute="top" secondItem="5rB-PS-hL1" secondAttribute="top" constant="16" id="FkL-tk-b8a"/>
+                                                        <constraint firstAttribute="height" constant="66" id="O1u-oR-Wkb"/>
                                                         <constraint firstItem="jNG-O2-8zI" firstAttribute="leading" secondItem="5rB-PS-hL1" secondAttribute="leading" constant="12" id="Ol1-zR-SuX"/>
+                                                        <constraint firstItem="jNG-O2-8zI" firstAttribute="centerY" secondItem="5rB-PS-hL1" secondAttribute="centerY" id="P5d-PP-kGj"/>
                                                         <constraint firstItem="SwZ-rO-y20" firstAttribute="centerY" secondItem="5rB-PS-hL1" secondAttribute="centerY" id="fwi-dm-zVq"/>
-                                                        <constraint firstAttribute="bottom" secondItem="jNG-O2-8zI" secondAttribute="bottom" constant="16" id="sRf-OZ-qlz"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1100,7 +1100,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ppM-Go-o0s">
                                                             <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Файлы (3)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-2W-6vt">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Дополнительно" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-2W-6vt">
                                                                     <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
@@ -1117,12 +1117,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" name="_backgroundDark"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="66" id="7qV-O7-x96"/>
                                                         <constraint firstAttribute="trailing" secondItem="rBV-Wy-ycM" secondAttribute="trailing" id="BTn-lU-5D9"/>
                                                         <constraint firstItem="ppM-Go-o0s" firstAttribute="leading" secondItem="fIS-ab-oBo" secondAttribute="leading" constant="12" id="PGN-ei-Llh"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ppM-Go-o0s" secondAttribute="bottom" constant="16" id="al5-NC-TTE"/>
+                                                        <constraint firstItem="ppM-Go-o0s" firstAttribute="centerY" secondItem="fIS-ab-oBo" secondAttribute="centerY" id="SZv-BB-Fw5"/>
                                                         <constraint firstItem="rBV-Wy-ycM" firstAttribute="centerY" secondItem="fIS-ab-oBo" secondAttribute="centerY" id="fHE-b6-oKj"/>
                                                         <constraint firstItem="rBV-Wy-ycM" firstAttribute="leading" secondItem="ppM-Go-o0s" secondAttribute="trailing" constant="12" id="hCG-YZ-9mu"/>
-                                                        <constraint firstItem="ppM-Go-o0s" firstAttribute="top" secondItem="fIS-ab-oBo" secondAttribute="top" constant="16" id="v00-YE-fuU"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1147,7 +1147,7 @@
                         <constraints>
                             <constraint firstItem="tFy-M8-7zZ" firstAttribute="top" secondItem="rFt-XH-y63" secondAttribute="top" id="FFj-y5-8lf"/>
                             <constraint firstItem="g7o-71-asm" firstAttribute="bottom" secondItem="2lE-RF-EyN" secondAttribute="bottom" id="M5a-CG-mh5"/>
-                            <constraint firstItem="tFy-M8-7zZ" firstAttribute="bottom" secondItem="rFt-XH-y63" secondAttribute="bottom" id="PIM-P4-wTw"/>
+                            <constraint firstItem="tFy-M8-7zZ" firstAttribute="bottom" secondItem="2lE-RF-EyN" secondAttribute="bottom" id="PIM-P4-wTw"/>
                             <constraint firstItem="tFy-M8-7zZ" firstAttribute="trailing" secondItem="rFt-XH-y63" secondAttribute="trailing" id="cei-ch-kyP"/>
                             <constraint firstItem="rFt-XH-y63" firstAttribute="trailing" secondItem="g7o-71-asm" secondAttribute="trailing" id="oDg-71-zuo"/>
                             <constraint firstItem="tFy-M8-7zZ" firstAttribute="leading" secondItem="rFt-XH-y63" secondAttribute="leading" id="odT-fd-7hz"/>

@@ -9,7 +9,8 @@ class CellOther: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        titleCellLabel.text = "ДОПОЛНИТЕЛЬНО"
+        titleCellLabel.text = "Дополнительно".uppercased()
+        titleCellLabel.addCharacterSpacing(kernValue: 1.5)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
