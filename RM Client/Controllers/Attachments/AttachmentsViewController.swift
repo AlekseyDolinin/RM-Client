@@ -8,35 +8,51 @@ class AttachmentsViewController: UIViewController {
     }
     
     var selectTask: Task?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         attachmentsView.tableAttachments.delegate = self
         attachmentsView.tableAttachments.dataSource = self
         
-        for attachment in selectTask!.attachments {
-            
-//            print("author: \(attachment.author)")
-//            print("content_type: \(attachment.content_type)")
-//            print("content_url: \(attachment.content_url)")
-//            print("createdOn: \(attachment.createdOn)")
-//            print("description: \(attachment.description)")
-//            print("fileName: \(attachment.fileName)")
-//            print("filesize: \(attachment.filesize)")
-//            print("id: \(attachment.id)")
-//            print("thumbnail_url: \(attachment.thumbnail_url)")
-            
-        }
-        
-        
+        attachmentsView.configure()
+        checkTypeAttachment()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
-  
     }
+    
+    func checkTypeAttachment() {
+        for attachment in selectTask!.attachments {
+            
+            let filename: NSString = attachment.content_type! as NSString
+            let pathExtention = filename.pathExtension
+            let pathPrefix = filename.deletingLastPathComponent
+            
+            // изображение
+            if pathPrefix == "image" {
+                // если есть ссылка на превью
+                if attachment.thumbnail_url != "" {
+                    // скачивание превью
+                    API.shared.getAttachmentThumbnail(idAttachment: attachment.id!) { (thumbnail) in
+                        attachment.thumbnailImage = thumbnail
+                        self.attachmentsView.tableAttachments.reloadData()
+                    }
+                }
+            }
+            
+            // документ
+            if pathExtention == "document" {
+                attachment.thumbnailImage = Attach.type.document.image
+            }
+            
+            // видео
+            if pathPrefix == "video" {
+                attachment.thumbnailImage = Attach.type.video.image
+            }
+        }
+    }
+    
     
     @IBAction func back(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

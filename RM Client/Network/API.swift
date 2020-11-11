@@ -66,15 +66,21 @@ class API {
         }
     }
     
-    func getImage(id: Int, completion: @escaping (UIImage) -> Void) {
+    func getAttachmentThumbnail(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
         
-        let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(id)"
-        print(request)
+        let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(idAttachment)"
+//        print(request)
         
         Alamofire.request(request, method: .get).response { response in
 
             if let dataEncodedString = response.data {
-                guard  let decodedimage = UIImage(data: dataEncodedString) else {return}
+                guard  let decodedimage = UIImage(data: dataEncodedString) else {
+                    print("error decoded image")
+                    
+                    //если ошибка то заменяю превью заглушкой
+                    completion(Attach.type.image.image)
+                    return
+                }                
                 completion(decodedimage)
             } else {
                 print("ERROR GET IMAGE")

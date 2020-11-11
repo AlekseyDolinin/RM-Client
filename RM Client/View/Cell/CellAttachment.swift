@@ -14,6 +14,8 @@ class CellAttachment: UITableViewCell {
         super.awakeFromNib()
 
         previewImageView.layer.cornerRadius = 4
+        previewImageView.backgroundColor = ._backgroundNormal
+        previewImageView.image = Attach.type.file.image
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,5 +23,4 @@ class CellAttachment: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

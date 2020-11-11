@@ -17,13 +17,17 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
         
         cellAttachment.authorLabel.text = selectTask?.attachments[indexPath.row].author
         cellAttachment.createdOnLabel.text = selectTask?.attachments[indexPath.row].createdOn
+        cellAttachment.previewImageView.image = selectTask?.attachments[indexPath.row].thumbnailImage
         
-        let idAttachment = (selectTask?.attachments[indexPath.row].id)!
-        
-        API.shared.getImage(id: idAttachment) { (thumbnailImage) in
-            cellAttachment.previewImageView.image = thumbnailImage
-        }
+        let date = Date().convertStringToDate(dataString: (selectTask?.attachments[indexPath.row].createdOn)!)
+        cellAttachment.createdOnLabel.text = Date().convertDateToString(date: date)
         
         return cellAttachment
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailAttachmentVC") as! DetailAttachmentViewController
+        vc.attachment = selectTask?.attachments[indexPath.row]
+        present(vc, animated: true, completion: nil)
     }
 }

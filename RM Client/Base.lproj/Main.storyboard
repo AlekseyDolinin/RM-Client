@@ -1404,53 +1404,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-tC-Uvj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-tC-Uvj">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" name="_backgroundNormal"/>
+                                <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ZFb-gW-uGP">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS7-Hf-CZi">
+                                            <rect key="frame" x="12" y="60" width="296" height="28"/>
+                                            <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="22"/>
+                                            <color key="textColor" name="_white"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="MS7-Hf-CZi" firstAttribute="leading" secondItem="ZFb-gW-uGP" secondAttribute="leading" constant="12" id="EAO-v0-ueW"/>
+                                        <constraint firstAttribute="trailing" secondItem="MS7-Hf-CZi" secondAttribute="trailing" constant="12" id="LF2-Hq-h5u"/>
+                                        <constraint firstAttribute="bottom" secondItem="MS7-Hf-CZi" secondAttribute="bottom" constant="12" id="Zrw-46-Hdm"/>
+                                    </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="uab-0Z-Nmz">
-                                    <rect key="frame" x="0.0" y="198" width="320" height="121"/>
+                                    <rect key="frame" x="0.0" y="236" width="320" height="121"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellAttachment" rowHeight="108" id="NlW-p2-4O3" customClass="CellAttachment" customModule="RM_Client" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="320" height="108"/>
+                                        <rect key="frame" x="0.0" y="128" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NlW-p2-4O3" id="5pg-BD-Nj8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMG_0162.MP4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-s5-zkd">
-                                                    <rect key="frame" x="70" y="12" width="192" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="IMG_0162.MP4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-s5-zkd">
+                                                    <rect key="frame" x="74" y="12" width="188" height="18"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="14"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(6,34 МБ)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLc-6c-s7A">
-                                                    <rect key="frame" x="70" y="34" width="192" height="18"/>
+                                                    <rect key="frame" x="74" y="34" width="188" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кашин Сергей" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-8f-dXa">
-                                                    <rect key="frame" x="70" y="56" width="192" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Кашин Сергей" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-8f-dXa">
+                                                    <rect key="frame" x="74" y="55.5" width="188" height="16"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02.11.2020 11:42" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hQ-qp-t3N">
-                                                    <rect key="frame" x="70" y="76" width="192" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="02.11.2020 11:42" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hQ-qp-t3N">
+                                                    <rect key="frame" x="74" y="75.5" width="188" height="16"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="07K-rB-lod">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="att_File" translatesAutoresizingMaskIntoConstraints="NO" id="07K-rB-lod">
                                                     <rect key="frame" x="12" y="12" width="50" height="50"/>
+                                                    <color key="backgroundColor" name="_backgroundNormal"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="alg-Gs-LYc"/>
                                                         <constraint firstAttribute="height" constant="50" id="pIC-3I-HK0"/>
@@ -1482,7 +1498,7 @@
                                                 <constraint firstItem="07K-rB-lod" firstAttribute="top" secondItem="5pg-BD-Nj8" secondAttribute="top" constant="12" id="jyy-mN-nAa"/>
                                                 <constraint firstItem="07K-rB-lod" firstAttribute="leading" secondItem="5pg-BD-Nj8" secondAttribute="leading" constant="12" id="nzS-l1-5vU"/>
                                                 <constraint firstAttribute="bottom" secondItem="5hQ-qp-t3N" secondAttribute="bottom" constant="16" id="o1c-7k-yEt"/>
-                                                <constraint firstItem="FNE-s5-zkd" firstAttribute="leading" secondItem="07K-rB-lod" secondAttribute="trailing" constant="8" id="qFK-dU-ayu"/>
+                                                <constraint firstItem="FNE-s5-zkd" firstAttribute="leading" secondItem="07K-rB-lod" secondAttribute="trailing" constant="12" id="qFK-dU-ayu"/>
                                                 <constraint firstItem="5hQ-qp-t3N" firstAttribute="leading" secondItem="mfV-8f-dXa" secondAttribute="leading" id="tAA-9D-qz7"/>
                                                 <constraint firstItem="mfV-8f-dXa" firstAttribute="leading" secondItem="sLc-6c-s7A" secondAttribute="leading" id="vW7-e6-1NE"/>
                                             </constraints>
@@ -1518,7 +1534,6 @@
                                     <constraint firstItem="5wU-Yt-927" firstAttribute="leading" secondItem="cVh-EZ-arv" secondAttribute="leading" id="3fs-6U-QwE"/>
                                     <constraint firstItem="5wU-Yt-927" firstAttribute="top" secondItem="cVh-EZ-arv" secondAttribute="top" id="Duk-Pu-peN"/>
                                     <constraint firstAttribute="height" constant="44" id="b5g-Ox-vDK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gJT-RA-kHK"/>
                                     <constraint firstAttribute="bottom" secondItem="5wU-Yt-927" secondAttribute="bottom" id="yph-j5-2nL"/>
                                 </constraints>
                             </view>
@@ -1537,6 +1552,7 @@
                         <connections>
                             <outlet property="buttonBack" destination="5wU-Yt-927" id="4rC-0d-aNo"/>
                             <outlet property="tableAttachments" destination="Fqh-tC-Uvj" id="Pkr-Ly-jtK"/>
+                            <outlet property="titleLabel" destination="MS7-Hf-CZi" id="eu2-DN-Qyn"/>
                         </connections>
                     </view>
                     <size key="freeformSize" width="320" height="568"/>
@@ -1545,11 +1561,61 @@
             </objects>
             <point key="canvasLocation" x="3382.5" y="-1161.9718309859154"/>
         </scene>
+        <!--Detail Attachment View Controller-->
+        <scene sceneID="Omv-XV-gVZ">
+            <objects>
+                <viewController storyboardIdentifier="DetailAttachmentVC" id="pjc-Nh-PN4" customClass="DetailAttachmentViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bDI-eu-1mP" customClass="DetailAttachmentView" customModule="RM_Client" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-Z0-PQQ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-Ek-TsB">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="puq-6v-Kku"/>
+                                        </constraints>
+                                        <state key="normal" image="closeIcon"/>
+                                        <connections>
+                                            <action selector="back:" destination="MN4-gb-NQb" eventType="touchUpInside" id="7Lz-dF-WC2"/>
+                                            <action selector="closeModalView:" destination="pjc-Nh-PN4" eventType="touchUpInside" id="Ps3-om-9Ew"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xqt-Ek-TsB" firstAttribute="top" secondItem="wG8-Z0-PQQ" secondAttribute="top" id="kqb-eH-Mie"/>
+                                    <constraint firstItem="Xqt-Ek-TsB" firstAttribute="leading" secondItem="wG8-Z0-PQQ" secondAttribute="leading" id="skZ-0I-jYp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xqt-Ek-TsB" secondAttribute="bottom" id="tpP-Nl-dJQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="uVe-Ic-en6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="_backgroundNormal"/>
+                        <constraints>
+                            <constraint firstItem="QTP-sP-hh1" firstAttribute="trailing" secondItem="wG8-Z0-PQQ" secondAttribute="trailing" id="FIX-wH-XkR"/>
+                            <constraint firstItem="wG8-Z0-PQQ" firstAttribute="leading" secondItem="bDI-eu-1mP" secondAttribute="leading" id="aYn-eS-sXf"/>
+                            <constraint firstItem="wG8-Z0-PQQ" firstAttribute="top" secondItem="QTP-sP-hh1" secondAttribute="top" id="gsW-Ti-KyT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QTP-sP-hh1"/>
+                        <connections>
+                            <outlet property="buttonClose" destination="Xqt-Ek-TsB" id="yCP-4y-Lsq"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ay0-AP-gOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4127" y="-1161"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addButton" width="41" height="41"/>
+        <image name="att_File" width="50" height="50"/>
         <image name="attachIcon" width="18" height="18"/>
         <image name="backIcon" width="44" height="44"/>
+        <image name="closeIcon" width="44" height="44"/>
         <image name="folderEmpty" width="96" height="96"/>
         <image name="menuIconTabBar" width="24" height="24"/>
         <image name="nextIcon" width="44" height="44"/>

@@ -1,3 +1,5 @@
+import UIKit
+
 class Attachment {
     
     var id: Int?
@@ -9,6 +11,7 @@ class Attachment {
     var description: String?
     var content_type: String?
     var content_url: String?
+    var thumbnailImage: UIImage?
     
     init(id: Int? = nil,
          fileName: String? = nil,
@@ -18,7 +21,8 @@ class Attachment {
          filesize: Int? = nil,
          description: String? = nil,
          content_type: String? = nil,
-         content_url: String? = nil){
+         content_url: String? = nil,
+         thumbnailImage: UIImage? = nil){
         
         self.id = id
         self.fileName = fileName
@@ -29,5 +33,6 @@ class Attachment {
         self.description = description
         self.content_type = content_type
         self.content_url = content_url
+        self.thumbnailImage = thumbnailImage
     }
 }

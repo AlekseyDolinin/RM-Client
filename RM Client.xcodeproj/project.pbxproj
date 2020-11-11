@@ -46,6 +46,9 @@
 		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
 		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
 		108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB0242550899300BF89C4 /* TabbarViewController.swift */; };
+		109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830AC255C7CD200A045E3 /* AttachmentType.swift */; };
+		109830B0255C84E700A045E3 /* DetailAttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */; };
+		109830B3255C851500A045E3 /* DetailAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830B2255C851500A045E3 /* DetailAttachmentView.swift */; };
 		10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */; };
 		10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */; };
 		10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0E255097CD0098B832 /* ProjectsView.swift */; };
@@ -110,6 +113,9 @@
 		108CB0242550899300BF89C4 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegates.swift; sourceTree = "<group>"; };
+		109830AC255C7CD200A045E3 /* AttachmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentType.swift; sourceTree = "<group>"; };
+		109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttachmentViewController.swift; sourceTree = "<group>"; };
+		109830B2255C851500A045E3 /* DetailAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttachmentView.swift; sourceTree = "<group>"; };
 		10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsViewController.swift; sourceTree = "<group>"; };
 		10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsView.swift; sourceTree = "<group>"; };
 		10DF2A0E255097CD0098B832 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 				10737568254DA6F4006D1956 /* Network */,
 				10737559254DA60D006D1956 /* Assets.xcassets */,
 				1073756B254DA70C006D1956 /* Extentions */,
+				109830AE255C7CDE00A045E3 /* HelpClasses */,
 				1073756A254DA704006D1956 /* Utils */,
 				10DF2A23255481E70098B832 /* Store */,
 				1073756C254DA717006D1956 /* Resourses */,
@@ -221,6 +228,7 @@
 				10737585254DD20E006D1956 /* TasksView.swift */,
 				100648EE2559C8B100C7490E /* TaskDetailView.swift */,
 				1048BFD3255B18CC00896D05 /* AttachmentsView.swift */,
+				109830B2255C851500A045E3 /* DetailAttachmentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				10737582254DCC83006D1956 /* Tasks */,
 				100648ED2559C84300C7490E /* TaskDetail */,
 				1048BFD5255B195800896D05 /* Attachments */,
+				109830B1255C84F100A045E3 /* DetailAttachment */,
 				10737571254DA8B6006D1956 /* Projects */,
 				10DF2A1B25533D4F0098B832 /* MenuViewController.swift */,
 			);
@@ -323,6 +332,22 @@
 				10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		109830AE255C7CDE00A045E3 /* HelpClasses */ = {
+			isa = PBXGroup;
+			children = (
+				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
+			);
+			path = HelpClasses;
+			sourceTree = "<group>";
+		};
+		109830B1255C84F100A045E3 /* DetailAttachment */ = {
+			isa = PBXGroup;
+			children = (
+				109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */,
+			);
+			path = DetailAttachment;
 			sourceTree = "<group>";
 		};
 		10DF2A23255481E70098B832 /* Store */ = {
@@ -475,6 +500,7 @@
 			files = (
 				10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
+				109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
 				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,
 				1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */,
@@ -513,9 +539,11 @@
 				100648F52559CED400C7490E /* CellOther.swift in Sources */,
 				1048BFDB255B2C5600896D05 /* Converters.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
+				109830B3255C851500A045E3 /* DetailAttachmentView.swift in Sources */,
 				10DF2A29255482080098B832 /* AppReducer.swift in Sources */,
 				10DF2A2225546CC40098B832 /* Status.swift in Sources */,
 				104FAD18255A703E006BB4B7 /* CellTiming.swift in Sources */,
+				109830B0255C84E700A045E3 /* DetailAttachmentViewController.swift in Sources */,
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10DF2A2025536AB50098B832 /* Attachment.swift in Sources */,
