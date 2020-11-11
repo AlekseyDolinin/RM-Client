@@ -26,8 +26,10 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailAttachmentVC") as! DetailAttachmentViewController
-        vc.attachment = selectTask?.attachments[indexPath.row]
-        present(vc, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailAttachmentVC") as! DetailAttachmentViewController
+            vc.attachment = self.selectTask?.attachments[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

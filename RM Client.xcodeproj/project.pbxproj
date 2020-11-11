@@ -49,6 +49,8 @@
 		109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830AC255C7CD200A045E3 /* AttachmentType.swift */; };
 		109830B0255C84E700A045E3 /* DetailAttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */; };
 		109830B3255C851500A045E3 /* DetailAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830B2255C851500A045E3 /* DetailAttachmentView.swift */; };
+		109830B5255C932500A045E3 /* ImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830B4255C932500A045E3 /* ImageViewZoom.swift */; };
+		109830B7255C96FB00A045E3 /* OpenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109830B6255C96FB00A045E3 /* OpenImage.swift */; };
 		10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */; };
 		10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */; };
 		10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A0E255097CD0098B832 /* ProjectsView.swift */; };
@@ -116,6 +118,8 @@
 		109830AC255C7CD200A045E3 /* AttachmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentType.swift; sourceTree = "<group>"; };
 		109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttachmentViewController.swift; sourceTree = "<group>"; };
 		109830B2255C851500A045E3 /* DetailAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttachmentView.swift; sourceTree = "<group>"; };
+		109830B4255C932500A045E3 /* ImageViewZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewZoom.swift; sourceTree = "<group>"; };
+		109830B6255C96FB00A045E3 /* OpenImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenImage.swift; sourceTree = "<group>"; };
 		10DF2A0A255094CF0098B832 /* _RootProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsViewController.swift; sourceTree = "<group>"; };
 		10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsView.swift; sourceTree = "<group>"; };
 		10DF2A0E255097CD0098B832 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 		109830AE255C7CDE00A045E3 /* HelpClasses */ = {
 			isa = PBXGroup;
 			children = (
+				109830B4255C932500A045E3 /* ImageViewZoom.swift */,
 				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
 			);
 			path = HelpClasses;
@@ -346,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				109830AF255C84E700A045E3 /* DetailAttachmentViewController.swift */,
+				109830B6255C96FB00A045E3 /* OpenImage.swift */,
 			);
 			path = DetailAttachment;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
 				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,
+				109830B5255C932500A045E3 /* ImageViewZoom.swift in Sources */,
 				1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */,
 				100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
@@ -522,6 +529,7 @@
 				108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */,
 				10DF2A1E255360DE0098B832 /* Date.swift in Sources */,
 				10DF2A2A2554820A0098B832 /* AppState.swift in Sources */,
+				109830B7255C96FB00A045E3 /* OpenImage.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
