@@ -4,7 +4,7 @@ class DetailAttachmentView: UIView {
     
     @IBOutlet weak var buttonClose: UIButton!
 
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var backViewForImage: UIView!
     
     func configure() {
 

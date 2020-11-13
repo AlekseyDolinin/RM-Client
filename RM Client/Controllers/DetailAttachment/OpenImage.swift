@@ -4,7 +4,7 @@ extension DetailAttachmentViewController: ImageViewZoomDelegate {
     
     func setScrollViewImage(image: UIImage) {
         
-        detailAttachmentView.backView.alpha = 0
+        detailAttachmentView.backViewForImage.alpha = 0
         
         let viewHeight: CGFloat = self.view.bounds.size.height
         let viewWidth: CGFloat = self.view.bounds.size.width
@@ -19,10 +19,10 @@ extension DetailAttachmentViewController: ImageViewZoomDelegate {
         imageView.display(image: image)
         scrollView.addSubview(imageView)
 
-        detailAttachmentView.backView.addSubview(scrollView)
+        detailAttachmentView.backViewForImage.addSubview(scrollView)
         
         UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.detailAttachmentView.backView.alpha = 1
+            self?.detailAttachmentView.backViewForImage.alpha = 1
         }
     }
     

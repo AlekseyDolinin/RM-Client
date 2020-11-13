@@ -40,12 +40,10 @@ class AttachmentsViewController: UIViewController {
                     }
                 }
             }
-            
             // документ
             if pathExtention == "document" {
                 attachment.thumbnailImage = Attach.type.document.image
             }
-            
             // видео
             if pathPrefix == "video" {
                 attachment.thumbnailImage = Attach.type.video.image

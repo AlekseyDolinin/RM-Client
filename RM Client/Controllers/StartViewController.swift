@@ -69,7 +69,7 @@ class StartViewController: UIViewController, StoreSubscriber {
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)",
             offset: offset,
-            limit: 1000,
+            limit: 100,
             completion: { (json) in
                 
                 let totalTasks = json["issues"].count

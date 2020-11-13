@@ -11,6 +11,6 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.0'
 pod 'ReSwift'
 
-pod 'AlamofireImage', '3.4.0'
+pod 'GPVideoPlayer'
 
 end

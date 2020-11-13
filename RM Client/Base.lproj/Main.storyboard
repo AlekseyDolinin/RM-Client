@@ -1631,7 +1631,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QTP-sP-hh1"/>
                         <connections>
-                            <outlet property="backView" destination="ebZ-EU-f2M" id="3Ym-XH-c4f"/>
+                            <outlet property="backViewForImage" destination="ebZ-EU-f2M" id="EJg-h4-6eL"/>
                             <outlet property="buttonClose" destination="Xqt-Ek-TsB" id="yCP-4y-Lsq"/>
                         </connections>
                     </view>

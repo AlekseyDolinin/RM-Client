@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9778AE8394BE451567650E0B239BA21"
-               BuildableName = "AlamofireImage.framework"
-               BlueprintName = "AlamofireImage"
+               BlueprintIdentifier = "FEF604583FAF7F8302A0B9018408CC1A"
+               BuildableName = "GPVideoPlayer.framework"
+               BlueprintName = "GPVideoPlayer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

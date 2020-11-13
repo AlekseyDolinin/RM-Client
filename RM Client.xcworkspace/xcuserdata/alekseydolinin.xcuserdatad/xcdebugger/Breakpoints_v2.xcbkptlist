@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "626919825.1543421"
+            timestampString = "626922075.006466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -34,7 +34,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Network/API.swift"
-            timestampString = "626919825.155959"
+            timestampString = "626922075.006851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -82,7 +82,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "626919825.156294"
+            timestampString = "626922075.0071909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "626919825.157194"
+            timestampString = "626922075.0072989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -131,7 +131,7 @@
                   moduleName = "RM Client"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alekseydolinin/Documents/GitHub/RM%20Client/RM%20Client/Controllers/StartViewController.swift"
-                  timestampString = "626919825.6283489"
+                  timestampString = "626923732.6404459"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -146,7 +146,7 @@
                   moduleName = "RM Client"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alekseydolinin/Documents/GitHub/RM%20Client/RM%20Client/Controllers/StartViewController.swift"
-                  timestampString = "626919825.631412"
+                  timestampString = "626923732.643898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -163,11 +163,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/DetailAttachment/DetailAttachmentViewController.swift"
-            timestampString = "626919825.158103"
+            timestampString = "626923732.028704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "checkTypeAttachment()"
             landmarkType = "7">
             <Actions>
@@ -187,11 +187,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/DetailAttachment/DetailAttachmentViewController.swift"
-            timestampString = "626919825.15846"
+            timestampString = "626923732.029882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "checkTypeAttachment()"
             landmarkType = "7">
             <Actions>
@@ -199,30 +199,6 @@
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
                   <ActionContent
                      consoleCommand = "po pathExtention">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
-            filePath = "RM Client/Controllers/DetailAttachment/DetailAttachmentViewController.swift"
-            timestampString = "626919825.158541"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "checkTypeAttachment()"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "po pathPrefix">
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
