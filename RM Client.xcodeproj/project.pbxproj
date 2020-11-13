@@ -42,6 +42,7 @@
 		10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */; };
 		10737597254F2A30006D1956 /* PT Root UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737593254F2A30006D1956 /* PT Root UI_Light.ttf */; };
 		10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */; };
+		108C0011255DF43E001F5FE0 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C0010255DF43E001F5FE0 /* StartView.swift */; };
 		108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB01C254F475600BF89C4 /* CollectionDelegates.swift */; };
 		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
 		108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108CB021254F6BD000BF89C4 /* StatusCell.xib */; };
@@ -109,6 +110,7 @@
 		10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Regular.ttf"; sourceTree = "<group>"; };
 		10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
 		10737593254F2A30006D1956 /* PT Root UI_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Light.ttf"; sourceTree = "<group>"; };
+		108C0010255DF43E001F5FE0 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		108CB01C254F475600BF89C4 /* CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegates.swift; sourceTree = "<group>"; };
 		108CB020254F6BD000BF89C4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		108CB021254F6BD000BF89C4 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				10737566254DA6DB006D1956 /* Cell */,
+				108C0010255DF43E001F5FE0 /* StartView.swift */,
 				10DF2A1525524E6D0098B832 /* _RootTasksView.swift */,
 				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
 				10DF2A0E255097CD0098B832 /* ProjectsView.swift */,
@@ -506,6 +509,7 @@
 			files = (
 				10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
+				108C0011255DF43E001F5FE0 /* StartView.swift in Sources */,
 				109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
 				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,

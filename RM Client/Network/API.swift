@@ -14,14 +14,11 @@ class API {
         let request = "https://\(user):\(password)@\(path)/projects.json"
         Alamofire.request(request, method: .get).responseJSON { response in
             completion(response.result.isSuccess)
-            print("RESULT AUTH: \(response.result.isSuccess)")
         }
     }
     
     func getJSONPagination(endPoint: String, offset: Int?, limit: Int?, completion: @escaping (JSON) -> Void) {
-        
         let request = "https://\(user):\(password)@\(path)\(endPoint).json?offset=\(offset ?? 0)&limit=\(limit ?? 0)"
-//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON Pagination")
@@ -35,9 +32,7 @@ class API {
     }
     
     func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
-        
         let request = "https://\(user):\(password)@\(path)\(endPoint).json"
-//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
@@ -53,7 +48,6 @@ class API {
     func getDataTask(endPoint: String, completion: @escaping (JSON) -> Void) {
         
         let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=attachments"
-//        print(request)
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
@@ -68,9 +62,7 @@ class API {
     
     func getAttachmentThumbnail(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
         let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(idAttachment)"
-//        print(request)
         Alamofire.request(request, method: .get).response { response in
-            
             DispatchQueue.main.async {
                 guard let data = response.data, let image = UIImage(data: data) else {
                     print("error image Thumbnail")
@@ -84,7 +76,6 @@ class API {
     
     func getAttachmentImage(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
         let request = "https://\(user):\(password)@\(path)/attachments/download/\(idAttachment)"
-        //        print(request)
         Alamofire.request(request).validate().downloadProgress { progress in
             
 //                print("totalUnitCount:\n", progress.totalUnitCount)

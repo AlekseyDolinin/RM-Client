@@ -3,6 +3,11 @@ import ReSwift
 
 class StartViewController: UIViewController, StoreSubscriber {
     
+    var startView: StartView! {
+        guard isViewLoaded else {return nil}
+        return (view as! StartView)
+    }
+    
     typealias StoreSubscriberStateType = AppState
     
     static let shared = StartViewController()
@@ -25,10 +30,13 @@ class StartViewController: UIViewController, StoreSubscriber {
     var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
     
     func checkAuth() {
+        self.startView.stateLabel.text = "Проверка авторизации"
         API.shared.authentication { (resultAuth) in
             // если пользователь авторизован скачиваем данные по пользователю
             if resultAuth == true {
+                
                 // данные по аккаунту
+                self.startView.stateLabel.text = "Получение данных по аккаунту"
                 API.shared.getJSON(endPoint: "/my/account", completion: { (json) in
                     let data = json["user"]
                     
@@ -48,6 +56,7 @@ class StartViewController: UIViewController, StoreSubscriber {
                     self.getStatusesTaskInCompany()
                     
                     // получение задач пользователя
+//                    self.startView.stateLabel.text = "Запрос задач по аккаунту"
                     self.getTasks(offset: 0)
                 })
             }
@@ -56,6 +65,7 @@ class StartViewController: UIViewController, StoreSubscriber {
     
     // получение задач пользователя
     func getTasks(offset: Int) {
+        self.startView.stateLabel.text = "Запрос задач пользователя"
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)",
             offset: offset,
@@ -133,6 +143,7 @@ class StartViewController: UIViewController, StoreSubscriber {
     
     func getStatusesTaskInCompany() {
         // список статусов задач
+//        self.startView.stateLabel.text = "Запрос списка статусов"
         API.shared.getJSON(endPoint: "/issue_statuses") { (json) in
             
             var listTasksStatuses = [Status]()
@@ -153,15 +164,19 @@ class StartViewController: UIViewController, StoreSubscriber {
     func separateTasks() {
         let listStatusTasks = mainStore.state.statusTasks
         let listAllTasks = mainStore.state.userTasks
+        var transition = false
         
         for i in 0 ..< listStatusTasks.count {
             let nameFilter = listStatusTasks[i].name
             let listStatusTasksFiltered = listAllTasks.filter{ $0.status == nameFilter}
             listStatusTasks[i].arrayTasks = listStatusTasksFiltered
+            
+            if i == listStatusTasks.count - 1 && transition == false {
+                transition = true
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
+                self.navigationController?.pushViewController(vc!, animated: true);
+            }
         }
-        print("переход на следующий контроллер после авторизации и сортировки задач по статусам")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
-        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func newState(state: AppState) {
@@ -169,49 +184,3 @@ class StartViewController: UIViewController, StoreSubscriber {
 
     }
 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-
-
-
-//                // список трекеров задач
-//                API.shared.getJSON(endPoint: "/trackers") { (json) in
-//                    print(json)
-//                }
-//
-//                // список приоритетов задач (низкий, нормальный, высокий)
-//                API.shared.getJSON(endPoint: "/enumerations/issue_priorities") { (json) in
-//                    print(json)
-//                }
-//
-//                // категории задач, доступные для проекта с заданным идентификатором
-//                API.shared.getJSON(endPoint: "/projects/309/issue_categories") { (json) in
-//                    print(json)
-//                }
-//
-//                // список ролей в компании
-//                API.shared.getJSON(endPoint: "/roles") { (json) in
-//                    print(json)
-//                }
-
-
-//                API.shared.getJSON(endPoint: "/projects/271/memberships") { (json) in
-//                    print(json)
-//                }
-//
-//                API.shared.getJSON(endPoint: "/issues/78716/relations") { (json) in
-//                    print(json)
-//                }
-//
-//                API.shared.getJSON(endPoint: "/queries") { (json) in
-//                    print(json)
-//                }

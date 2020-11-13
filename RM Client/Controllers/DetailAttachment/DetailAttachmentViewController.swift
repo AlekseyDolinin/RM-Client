@@ -29,7 +29,6 @@ class DetailAttachmentViewController: UIViewController {
         
         // изображение
         if pathPrefix == "image" {
-            print("image")
             let idAttachment = (attachment!.id)!
             API.shared.getAttachmentImage(idAttachment: idAttachment) { (image) in
                 self.setScrollViewImage(image: image)
@@ -38,12 +37,12 @@ class DetailAttachmentViewController: UIViewController {
         
         // документ
         if pathExtention == "document" {
-            print("document")
+
         }
         
         // видео
         if pathPrefix == "video" {
-            print("video")
+
         }
     }
     
