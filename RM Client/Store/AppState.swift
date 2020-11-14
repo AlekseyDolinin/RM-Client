@@ -6,7 +6,6 @@ struct AppState: StateType {
     var userData: User?
     var userTasks: [Task] = []
     var statusTasks: [Status] = []
-    var project: [Project] = []
-    
+    var projects: [Project] = []
     
 }

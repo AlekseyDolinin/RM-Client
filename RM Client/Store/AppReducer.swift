@@ -14,8 +14,8 @@ func appReducer(action: Action, state: AppState?) -> AppState {
     case let statusTasks as LoadedStatusTasks:
         state.statusTasks = statusTasks.statusTasks
 
-    case let project as LoadedProject:
-        state.project = project.project
+    case let projects as LoadedProject:
+        state.projects = projects.projects
 
         
     default:

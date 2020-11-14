@@ -21,7 +21,7 @@ class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate {
         taskDetailView.tableDetailInfoTask.dataSource = self
         
         for task in mainStore.state.userTasks {
-            if task.id == idSelectTask {
+            if task.idTask == idSelectTask {
                 selectTask = task
                 taskDetailView.setParametersHeader(task)
             }

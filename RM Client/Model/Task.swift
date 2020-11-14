@@ -1,3 +1,5 @@
+import UIKit
+
 class Task {
     
     var doneRatio: Int
@@ -5,6 +7,7 @@ class Task {
     var createdOn: String
     var tracker: String
     var author: String
+    var avatarAuthor: UIImage
     var dueDate: String
     var subject: String
     var isPrivate: Bool
@@ -13,13 +16,14 @@ class Task {
     var estimatedHours: Double?
     var customFields: [CustomField]
     var priority: String
-    var id: Int
+    var idTask: Int
     var parent: Int
     var updatedOn: String
     var closedOn: Bool?
     var status: String
     var description: String
     var project: String
+    var projectID: Int
     var attachments: [Attachment]
     
     init(doneRatio: Int,
@@ -27,6 +31,7 @@ class Task {
          createdOn: String,
          tracker: String,
          author: String,
+         avatarAuthor: UIImage,
          dueDate: String,
          subject: String,
          isPrivate: Bool,
@@ -35,13 +40,14 @@ class Task {
          estimatedHours: Double?,
          customFields: [CustomField],
          priority: String,
-         id: Int,
+         idTask: Int,
          parent: Int,
          updatedOn: String,
          closedOn: Bool?,
          status: String,
          description: String,
          project: String,
+         projectID: Int,
          attachments: [Attachment]
          ){
         
@@ -50,6 +56,7 @@ class Task {
         self.createdOn = createdOn
         self.tracker = tracker
         self.author = author
+        self.avatarAuthor = avatarAuthor
         self.dueDate = dueDate
         self.subject = subject
         self.isPrivate = isPrivate
@@ -58,13 +65,14 @@ class Task {
         self.estimatedHours = estimatedHours
         self.customFields = customFields
         self.priority = priority
-        self.id = id
+        self.idTask = idTask
         self.parent = parent
         self.updatedOn = updatedOn
         self.closedOn = closedOn
         self.status = status
         self.description = description
         self.project = project
+        self.projectID = projectID
         self.attachments = attachments
     }
 }

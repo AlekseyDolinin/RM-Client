@@ -7,9 +7,10 @@ class ProjectsViewController: UIViewController {
         guard isViewLoaded else {return nil}
         return (view as! ProjectsView)
     }
+
     
     var listProjects = [Project]()
-    var totalProjects = Int()
+    static var totalProjects = Int()
     var offset = 0
     
     override func viewDidLoad() {
@@ -19,26 +20,26 @@ class ProjectsViewController: UIViewController {
         
         projectsView.tableProjects.delegate = self
         projectsView.tableProjects.dataSource = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if listProjects.isEmpty {
-            print("запрос проектов")
-            getProjects(offset: offset)
-        }
+        
+        getProjects(offset: offset)
     }
     
     func getProjects(offset: Int) {
         
-        API.shared.getJSONPagination(endPoint: "/projects", offset: offset, limit: 100, completion: { (json) in
+        API.shared.getJSONPagination(endPoint: "/projects.json?", offset: offset, limit: 100, completion: { (json) in
             
-            self.totalProjects = json["total_count"].intValue
-            
-            print("всего проектов: \(self.totalProjects)")
+            print("всего проектов: \(json["total_count"].intValue)")
+            ProjectsViewController.totalProjects = json["total_count"].intValue
             
             for i in json["projects"] {
                 
                 let projectData = i.1
+                
+//                let idProject = projectData["id"].intValue
+//                API.shared.getJSON(endPoint: "/projects/\(idProject)/memberships", completion: { (json) in
+//                    print(json)
+//                })
+                print(projectData)
                 var listCustomFields = [CustomField]()
                 
                 for i in projectData["custom_fields"] {
@@ -50,7 +51,7 @@ class ProjectsViewController: UIViewController {
                 }
                 
                 let project = Project(
-                    id: projectData["id"].intValue,
+                    idProject: projectData["id"].intValue,
                     name: projectData["name"].stringValue,
                     description: projectData["description"].stringValue,
                     updated_on: projectData["updated_on"].stringValue,
@@ -60,28 +61,19 @@ class ProjectsViewController: UIViewController {
                     created_on: projectData["created_on"].stringValue,
                     is_public: projectData["is_public"].boolValue,
                     status: projectData["status"].intValue,
-                    parentID: projectData["parent"]["id"].int)
+                    parentID: projectData["parent"]["id"].int,
+                    parentName: projectData["parent"]["name"].stringValue)
                 
-                
-                if project.parentID == nil {
-                    self.listProjects.append(project)
-                }
-                
-//                print("~~~~~~~~~~")
-//                print(project.name)
-//                print(project.parentID)
-                
+//                if project.parentID == nil {
+//                    self.listProjects.append(project)
+//                }
+                self.listProjects.append(project)
                 self.listProjects = self.listProjects.sorted(by: {$0.name < $1.name})
+                mainStore.dispatch(LoadedProject(projects: self.listProjects))
+                self.sortProjects()
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showContent"), object: nil)
             self.projectsView.tableProjects.reloadData()
         })
     }
-    
-    
-    
-    
-    
-    
-    
 }

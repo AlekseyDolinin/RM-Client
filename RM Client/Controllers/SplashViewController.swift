@@ -8,10 +8,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("CHECK")
-
         if UserDefaults.standard.dictionary(forKey: "userAuthData") != nil {
-            print("ЕСТЬ ДАННЫЕ В ДЕФОЛТЕ")
             userAuthData = UserDefaults.standard.dictionary(forKey: "userAuthData") as! [String : String]
             let defaultServer: String = userAuthData["server"]!
             let defaultUser: String = userAuthData["user"]!
@@ -26,7 +23,6 @@ class SplashViewController: UIViewController {
     }
     
     func checkAuth(server: String, user: String, password: String) {
-        print("ПОПЫТКА АВТОРИЗАЦИИ")
         // проверка введенных данных по пользователю
         API.shared.authentication(server: server, user: user, password: password) { [weak self] (response) in
             var json = JSON()
@@ -43,7 +39,6 @@ class SplashViewController: UIViewController {
                 self?.present(vc!, animated: true, completion: nil)
             } else {
                 // заполнение данных пользователя
-                print("АВТОРИЗАЦИИ УПЕШНА")
                 self?.fillUserData(json)
             }
         }
@@ -51,7 +46,6 @@ class SplashViewController: UIViewController {
     
     // обработка данных при успешной авторизации
     func fillUserData(_ userDataJson: JSON) {
-        print("ЗАПОЛНЕНИЕ ЮЗЕРА")
         let data = userDataJson["user"]
         
         // хэш почты для получения аватара по почте
@@ -75,7 +69,6 @@ class SplashViewController: UIViewController {
             
             // переход далее при корректной авторизации
             // и заполнении данных пользователя
-            print("ПЕРЕХОД ДАЛЬШЕ")
             let vc = self?.storyboard?.instantiateViewController(withIdentifier: "StartVC")
             self?.navigationController?.pushViewController(vc!, animated: false)
         })

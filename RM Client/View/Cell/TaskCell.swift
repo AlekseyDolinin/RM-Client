@@ -17,12 +17,12 @@ class TaskCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         backView.layer.cornerRadius = 8
         
         sequenceView.layer.cornerRadius = sequenceView.frame.height / 2
         priorityView.layer.cornerRadius = priorityView.frame.height / 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,5 +30,4 @@ class TaskCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

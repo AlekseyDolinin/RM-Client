@@ -13,6 +13,6 @@ struct LoadedStatusTasks: Action {
 }
 
 struct LoadedProject: Action {
-    var project: [Project]
+    var projects: [Project]
 }
 

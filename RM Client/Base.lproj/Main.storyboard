@@ -415,6 +415,12 @@
                                         <color key="textColor" name="_white"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zup-35-QPH">
+                                        <rect key="frame" x="157" y="28" width="25" height="13"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="10"/>
+                                        <color key="textColor" name="_blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbG-GA-bmI">
                                         <rect key="frame" x="0.0" y="128" width="160" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -448,11 +454,13 @@
                                 </subviews>
                                 <color key="backgroundColor" name="_backgroundDark"/>
                                 <constraints>
+                                    <constraint firstItem="Zup-35-QPH" firstAttribute="leading" secondItem="hsD-dL-BQB" secondAttribute="trailing" id="72S-FT-2PJ"/>
                                     <constraint firstItem="hsD-dL-BQB" firstAttribute="leading" secondItem="kkL-J8-kXO" secondAttribute="leading" constant="16" id="Hh2-8w-Y7i"/>
                                     <constraint firstItem="ujI-JD-x3G" firstAttribute="leading" secondItem="h03-U1-gPV" secondAttribute="trailing" id="IlU-Yz-hsK"/>
                                     <constraint firstAttribute="bottom" secondItem="ujI-JD-x3G" secondAttribute="bottom" id="KHH-Lb-Z83"/>
                                     <constraint firstAttribute="bottom" secondItem="h03-U1-gPV" secondAttribute="bottom" id="KxJ-qq-l0J"/>
                                     <constraint firstAttribute="height" constant="130" id="KyY-DI-PCg"/>
+                                    <constraint firstItem="Zup-35-QPH" firstAttribute="top" secondItem="hsD-dL-BQB" secondAttribute="top" constant="4" id="SkH-lh-b3F"/>
                                     <constraint firstItem="hsD-dL-BQB" firstAttribute="top" secondItem="kkL-J8-kXO" secondAttribute="top" constant="24" id="U3I-JT-kDg"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hsD-dL-BQB" secondAttribute="trailing" constant="20" symbolic="YES" id="W7c-EM-mc1"/>
                                     <constraint firstItem="FbG-GA-bmI" firstAttribute="leading" secondItem="kkL-J8-kXO" secondAttribute="leading" id="YqY-Ik-TLo"/>
@@ -478,11 +486,13 @@
                             <constraint firstItem="0KP-XL-2wA" firstAttribute="trailing" secondItem="8gf-ih-krM" secondAttribute="trailing" id="uBG-hE-jtI"/>
                         </constraints>
                         <connections>
+                            <outlet property="allCountProjectLabel" destination="Zup-35-QPH" id="SX4-mt-O7w"/>
                             <outlet property="butonTabOne" destination="h03-U1-gPV" id="R7J-A0-eRN"/>
                             <outlet property="butonTabTwo" destination="ujI-JD-x3G" id="hnT-CY-uzz"/>
                             <outlet property="indicatorView" destination="FbG-GA-bmI" id="fQc-Vl-zxk"/>
                             <outlet property="loader" destination="dfU-Jv-Hky" id="njf-SU-6vE"/>
                             <outlet property="scrollVew" destination="0KP-XL-2wA" id="zzk-EC-36j"/>
+                            <outlet property="titleLabel" destination="hsD-dL-BQB" id="chY-ge-lXK"/>
                             <outlet property="viewTop" destination="kkL-J8-kXO" id="Nq7-uN-Wf8"/>
                         </connections>
                     </view>

@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class StartViewController: UIViewController {
     
@@ -12,35 +14,45 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("START VC")
-        
         // получение статусов задач по компании
-        self.getStatusesTaskInCompany()
-        
+        getStatusesTaskInCompany()
+
         // получение задач пользователя
-        self.getTasks(offset: 0)
+        getTasks(offset: 0)
+        
     }
     
     var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
 
+    
+    // получение списка пользователей
+    // работает только для админов
+    func getUsersCompany() {
+        print("ПОЛУЧЕНИЕ СПИСКА ПОЛЬЗОВАТЕЛЕЙ")
+        API.shared.getJSON(endPoint: "/users") { (json) in
+            print(json)
+        }
+    }
+    
     // получение задач пользователя
     func getTasks(offset: Int) {
-        self.startView.stateLabel.text = "Запрос задач пользователя"
+//        self.startView.stateLabel.text = "Запрос задач пользователя"
         API.shared.getJSONPagination(
-            endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)",
+            endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)&include=attachments&",
             offset: offset,
             limit: 10,
             completion: { (json) in
                 
                 let totalTasks = json["issues"].count
                 var listAllTasks = [Task]()
-                var listCustomFields = [CustomField]()
-                var listAttachments = [Attachment]()
-                
-//                print(json["issues"])
-                
+
                 for i in json["issues"] {
+                    
+                    var listCustomFields = [CustomField]()
+                    var listAttachments = [Attachment]()
+                    
                     let dataTask = i.1
+                    
                     for i in dataTask["custom_fields"] {
                         let customFieldData = i.1
                         let customField = CustomField(id: customFieldData["id"].intValue,
@@ -68,6 +80,7 @@ class StartViewController: UIViewController {
                                     createdOn: dataTask["created_on"].stringValue,
                                     tracker: dataTask["tracker"]["name"].stringValue,
                                     author: dataTask["author"]["name"].stringValue,
+                                    avatarAuthor: UIImage(),
                                     dueDate: dataTask["due_date"].stringValue,
                                     subject: dataTask["subject"].stringValue,
                                     isPrivate: dataTask["is_private"].boolValue,
@@ -76,13 +89,14 @@ class StartViewController: UIViewController {
                                     estimatedHours: dataTask["estimated_hours"].doubleValue,
                                     customFields: listCustomFields,
                                     priority: dataTask["priority"]["name"].stringValue,
-                                    id: dataTask["id"].intValue,
+                                    idTask: dataTask["id"].intValue,
                                     parent: dataTask["parent"]["id"].intValue,
                                     updatedOn: dataTask["updated_on"].stringValue,
                                     closedOn: dataTask["closed_on"].boolValue,
                                     status: dataTask["status"]["name"].stringValue,
                                     description: dataTask["description"].stringValue,
                                     project: dataTask["project"]["name"].stringValue,
+                                    projectID: dataTask["project"]["id"].intValue,
                                     attachments: listAttachments)
                     
                     listAllTasks.append(task)

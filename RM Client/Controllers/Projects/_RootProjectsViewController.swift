@@ -1,8 +1,11 @@
 import UIKit
+import ReSwift
 
-class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
+class RootProjectsViewController: UIViewController, UIScrollViewDelegate, StoreSubscriber {
     
-    private var rootProjectsView: RootProjectsView! {
+    typealias StoreSubscriberStateType = AppState
+    
+    var rootProjectsView: RootProjectsView! {
         guard isViewLoaded else {return nil}
         return (view as! RootProjectsView)
     }
@@ -40,6 +43,14 @@ class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
     }
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        mainStore.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        mainStore.unsubscribe(self)
+    }
+    
     @objc private func moveTopView(notification: NSNotification) {
         
         if let off = notification.object {
@@ -65,6 +76,12 @@ class RootProjectsViewController: UIViewController, UIScrollViewDelegate {
             rootProjectsView.scrollVew.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         } else if sender.tag == 2 {
             rootProjectsView.scrollVew.setContentOffset(CGPoint(x: view.frame.width, y: 0), animated: true)
+        }
+    }
+    
+    func newState(state: AppState) {
+        if !state.projects.isEmpty {
+            rootProjectsView.allCountProjectLabel.text = String(state.projects.count)
         }
     }
 

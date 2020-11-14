@@ -49,7 +49,7 @@ class TaskDetailView: UIView {
         }
         
         nameProjectLabel.text = task.project
-        idTaskLabel.text = "\(task.id):"
+        idTaskLabel.text = "\(task.idTask):"
         nameTrackerLabel.text = task.tracker
         subjectTaskLabel.text = task.subject
         

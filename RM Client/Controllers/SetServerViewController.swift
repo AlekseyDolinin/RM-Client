@@ -7,9 +7,7 @@ class SetServerViewController: UIViewController, UITextFieldDelegate {
         guard isViewLoaded else {return nil}
         return (view as! SetServerView)
     }
-    
-    typealias StoreSubscriberStateType = AppState
-    
+        
     static let shared = StartViewController()
     
     var serverInputText = String()
@@ -24,7 +22,6 @@ class SetServerViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         if UserDefaults.standard.dictionary(forKey: "userAuthData") != nil {
-            print("_ЕСТЬ ДАННЫЕ В ДЕФОЛТЕ")
             userAuthData = UserDefaults.standard.dictionary(forKey: "userAuthData") as! [String : String]
             let defaultServer: String = userAuthData["server"]!
             let defaultUser: String = userAuthData["user"]!

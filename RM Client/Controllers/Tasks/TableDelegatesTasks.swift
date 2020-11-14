@@ -11,7 +11,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         let taskCell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
         
         taskCell.projectNameLabel.text = listFilteredTasks[indexPath.row].project
-        taskCell.idTaskLabel.text = "#\(listFilteredTasks[indexPath.row].id): "
+        taskCell.idTaskLabel.text = "#\(listFilteredTasks[indexPath.row].idTask): "
         taskCell.trackerLabel.text = listFilteredTasks[indexPath.row].tracker
         taskCell.nameTaskLabel.text = listFilteredTasks[indexPath.row].subject
         taskCell.nameAuthorTaskLabel.text = listFilteredTasks[indexPath.row].author
@@ -46,7 +46,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TaskDetailVC") as! TaskDetailViewController
-        vc.idSelectTask = listFilteredTasks[indexPath.row].id
+        vc.idSelectTask = listFilteredTasks[indexPath.row].idTask
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

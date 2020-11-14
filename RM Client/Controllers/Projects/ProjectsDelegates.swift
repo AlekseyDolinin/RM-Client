@@ -11,13 +11,13 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         let projectCell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         
         projectCell.nameProjectLabel.text = listProjects[indexPath.row].name
-        projectCell.idProjectLabel.text = "#\(listProjects[indexPath.row].id)"
+        projectCell.idProjectLabel.text = "#\(listProjects[indexPath.row].idProject)"
         projectCell.createdProjectLabel.text = listProjects[indexPath.row].created_on
         
         
         if indexPath.row == listProjects.count - 1 { // last cell
             print("подзагрузка")
-            if totalProjects > listProjects.count { // more items to fetch
+            if ProjectsViewController.totalProjects > listProjects.count { // more items to fetch
                 offset = offset + 1
                 getProjects(offset: offset)
             }
