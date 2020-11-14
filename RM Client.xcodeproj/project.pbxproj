@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1001176E255FE83B0052AAB1 /* SetServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001176D255FE83B0052AAB1 /* SetServerViewController.swift */; };
+		10011770255FE8780052AAB1 /* SetServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001176F255FE8780052AAB1 /* SetServerView.swift */; };
+		10011772255FF40B0052AAB1 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10011771255FF40B0052AAB1 /* UIButton.swift */; };
+		1001177425600D010052AAB1 /* StartViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001177325600D010052AAB1 /* StartViewNavigationController.swift */; };
 		100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648EE2559C8B100C7490E /* TaskDetailView.swift */; };
 		100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */; };
 		100648F52559CED400C7490E /* CellOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F42559CED400C7490E /* CellOther.swift */; };
@@ -76,6 +80,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1001176D255FE83B0052AAB1 /* SetServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetServerViewController.swift; sourceTree = "<group>"; };
+		1001176F255FE8780052AAB1 /* SetServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetServerView.swift; sourceTree = "<group>"; };
+		10011771255FF40B0052AAB1 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		1001177325600D010052AAB1 /* StartViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewNavigationController.swift; sourceTree = "<group>"; };
 		100648EE2559C8B100C7490E /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTaskDetail.swift; sourceTree = "<group>"; };
 		100648F42559CED400C7490E /* CellOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOther.swift; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				10737566254DA6DB006D1956 /* Cell */,
+				1001176F255FE8780052AAB1 /* SetServerView.swift */,
 				108C0010255DF43E001F5FE0 /* StartView.swift */,
 				10DF2A1525524E6D0098B832 /* _RootTasksView.swift */,
 				10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */,
@@ -269,6 +278,8 @@
 		10737567254DA6E1006D1956 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1001177325600D010052AAB1 /* StartViewNavigationController.swift */,
+				1001176D255FE83B0052AAB1 /* SetServerViewController.swift */,
 				10737574254DA8C6006D1956 /* StartViewController.swift */,
 				10739C46255FCA4200861E7E /* GetHashMail.swift */,
 				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
@@ -305,6 +316,7 @@
 				10DF2A19255265310098B832 /* UIScrollView.swift */,
 				10DF2A1D255360DE0098B832 /* Date.swift */,
 				1048BFCF255A7B1500896D05 /* UIString.swift */,
+				10011771255FF40B0052AAB1 /* UIButton.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -527,6 +539,7 @@
 				1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */,
 				100648EF2559C8B100C7490E /* TaskDetailView.swift in Sources */,
 				10737553254DA60B006D1956 /* AppDelegate.swift in Sources */,
+				1001176E255FE83B0052AAB1 /* SetServerViewController.swift in Sources */,
 				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
 				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
 				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
@@ -550,10 +563,12 @@
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
 				108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */,
+				10011772255FF40B0052AAB1 /* UIButton.swift in Sources */,
 				1048BFD0255A7B1500896D05 /* UIString.swift in Sources */,
 				104FAD16255A703C006BB4B7 /* CellFiles.swift in Sources */,
 				100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */,
 				10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */,
+				1001177425600D010052AAB1 /* StartViewNavigationController.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
 				10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
@@ -566,6 +581,7 @@
 				10DF2A29255482080098B832 /* AppReducer.swift in Sources */,
 				10DF2A2225546CC40098B832 /* Status.swift in Sources */,
 				104FAD18255A703E006BB4B7 /* CellTiming.swift in Sources */,
+				10011770255FE8780052AAB1 /* SetServerView.swift in Sources */,
 				109830B0255C84E700A045E3 /* DetailAttachmentViewController.swift in Sources */,
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
 				10739C4B255FD10900861E7E /* MenuView.swift in Sources */,

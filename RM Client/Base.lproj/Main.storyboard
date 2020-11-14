@@ -21,10 +21,188 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Set Server View Controller-->
+        <scene sceneID="vD7-NA-gb4">
+            <objects>
+                <viewController storyboardIdentifier="SetServerVC" id="uLH-q6-VBR" customClass="SetServerViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1c-j4-HeI"/>
+                        <viewControllerLayoutGuide type="bottom" id="tvM-Bi-UAS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X0J-vP-UEI" customClass="SetServerView" customModule="RM_Client" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qe-2c-0gI">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <connections>
+                                    <action selector="hideKBAction:" destination="uLH-q6-VBR" eventType="touchUpInside" id="nsz-TG-AFB"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8N7-Ed-E5Q">
+                                <rect key="frame" x="16" y="120" width="288" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЕРВЕР:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXH-cg-qRo">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
+                                        <color key="textColor" name="_white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="server" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pt7-nt-aHR">
+                                        <rect key="frame" x="0.0" y="22" width="288" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="_white"/>
+                                        <color key="textColor" name="_white"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pt7-nt-aHR" secondAttribute="trailing" id="9gT-rq-F0T"/>
+                                    <constraint firstItem="Pt7-nt-aHR" firstAttribute="leading" secondItem="8N7-Ed-E5Q" secondAttribute="leading" id="bUU-tp-SEG"/>
+                                    <constraint firstItem="AXH-cg-qRo" firstAttribute="leading" secondItem="8N7-Ed-E5Q" secondAttribute="leading" id="oy2-ZV-A8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="AXH-cg-qRo" secondAttribute="trailing" id="yT2-16-Bg9"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcC-oZ-23y">
+                                <rect key="frame" x="16" y="171" width="288" height="1"/>
+                                <color key="backgroundColor" name="_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0Fy-Bc-3za"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vwe-QX-e7T">
+                                <rect key="frame" x="16" y="212" width="288" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПОЛЬЗОВАТЕЛЬ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGr-Nh-J9w">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
+                                        <color key="textColor" name="_white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="user" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-xy-cZg">
+                                        <rect key="frame" x="0.0" y="22" width="288" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="_white"/>
+                                        <color key="textColor" name="_white"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ke1-xy-cZg" secondAttribute="trailing" id="HaE-rk-2qt"/>
+                                    <constraint firstItem="xGr-Nh-J9w" firstAttribute="leading" secondItem="Vwe-QX-e7T" secondAttribute="leading" id="RXC-jt-seP"/>
+                                    <constraint firstItem="ke1-xy-cZg" firstAttribute="leading" secondItem="Vwe-QX-e7T" secondAttribute="leading" id="T05-aA-5Kv"/>
+                                    <constraint firstAttribute="trailing" secondItem="xGr-Nh-J9w" secondAttribute="trailing" id="f2q-Kw-jHP"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1T5-eP-WeE">
+                                <rect key="frame" x="16" y="263" width="288" height="1"/>
+                                <color key="backgroundColor" name="_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hc6-Sx-jct"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gCL-t6-X0D">
+                                <rect key="frame" x="16" y="304" width="288" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПАРОЛЬ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td9-gb-bPF">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
+                                        <color key="textColor" name="_white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-Xu-ued">
+                                        <rect key="frame" x="0.0" y="22" width="288" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="_white"/>
+                                        <color key="textColor" name="_white"/>
+                                        <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="td9-gb-bPF" firstAttribute="leading" secondItem="gCL-t6-X0D" secondAttribute="leading" id="JMW-88-4RE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q7c-Xu-ued" secondAttribute="trailing" id="L9H-rQ-OW9"/>
+                                    <constraint firstAttribute="trailing" secondItem="td9-gb-bPF" secondAttribute="trailing" id="PYD-Ou-I4z"/>
+                                    <constraint firstItem="Q7c-Xu-ued" firstAttribute="leading" secondItem="gCL-t6-X0D" secondAttribute="leading" id="kgd-fz-QDG"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-xQ-kEK">
+                                <rect key="frame" x="16" y="355" width="288" height="1"/>
+                                <color key="backgroundColor" name="_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="P39-0M-uBd"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-2i-a4w">
+                                <rect key="frame" x="150" y="471" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Np-HK-ge8">
+                                <rect key="frame" x="45" y="456" width="230" height="50"/>
+                                <color key="backgroundColor" name="_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dxj-OG-MeM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="a8p-c0-S4Q"/>
+                                </constraints>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" name="_backgroundDark"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterAction:" destination="uLH-q6-VBR" eventType="touchUpInside" id="5YK-9t-bbr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="_backgroundDark"/>
+                        <constraints>
+                            <constraint firstItem="xcC-oZ-23y" firstAttribute="trailing" secondItem="8N7-Ed-E5Q" secondAttribute="trailing" id="3kr-5h-Eb1"/>
+                            <constraint firstItem="5Np-HK-ge8" firstAttribute="top" secondItem="pS6-xQ-kEK" secondAttribute="bottom" constant="100" id="5ab-IY-1Hb"/>
+                            <constraint firstItem="tvM-Bi-UAS" firstAttribute="top" secondItem="8qe-2c-0gI" secondAttribute="bottom" id="8aj-WK-pe3"/>
+                            <constraint firstItem="gCL-t6-X0D" firstAttribute="leading" secondItem="Vwe-QX-e7T" secondAttribute="leading" id="AQw-Kb-j4w"/>
+                            <constraint firstItem="pS6-xQ-kEK" firstAttribute="trailing" secondItem="gCL-t6-X0D" secondAttribute="trailing" id="BVx-9L-Hzw"/>
+                            <constraint firstItem="1T5-eP-WeE" firstAttribute="trailing" secondItem="Vwe-QX-e7T" secondAttribute="trailing" id="Dyn-qy-MHe"/>
+                            <constraint firstItem="gCL-t6-X0D" firstAttribute="trailing" secondItem="Vwe-QX-e7T" secondAttribute="trailing" id="Iyw-QF-DEr"/>
+                            <constraint firstItem="Vwe-QX-e7T" firstAttribute="trailing" secondItem="8N7-Ed-E5Q" secondAttribute="trailing" id="PRR-TN-nda"/>
+                            <constraint firstItem="Vwe-QX-e7T" firstAttribute="top" secondItem="8N7-Ed-E5Q" secondAttribute="bottom" constant="40" id="TD7-af-Ida"/>
+                            <constraint firstItem="pS6-xQ-kEK" firstAttribute="leading" secondItem="gCL-t6-X0D" secondAttribute="leading" id="UKy-sa-xa1"/>
+                            <constraint firstItem="8N7-Ed-E5Q" firstAttribute="leading" secondItem="X0J-vP-UEI" secondAttribute="leading" constant="16" id="Ul9-JX-jFh"/>
+                            <constraint firstItem="8qe-2c-0gI" firstAttribute="top" secondItem="D1c-j4-HeI" secondAttribute="bottom" id="V6V-Yu-dwJ"/>
+                            <constraint firstItem="9fv-2i-a4w" firstAttribute="centerY" secondItem="5Np-HK-ge8" secondAttribute="centerY" id="Wce-ws-a81"/>
+                            <constraint firstItem="9fv-2i-a4w" firstAttribute="centerX" secondItem="X0J-vP-UEI" secondAttribute="centerX" id="bWE-tT-s9J"/>
+                            <constraint firstItem="pS6-xQ-kEK" firstAttribute="bottom" secondItem="gCL-t6-X0D" secondAttribute="bottom" id="dDA-d9-Yqn"/>
+                            <constraint firstAttribute="trailing" secondItem="8N7-Ed-E5Q" secondAttribute="trailing" constant="16" id="gwg-j4-xcB"/>
+                            <constraint firstItem="xcC-oZ-23y" firstAttribute="bottom" secondItem="8N7-Ed-E5Q" secondAttribute="bottom" id="jyE-Z3-4Cw"/>
+                            <constraint firstItem="1T5-eP-WeE" firstAttribute="bottom" secondItem="Vwe-QX-e7T" secondAttribute="bottom" id="k0m-EZ-3A5"/>
+                            <constraint firstItem="1T5-eP-WeE" firstAttribute="leading" secondItem="Vwe-QX-e7T" secondAttribute="leading" id="mfs-gH-beP"/>
+                            <constraint firstItem="5Np-HK-ge8" firstAttribute="centerX" secondItem="X0J-vP-UEI" secondAttribute="centerX" id="rd1-ti-frq"/>
+                            <constraint firstItem="8qe-2c-0gI" firstAttribute="leading" secondItem="X0J-vP-UEI" secondAttribute="leading" id="t0M-1k-4pe"/>
+                            <constraint firstAttribute="trailing" secondItem="8qe-2c-0gI" secondAttribute="trailing" id="wcN-XP-5Dx"/>
+                            <constraint firstItem="gCL-t6-X0D" firstAttribute="top" secondItem="Vwe-QX-e7T" secondAttribute="bottom" constant="40" id="x6D-Zb-UIi"/>
+                            <constraint firstItem="xcC-oZ-23y" firstAttribute="leading" secondItem="8N7-Ed-E5Q" secondAttribute="leading" id="xOc-Yh-Uey"/>
+                            <constraint firstItem="8N7-Ed-E5Q" firstAttribute="top" secondItem="D1c-j4-HeI" secondAttribute="bottom" constant="100" id="y89-t1-i1p"/>
+                            <constraint firstItem="Vwe-QX-e7T" firstAttribute="leading" secondItem="8N7-Ed-E5Q" secondAttribute="leading" id="yUC-wW-bLS"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="enterButton" destination="5Np-HK-ge8" id="utQ-mD-2xl"/>
+                            <outlet property="inputPassword" destination="Q7c-Xu-ued" id="gt7-Ky-jm5"/>
+                            <outlet property="inputServer" destination="Pt7-nt-aHR" id="8cX-U2-Keq"/>
+                            <outlet property="inputUser" destination="ke1-xy-cZg" id="7iX-qt-7WU"/>
+                            <outlet property="loader" destination="9fv-2i-a4w" id="6zT-cV-laf"/>
+                            <outlet property="titleInputPasswordLabel" destination="td9-gb-bPF" id="ExZ-eV-cyD"/>
+                            <outlet property="titleInputServerLabel" destination="AXH-cg-qRo" id="2rs-hc-Hee"/>
+                            <outlet property="titleInputUserLabel" destination="xGr-Nh-J9w" id="7bi-zS-iZq"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="t8g-7C-8uh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iE-A1-2zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2754" y="-1279"/>
+        </scene>
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartVC" id="BYZ-38-t0r" customClass="StartViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ASE-a5-IQs"/>
                         <viewControllerLayoutGuide type="bottom" id="9jJ-St-cUA"/>
@@ -99,7 +277,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="304" height="120.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#76903" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-Eh-kKq">
-                                                            <rect key="frame" x="12" y="16" width="40.5" height="16"/>
+                                                            <rect key="frame" x="12" y="16" width="41.5" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="iXs-Zl-b4Z"/>
                                                             </constraints>
@@ -107,13 +285,13 @@
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlV-y8-utB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlV-y8-utB">
                                                             <rect key="frame" x="12" y="48" width="280" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="20"/>
                                                             <color key="textColor" name="_white"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="30.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-IM-XCc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="30.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-IM-XCc">
                                                             <rect key="frame" x="12" y="87.5" width="70" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
                                                             <color key="textColor" name="_blue"/>
@@ -333,22 +511,41 @@
             </objects>
             <point key="canvasLocation" x="1088" y="976"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="z0S-FT-dKx">
+            <objects>
+                <viewController id="DRV-og-v7y" customClass="SplashViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bgD-Xw-a5K"/>
+                        <viewControllerLayoutGuide type="bottom" id="mUF-Kc-IGD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8sr-CJ-756">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k8q-ea-VK4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wW3-sy-fQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2754" y="-579"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="C7j-Wb-MPf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mzB-hX-ZRi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mzB-hX-ZRi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EDo-Dl-uq7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lQZ-T1-Ays"/>
+                        <segue destination="DRV-og-v7y" kind="relationship" relationship="rootViewController" id="3Ss-bB-nHr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lis-SS-Mgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2947.5" y="-579.92957746478874"/>
+            <point key="canvasLocation" x="-3576" y="-579"/>
         </scene>
         <!--Задачи-->
         <scene sceneID="j7J-fm-hal">
@@ -388,10 +585,23 @@
                                     <constraint firstAttribute="width" constant="100" id="fAZ-lJ-1Kx"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYF-Je-790">
+                                <rect key="frame" x="121" y="392" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="K4b-rU-DpB"/>
+                                    <constraint firstAttribute="width" constant="78" id="n35-1s-5jj"/>
+                                </constraints>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="logout:" destination="cD6-0y-ROF" eventType="touchUpInside" id="YRM-wj-I4H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="_backgroundNormal"/>
                         <constraints>
                             <constraint firstItem="yae-WJ-Us7" firstAttribute="centerY" secondItem="p9T-vn-z5B" secondAttribute="centerY" id="2hA-IS-QMf"/>
+                            <constraint firstItem="tYF-Je-790" firstAttribute="centerX" secondItem="p9T-vn-z5B" secondAttribute="centerX" id="3Wn-Cv-pfj"/>
+                            <constraint firstItem="tYF-Je-790" firstAttribute="top" secondItem="yae-WJ-Us7" secondAttribute="bottom" constant="82.5" id="E5n-1k-g2P"/>
                             <constraint firstItem="yae-WJ-Us7" firstAttribute="centerX" secondItem="p9T-vn-z5B" secondAttribute="centerX" id="Vdn-pT-lWa"/>
                         </constraints>
                         <connections>
@@ -402,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFy-k1-e7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="1820"/>
+            <point key="canvasLocation" x="1087.5" y="1819.0140845070423"/>
         </scene>
         <!--Item-->
         <scene sceneID="hfm-2z-coq">
@@ -496,13 +706,13 @@
                                                     <rect key="frame" x="8" y="0.0" width="304" height="167.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12a-BZ-5H2">
-                                                            <rect key="frame" x="12" y="16" width="29.5" height="14"/>
+                                                            <rect key="frame" x="12" y="16" width="29.5" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="12"/>
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#76903:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISl-sA-4vz">
-                                                            <rect key="frame" x="12" y="38" width="43.5" height="16"/>
+                                                            <rect key="frame" x="12" y="39.5" width="44.5" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="Y5x-v6-MHy"/>
                                                             </constraints>
@@ -511,25 +721,25 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Улучшение/Доработка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-V5-k23">
-                                                            <rect key="frame" x="59.5" y="38" width="127.5" height="16"/>
+                                                            <rect key="frame" x="60.5" y="39.5" width="125" height="16"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-d1-LIb">
-                                                            <rect key="frame" x="12" y="70" width="280" height="30.5"/>
+                                                            <rect key="frame" x="12" y="71.5" width="280" height="26"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="20"/>
                                                             <color key="textColor" name="_white"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Кашин Сергей" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sv1-fY-Pka">
-                                                            <rect key="frame" x="12" y="116.5" width="280" height="16.5"/>
+                                                            <rect key="frame" x="12" y="113.5" width="280" height="18"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="30.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cl-Te-7jq">
-                                                            <rect key="frame" x="12" y="137" width="70" height="16.5"/>
+                                                            <rect key="frame" x="12" y="135.5" width="70" height="18"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
@@ -542,10 +752,10 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puI-OM-Lmg">
-                                                            <rect key="frame" x="161.5" y="12" width="92.5" height="22"/>
+                                                            <rect key="frame" x="162.5" y="13" width="91.5" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нормальный" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONg-LS-snQ">
-                                                                    <rect key="frame" x="12" y="5" width="60.5" height="12"/>
+                                                                    <rect key="frame" x="12" y="4.5" width="59.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
                                                                     <color key="textColor" name="_blue"/>
                                                                     <nil key="highlightedColor"/>
@@ -559,10 +769,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-3T-F1D">
-                                                            <rect key="frame" x="244" y="13" width="52" height="20"/>
+                                                            <rect key="frame" x="244" y="14" width="52" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-PA-1ML">
-                                                                    <rect key="frame" x="12" y="4" width="28" height="12"/>
+                                                                    <rect key="frame" x="12" y="3.5" width="28" height="13"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
                                                                     <color key="textColor" name="_backgroundDark"/>
                                                                     <nil key="highlightedColor"/>
@@ -682,10 +892,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHT-jb-pfa">
-                                            <rect key="frame" x="12" y="68" width="48.5" height="20"/>
+                                            <rect key="frame" x="12" y="68" width="48.5" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-hp-yaH">
-                                                    <rect key="frame" x="12" y="4" width="24.5" height="12"/>
+                                                    <rect key="frame" x="12" y="4" width="24.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
@@ -700,16 +910,16 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNc-nJ-pGU">
-                                            <rect key="frame" x="12" y="112" width="29.5" height="14"/>
+                                            <rect key="frame" x="12" y="113" width="29.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="12"/>
                                             <color key="textColor" name="_blue"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74l-XY-g9c">
-                                            <rect key="frame" x="213" y="67" width="56.5" height="22"/>
+                                            <rect key="frame" x="213" y="67.5" width="56.5" height="22"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISr-Jh-UDr">
-                                                    <rect key="frame" x="12" y="5" width="24.5" height="12"/>
+                                                    <rect key="frame" x="12" y="4.5" width="24.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
                                                     <color key="textColor" name="_blue"/>
                                                     <nil key="highlightedColor"/>
@@ -723,10 +933,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-RW-g6J">
-                                            <rect key="frame" x="259.5" y="68" width="48.5" height="20"/>
+                                            <rect key="frame" x="259.5" y="68.5" width="48.5" height="20"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjP-71-gGs">
-                                                    <rect key="frame" x="12" y="4" width="24.5" height="12"/>
+                                                    <rect key="frame" x="12" y="3.5" width="24.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="10"/>
                                                     <color key="textColor" name="_backgroundDark"/>
                                                     <nil key="highlightedColor"/>
@@ -741,19 +951,19 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n8-ge-SWM">
-                                            <rect key="frame" x="12" y="130" width="29.5" height="14"/>
+                                            <rect key="frame" x="12" y="132.5" width="29.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="12"/>
                                             <color key="textColor" name="_blue"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjC-5f-bNC">
-                                            <rect key="frame" x="45.5" y="130" width="29.5" height="14"/>
+                                            <rect key="frame" x="45.5" y="132.5" width="29.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                             <color key="textColor" name="_blue"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-8k-7fd">
-                                            <rect key="frame" x="12" y="168" width="296" height="198"/>
+                                            <rect key="frame" x="12" y="172" width="296" height="194"/>
                                             <string key="text">Бой: если оба пользователя одновременно нажали на кнопку флажка, а затем один из них них нажал сдаться, то у пользователя на ios не появляется экран после боя и он продолжается</string>
                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="22"/>
                                             <color key="textColor" name="_white"/>
@@ -797,13 +1007,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="ОПИСАНИЕ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-3l-Rce">
-                                                    <rect key="frame" x="12" y="16" width="62" height="13"/>
+                                                    <rect key="frame" x="12" y="16" width="59.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="11"/>
                                                     <color key="textColor" name="_blue"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-hq-Hav">
-                                                    <rect key="frame" x="12" y="37" width="296" height="102"/>
+                                                    <rect key="frame" x="12" y="38" width="296" height="101"/>
                                                     <string key="text">На ios устройстве, если оба аккаунта нажали кнопку флажка, затем второй аккаунт нажал сдаться, то на ios устройстве экран победы не появится и бой продолжиться</string>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
                                                     <color key="textColor" name="_white"/>
@@ -842,19 +1052,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АВТОР" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FG-b1-ubk">
-                                                    <rect key="frame" x="12" y="24" width="36.5" height="17"/>
+                                                    <rect key="frame" x="12" y="24" width="34.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="11"/>
                                                     <color key="textColor" name="_blue"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Кашин Сергей" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOj-bE-4xr">
-                                                    <rect key="frame" x="12" y="49" width="296" height="19"/>
+                                                    <rect key="frame" x="12" y="46" width="296" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="4 дня назад" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2F-a0-LQm">
-                                                    <rect key="frame" x="12" y="72" width="296" height="14"/>
+                                                    <rect key="frame" x="12" y="70.5" width="296" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
@@ -891,13 +1101,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="НАЗНАЧЕНА" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RY-2X-rqd">
-                                                    <rect key="frame" x="12" y="16" width="66.5" height="13"/>
+                                                    <rect key="frame" x="12" y="16" width="64" height="14"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="11"/>
                                                     <color key="textColor" name="_blue"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Долинин Алексей" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2y-JA-Js5">
-                                                    <rect key="frame" x="12" y="37" width="296" height="22"/>
+                                                    <rect key="frame" x="12" y="38" width="296" height="21"/>
                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
                                                     <color key="textColor" name="_white"/>
                                                     <nil key="highlightedColor"/>
@@ -930,16 +1140,16 @@
                                                     <rect key="frame" x="0.0" y="12" width="320" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="I78-dc-Msl">
-                                                            <rect key="frame" x="12" y="17.5" width="252" height="31"/>
+                                                            <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Файлы (3)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWS-jj-NEA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="4 дня назад" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVN-6v-NHo">
-                                                                    <rect key="frame" x="0.0" y="17" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="18.5" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_white"/>
                                                                     <nil key="highlightedColor"/>
@@ -997,16 +1207,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-L0-EP9">
-                                                            <rect key="frame" x="12" y="17.5" width="252" height="31"/>
+                                                            <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Тайминг" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-I1-7an">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="4 дня назад" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFH-ab-pbu">
-                                                                    <rect key="frame" x="0.0" y="17" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="18.5" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_white"/>
                                                                     <nil key="highlightedColor"/>
@@ -1057,16 +1267,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-O2-8zI">
-                                                            <rect key="frame" x="12" y="17.5" width="252" height="31"/>
+                                                            <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="История" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xad-Pp-1lN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="4 дня назад" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-lz-LOP">
-                                                                    <rect key="frame" x="0.0" y="17" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="18.5" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_white"/>
                                                                     <nil key="highlightedColor"/>
@@ -1117,16 +1327,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ppM-Go-o0s">
-                                                            <rect key="frame" x="12" y="17.5" width="252" height="31"/>
+                                                            <rect key="frame" x="12" y="16" width="252" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Дополнительно" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-2W-6vt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_blue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="4 дня назад" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-R8-kdG">
-                                                                    <rect key="frame" x="0.0" y="17" width="252" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="18.5" width="252" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
                                                                     <color key="textColor" name="_white"/>
                                                                     <nil key="highlightedColor"/>
@@ -1278,7 +1488,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="304" height="120.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#76903" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-yK-MRf">
-                                                            <rect key="frame" x="12" y="16" width="40.5" height="16"/>
+                                                            <rect key="frame" x="12" y="16" width="41.5" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="Q75-q5-60V"/>
                                                             </constraints>
@@ -1286,13 +1496,13 @@
                                                             <color key="textColor" name="_blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifO-8L-G3I">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifO-8L-G3I">
                                                             <rect key="frame" x="12" y="48" width="280" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="20"/>
                                                             <color key="textColor" name="_white"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="30.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-Rg-HEI">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="30.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-Rg-HEI">
                                                             <rect key="frame" x="12" y="87.5" width="70" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="14"/>
                                                             <color key="textColor" name="_blue"/>
@@ -1479,7 +1689,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS7-Hf-CZi">
-                                            <rect key="frame" x="12" y="62" width="296" height="26"/>
+                                            <rect key="frame" x="12" y="60" width="296" height="28"/>
                                             <fontDescription key="fontDescription" name="PTRootUI-Bold" family="PT Root UI" pointSize="22"/>
                                             <color key="textColor" name="_white"/>
                                             <nil key="highlightedColor"/>

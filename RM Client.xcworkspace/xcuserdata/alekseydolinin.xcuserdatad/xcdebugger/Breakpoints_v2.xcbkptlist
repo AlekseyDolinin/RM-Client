@@ -9,54 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
-            filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "627037125.3837709"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "checkAuth()"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "po resultAuth">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
-            filePath = "RM Client/Network/API.swift"
-            timestampString = "627037125.384607"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "authentication(completion:)"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "po response.result.isSuccess">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
             filePath = "Pods/Alamofire/Source/SessionManager.swift"
             timestampString = "626918703.8915679"
             startingColumnNumber = "9223372036854775807"
@@ -81,95 +33,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
-            filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "627037125.38502"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "separateTasks()"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "po &#x43f;&#x435;&#x440;&#x435;&#x445;&#x43e;&#x434; &#x43d;&#x430; &#x441;&#x43b;&#x435;&#x434;&#x443;&#x44e;&#x449;&#x438;&#x439; &#x43a;&#x43e;&#x43d;&#x442;&#x440;&#x43e;&#x43b;&#x43b;&#x435;&#x440; &#x43f;&#x43e;&#x441;&#x43b;&#x435; &#x430;&#x432;&#x442;&#x43e;&#x440;&#x438;&#x437;&#x430;&#x446;&#x438;&#x438; &#x438; &#x441;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x43e;&#x432;&#x43a;&#x438; &#x437;&#x430;&#x434;&#x430;&#x447; &#x43f;&#x43e; &#x441;&#x442;&#x430;&#x442;&#x443;&#x441;&#x430;&#x43c;">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
-            filePath = "RM Client/Controllers/StartViewController.swift"
-            timestampString = "627037125.385685"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "checkAuth()"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.Log">
-                  <ActionContent
-                     message = "%B has been touch %H times"
-                     conveyanceType = "0">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RM_Client.StartViewController.checkAuth() -&gt; ()"
-                  moduleName = "RM Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alekseydolinin/Documents/GitHub/RM%20Client/RM%20Client/Controllers/StartViewController.swift"
-                  timestampString = "627037125.990412"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "524">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in RM_Client.StartViewController.checkAuth() -&gt; ()"
-                  moduleName = "RM Client"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alekseydolinin/Documents/GitHub/RM%20Client/RM%20Client/Controllers/StartViewController.swift"
-                  timestampString = "627037125.9945509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/DetailAttachment/DetailAttachmentViewController.swift"
-            timestampString = "627037125.386346"
+            timestampString = "627042215.4683059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "checkTypeAttachment()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Actions>
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
@@ -187,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "RM Client/Controllers/DetailAttachment/DetailAttachmentViewController.swift"
-            timestampString = "627037125.38676"
+            timestampString = "627042215.4687231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "checkTypeAttachment()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Actions>
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">

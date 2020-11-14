@@ -7,18 +7,22 @@ class API {
     
     let user = "a.dolinin"
     let password = "Nfkkby9890"
-    let path = "dev.labmedia.su"
+    let host = "dev.labmedia.su"
     
-    // auth
-    func authentication(completion: @escaping (Bool) -> Void) {
-        let request = "https://\(user):\(password)@\(path)/projects.json"
+//    let path = "https://\(user):\(password)\(host)"
+    
+    let path = "https://a.dolinina:Nfkkby9890@dev.labmedia.su"
+    
+    func authentication(server: String, user: String, password: String, completion: @escaping (DataResponse<Any>) -> Void) {
+        // проверка авторизации - получая данные по пользователю
+        let request = "https://\(user):\(password)@\(server)" + "/my/account.json"
         Alamofire.request(request, method: .get).responseJSON { response in
-            completion(response.result.isSuccess)
+            completion(response)
         }
     }
     
     func getJSONPagination(endPoint: String, offset: Int, limit: Int, completion: @escaping (JSON) -> Void) {
-        let request = "https://\(user):\(password)@\(path)\(endPoint)&include=attachments&offset=\(offset)&limit=\(limit)"
+        let request = "https://\(user):\(password)@\(host)\(endPoint)&include=attachments&offset=\(offset)&limit=\(limit)"
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON Pagination")
@@ -32,7 +36,7 @@ class API {
     }
     
     func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
-        let request = "https://\(user):\(password)@\(path)\(endPoint).json"
+        let request = "https://\(user):\(password)@\(host)\(endPoint).json"
         Alamofire.request(request, method: .get).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
@@ -46,7 +50,7 @@ class API {
     }
     
     func getAttachmentThumbnail(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
-        let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(idAttachment)"
+        let request = "https://\(user):\(password)@\(host)/attachments/thumbnail/\(idAttachment)"
         Alamofire.request(request, method: .get).response { response in
             DispatchQueue.main.async {
                 guard let data = response.data, let image = UIImage(data: data) else {
@@ -60,7 +64,7 @@ class API {
     }
     
     func getAttachmentImage(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
-        let request = "https://\(user):\(password)@\(path)/attachments/download/\(idAttachment)"
+        let request = "https://\(user):\(password)@\(host)/attachments/download/\(idAttachment)"
         Alamofire.request(request).validate().downloadProgress { progress in
             
             //                print("totalUnitCount:\n", progress.totalUnitCount)
@@ -83,15 +87,18 @@ class API {
     
     
     func getImage(link: String, completion: @escaping (UIImage) -> Void) {
-        
         Alamofire.request(link).validate().downloadProgress { progress in
             }.response { response in
-                guard let data = response.data, let image = UIImage(data: data) else {
-                    print("error image attachmwent")
-                    completion(UIImage())
-                    return
-                }
-                completion(image)
+            guard let data = response.data, let image = UIImage(data: data) else {
+                print("error image attachmwent")
+                completion(UIImage())
+                return
+            }
+            completion(image)
         }
     }
+    
+    
+    
+    
 }

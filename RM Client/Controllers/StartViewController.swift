@@ -1,74 +1,27 @@
 import UIKit
-import ReSwift
 
-class StartViewController: UIViewController, StoreSubscriber {
+class StartViewController: UIViewController {
     
     var startView: StartView! {
         guard isViewLoaded else {return nil}
         return (view as! StartView)
     }
     
-    typealias StoreSubscriberStateType = AppState
-    
     static let shared = StartViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkAuth()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        mainStore.subscribe(self)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        mainStore.unsubscribe(self)
+        
+        print("START VC")
+        
+        // получение статусов задач по компании
+        self.getStatusesTaskInCompany()
+        
+        // получение задач пользователя
+        self.getTasks(offset: 0)
     }
     
     var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
-    
-    func checkAuth() {
-        self.startView.stateLabel.text = "Проверка авторизации"
-        API.shared.authentication { (resultAuth) in
-            // если пользователь авторизован скачиваем данные по пользователю
-            if resultAuth == true {
-                
-                // данные по аккаунту
-                self.startView.stateLabel.text = "Получение данных по аккаунту"
-                API.shared.getJSON(endPoint: "/my/account", completion: { (json) in
-                    let data = json["user"]
-
-                    // хэш почты для получения аватара по почте
-                    let md5HexMail = GetHashEmail.MD5(string: data["mail"].stringValue)
-                    
-                    let avatarLink = "https://www.gravatar.com/avatar/\(md5HexMail)?s=200"
-                    
-                    API.shared.getImage(link: avatarLink, completion: { (imageAvatar) in
-                        let userData = User(admin: data["admin"].boolValue,
-                                            api_key: data["api_key"].stringValue,
-                                            login: data["login"].stringValue,
-                                            last_login_on: data["last_login_on"].stringValue,
-                                            mail: data["mail"].stringValue,
-                                            lastname: data["lastname"].stringValue,
-                                            firstname: data["firstname"].stringValue,
-                                            id: data["id"].intValue,
-                                            created_on: data["created_on"].stringValue,
-                                            avatar: imageAvatar)
-                        
-                        mainStore.dispatch(UserData(userData: userData))
-                        
-                        // получение статусов задач по компании
-                        self.getStatusesTaskInCompany()
-                        
-                        // получение задач пользователя
-                        self.getTasks(offset: 0)
-                    })
-                })
-            }
-        }
-    }
 
     // получение задач пользователя
     func getTasks(offset: Int) {
@@ -180,10 +133,5 @@ class StartViewController: UIViewController, StoreSubscriber {
                 self.navigationController?.pushViewController(vc!, animated: true);
             }
         }
-    }
-    
-    func newState(state: AppState) {
-        
-
     }
 }
