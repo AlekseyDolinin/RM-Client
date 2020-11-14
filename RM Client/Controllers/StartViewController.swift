@@ -39,25 +39,32 @@ class StartViewController: UIViewController, StoreSubscriber {
                 self.startView.stateLabel.text = "Получение данных по аккаунту"
                 API.shared.getJSON(endPoint: "/my/account", completion: { (json) in
                     let data = json["user"]
+
+                    // хэш почты для получения аватара по почте
+                    let md5HexMail = GetHashEmail.MD5(string: data["mail"].stringValue)
                     
-                    let userData = User(admin: data["admin"].boolValue,
-                                        api_key: data["api_key"].stringValue,
-                                        login: data["login"].stringValue,
-                                        last_login_on: data["last_login_on"].stringValue,
-                                        mail: data["mail"].stringValue,
-                                        lastname: data["lastname"].stringValue,
-                                        firstname: data["firstname"].stringValue,
-                                        id: data["id"].intValue,
-                                        created_on: data["created_on"].stringValue)
+                    let avatarLink = "https://www.gravatar.com/avatar/\(md5HexMail)?s=200"
                     
-                    mainStore.dispatch(UserData(userData: userData))
-                    
-                    // получение статусов задач по компании
-                    self.getStatusesTaskInCompany()
-                    
-                    // получение задач пользователя
-//                    self.startView.stateLabel.text = "Запрос задач по аккаунту"
-                    self.getTasks(offset: 0)
+                    API.shared.getImage(link: avatarLink, completion: { (imageAvatar) in
+                        let userData = User(admin: data["admin"].boolValue,
+                                            api_key: data["api_key"].stringValue,
+                                            login: data["login"].stringValue,
+                                            last_login_on: data["last_login_on"].stringValue,
+                                            mail: data["mail"].stringValue,
+                                            lastname: data["lastname"].stringValue,
+                                            firstname: data["firstname"].stringValue,
+                                            id: data["id"].intValue,
+                                            created_on: data["created_on"].stringValue,
+                                            avatar: imageAvatar)
+                        
+                        mainStore.dispatch(UserData(userData: userData))
+                        
+                        // получение статусов задач по компании
+                        self.getStatusesTaskInCompany()
+                        
+                        // получение задач пользователя
+                        self.getTasks(offset: 0)
+                    })
                 })
             }
         }
@@ -77,7 +84,7 @@ class StartViewController: UIViewController, StoreSubscriber {
                 var listCustomFields = [CustomField]()
                 var listAttachments = [Attachment]()
                 
-                print(json["issues"])
+//                print(json["issues"])
                 
                 for i in json["issues"] {
                     let dataTask = i.1

@@ -42,6 +42,9 @@
 		10737596254F2A30006D1956 /* PT Root UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */; };
 		10737597254F2A30006D1956 /* PT Root UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737593254F2A30006D1956 /* PT Root UI_Light.ttf */; };
 		10737598254F2B53006D1956 /* PT Root UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */; };
+		10739C47255FCA4200861E7E /* GetHashMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10739C46255FCA4200861E7E /* GetHashMail.swift */; };
+		10739C49255FCB7500861E7E /* GetHashEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10739C48255FCB7500861E7E /* GetHashEmail.swift */; };
+		10739C4B255FD10900861E7E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10739C4A255FD10900861E7E /* MenuView.swift */; };
 		108C0011255DF43E001F5FE0 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C0010255DF43E001F5FE0 /* StartView.swift */; };
 		108CB01D254F475600BF89C4 /* CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB01C254F475600BF89C4 /* CollectionDelegates.swift */; };
 		108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB020254F6BD000BF89C4 /* StatusCell.swift */; };
@@ -110,6 +113,9 @@
 		10737591254F2A30006D1956 /* PT Root UI_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Regular.ttf"; sourceTree = "<group>"; };
 		10737592254F2A30006D1956 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
 		10737593254F2A30006D1956 /* PT Root UI_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Light.ttf"; sourceTree = "<group>"; };
+		10739C46255FCA4200861E7E /* GetHashMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashMail.swift; sourceTree = "<group>"; };
+		10739C48255FCB7500861E7E /* GetHashEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashEmail.swift; sourceTree = "<group>"; };
+		10739C4A255FD10900861E7E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		108C0010255DF43E001F5FE0 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		108CB01C254F475600BF89C4 /* CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegates.swift; sourceTree = "<group>"; };
 		108CB020254F6BD000BF89C4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 				100648EE2559C8B100C7490E /* TaskDetailView.swift */,
 				1048BFD3255B18CC00896D05 /* AttachmentsView.swift */,
 				109830B2255C851500A045E3 /* DetailAttachmentView.swift */,
+				10739C4A255FD10900861E7E /* MenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				10737574254DA8C6006D1956 /* StartViewController.swift */,
+				10739C46255FCA4200861E7E /* GetHashMail.swift */,
 				108CB0242550899300BF89C4 /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
 				100648ED2559C84300C7490E /* TaskDetail */,
@@ -346,6 +354,7 @@
 			children = (
 				109830B4255C932500A045E3 /* ImageViewZoom.swift */,
 				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
+				10739C48255FCB7500861E7E /* GetHashEmail.swift */,
 			);
 			path = HelpClasses;
 			sourceTree = "<group>";
@@ -509,6 +518,7 @@
 			files = (
 				10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
+				10739C47255FCA4200861E7E /* GetHashMail.swift in Sources */,
 				108C0011255DF43E001F5FE0 /* StartView.swift in Sources */,
 				109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
@@ -533,6 +543,7 @@
 				108CB0252550899300BF89C4 /* TabbarViewController.swift in Sources */,
 				10DF2A1E255360DE0098B832 /* Date.swift in Sources */,
 				10DF2A2A2554820A0098B832 /* AppState.swift in Sources */,
+				10739C49255FCB7500861E7E /* GetHashEmail.swift in Sources */,
 				109830B7255C96FB00A045E3 /* OpenImage.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
@@ -557,6 +568,7 @@
 				104FAD18255A703E006BB4B7 /* CellTiming.swift in Sources */,
 				109830B0255C84E700A045E3 /* DetailAttachmentViewController.swift in Sources */,
 				10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */,
+				10739C4B255FD10900861E7E /* MenuView.swift in Sources */,
 				10737586254DD20E006D1956 /* TasksView.swift in Sources */,
 				10DF2A2025536AB50098B832 /* Attachment.swift in Sources */,
 				1048BFD9255B281300896D05 /* AttachmentsDelegates.swift in Sources */,

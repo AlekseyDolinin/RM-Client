@@ -45,21 +45,6 @@ class API {
         }
     }
     
-//    func getDataTask(endPoint: String, completion: @escaping (JSON) -> Void) {
-//
-//        let request = "https://\(user):\(password)@\(path)\(endPoint).json?include=attachments"
-//        Alamofire.request(request, method: .get).responseJSON { response in
-//            if response.result.isSuccess == false {
-//                print("ERROR GET JSON")
-//                return
-//            }
-//            if let data = response.data {
-//                let json = JSON(data)
-//                completion(json)
-//            }
-//        }
-//    }
-    
     func getAttachmentThumbnail(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
         let request = "https://\(user):\(password)@\(path)/attachments/thumbnail/\(idAttachment)"
         Alamofire.request(request, method: .get).response { response in
@@ -78,21 +63,35 @@ class API {
         let request = "https://\(user):\(password)@\(path)/attachments/download/\(idAttachment)"
         Alamofire.request(request).validate().downloadProgress { progress in
             
-//                print("totalUnitCount:\n", progress.totalUnitCount)
-//                print("completedUnitCount:\n", progress.completedUnitCount)
-//                print("fractionCompleted:\n", progress.fractionCompleted)
-//                print("localizedDescription:\n", progress.localizedDescription)
-//                print("---------------------------------------------")
-        }.response { response in
-            DispatchQueue.main.async {
+            //                print("totalUnitCount:\n", progress.totalUnitCount)
+            //                print("completedUnitCount:\n", progress.completedUnitCount)
+            //                print("fractionCompleted:\n", progress.fractionCompleted)
+            //                print("localizedDescription:\n", progress.localizedDescription)
+            //                print("---------------------------------------------")
+            }.response { response in
+                DispatchQueue.main.async {
+                    guard let data = response.data, let image = UIImage(data: data) else {
+                        print("error image attachmwent")
+                        completion(UIImage())
+                        return
+                    }
+                    completion(image)
+                }
+        }
+    }
+    
+    
+    
+    func getImage(link: String, completion: @escaping (UIImage) -> Void) {
+        
+        Alamofire.request(link).validate().downloadProgress { progress in
+            }.response { response in
                 guard let data = response.data, let image = UIImage(data: data) else {
                     print("error image attachmwent")
                     completion(UIImage())
                     return
                 }
                 completion(image)
-            }
         }
     }
-    
 }

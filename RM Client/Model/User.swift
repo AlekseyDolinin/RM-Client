@@ -1,3 +1,5 @@
+import UIKit
+
 class User {
     
     var admin: Bool?
@@ -9,6 +11,7 @@ class User {
     var firstname: String?
     var id: Int?
     var created_on: String?
+    var avatar: UIImage?
     
     init(admin: Bool? = nil,
          api_key: String? = nil,
@@ -18,7 +21,8 @@ class User {
          lastname: String? = nil,
          firstname: String? = nil,
          id: Int? = nil,
-         created_on: String? = nil){
+         created_on: String? = nil,
+         avatar: UIImage? = UIImage()){
         
         self.admin = admin
         self.api_key = api_key
@@ -29,5 +33,6 @@ class User {
         self.firstname = firstname
         self.id = id
         self.created_on = created_on
+        self.avatar = avatar
     }
 }
