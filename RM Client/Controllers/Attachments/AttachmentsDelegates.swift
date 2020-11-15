@@ -46,7 +46,18 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
 //            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
 //            self.present(vc, animated: true, completion: nil)
             
-            let videoURL = URL(string: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_640_3MG.mp4")
+            let attachmentID: Int = (self.selectTask?.attachments[indexPath.row].id)!
+            
+            let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
+            let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
+            let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
+            
+            let linkString = "https://\(user):\(password)@\(server)/attachments/download/\(attachmentID)"
+            print(linkString)
+//            guard let url = URL(string: linkString) else { return }
+//            UIApplication.shared.open(url)
+            
+            let videoURL = URL(string: "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_5mb.mp4")
             let player = AVPlayer(url: videoURL!)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player

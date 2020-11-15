@@ -9,6 +9,7 @@ class AttachmentsViewController: UIViewController {
     
     var selectTask: Task?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,42 +22,48 @@ class AttachmentsViewController: UIViewController {
     func checkTypeAttachment() {
         for attachment in selectTask!.attachments {
             
-            let filename: NSString = attachment.content_type! as NSString
-            let pathExtention = (filename.pathExtension).lowercased()
-            let pathPrefix = (filename.deletingLastPathComponent).lowercased()
-            
-            // изображение
-            if pathPrefix == "image" {
-                
-                attachment.thumbnailImage = Attach.type.image.image
-                
-                // если есть ссылка на превью
-                if attachment.thumbnail_url != "" {
-                    // скачивание превью
-                    let id: Int = attachment.id!
-                    DispatchQueue.main.async {
-                        API.shared.getImage(endPoint: "/attachments/thumbnail/\(id)") { (thumbnail) in
-                            print(thumbnail)
-                            attachment.thumbnailImage = thumbnail
-                            self.attachmentsView.showContent()
-                        }
-                    }
+            if let fileURL = URL(string: attachment.fileName!){
+                let fileUTI = UTI(withExtension: fileURL.pathExtension)
+                switch fileUTI {
+                case .pdf:
+                    print("add PDF Options")
+                    attachment.thumbnailImage = Attach.type.document.image
+                case .jpeg, .png, .tiff:
+                    print("add jpg Options")
+                    attachment.thumbnailImage = Attach.type.image.image
+                case .gif:
+                    print("add gif options")
+                case .html:
+                    print("add html options")
+                case .quickTimeMovie, .mpeg, .mp4:
+                    print("video")
+                    attachment.thumbnailImage = Attach.type.video.image
+                case .docx, .doc:
+                    print("add dox options")
+                    attachment.thumbnailImage = Attach.type.document.image
+                default:
+                    print("default")
                 }
-            } else
-            
-            // видео
-            if pathPrefix == "video" {
-                attachment.thumbnailImage = Attach.type.video.image
-
-            } else {
-            // документ
-                pathExtention == "document"
-                attachment.thumbnailImage = Attach.type.document.image
+                self.attachmentsView.showContent()
             }
-            
-            self.attachmentsView.showContent()
         }
     }
+    
+//    func loadPreview() {
+//
+//            // если есть ссылка на превью
+//            if attachment.thumbnail_url != "" {
+//                // скачивание превью
+//                let id: Int = attachment.id!
+//                DispatchQueue.main.async {
+//                    API.shared.getImage(endPoint: "/attachments/thumbnail/\(id)") { (thumbnail) in
+//                        print(thumbnail)
+//                        attachment.thumbnailImage = thumbnail
+//                        self.attachmentsView.showContent()
+//                    }
+//                }
+//            }
+//    }
     
     
     @IBAction func back(_ sender: UIButton) {

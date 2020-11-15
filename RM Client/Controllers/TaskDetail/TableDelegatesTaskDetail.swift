@@ -80,9 +80,11 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
 //            self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             if selectTask?.attachments.isEmpty == false {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-                vc.selectTask = selectTask
-                self.navigationController?.pushViewController(vc, animated: true)
+                DispatchQueue.main.async { [weak self] in
+                    let vc = self?.storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
+                    vc.selectTask = self?.selectTask
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         case 4:
             let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
