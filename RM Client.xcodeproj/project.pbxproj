@@ -15,6 +15,8 @@
 		100648F12559C9C500C7490E /* TableDelegatesTaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */; };
 		100648F52559CED400C7490E /* CellOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100648F42559CED400C7490E /* CellOther.swift */; };
 		10351CBC25608CE100951935 /* SortProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CBB25608CE100951935 /* SortProject.swift */; };
+		10351CC225614FFA00951935 /* DetailTaskGoogleAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CC125614FF900951935 /* DetailTaskGoogleAds.swift */; };
+		10351CC42561502900951935 /* GoogleADS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CC32561502900951935 /* GoogleADS.swift */; };
 		1048BFD0255A7B1500896D05 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFCF255A7B1500896D05 /* UIString.swift */; };
 		1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD1255B187200896D05 /* AttachmentsViewController.swift */; };
 		1048BFD4255B18CC00896D05 /* AttachmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD3255B18CC00896D05 /* AttachmentsView.swift */; };
@@ -75,7 +77,7 @@
 		10DF2A29255482080098B832 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A26255482000098B832 /* AppReducer.swift */; };
 		10DF2A2A2554820A0098B832 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A25255482000098B832 /* AppState.swift */; };
 		10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A24255482000098B832 /* AppStore.swift */; };
-		10DF2A2D2554A0550098B832 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */; };
+		10DF2A2D2554A0550098B832 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTaskDetail.swift; sourceTree = "<group>"; };
 		100648F42559CED400C7490E /* CellOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOther.swift; sourceTree = "<group>"; };
 		10351CBB25608CE100951935 /* SortProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortProject.swift; sourceTree = "<group>"; };
+		10351CC125614FF900951935 /* DetailTaskGoogleAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskGoogleAds.swift; sourceTree = "<group>"; };
+		10351CC32561502900951935 /* GoogleADS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleADS.swift; sourceTree = "<group>"; };
 		1048BFCF255A7B1500896D05 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		1048BFD1255B187200896D05 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
 		1048BFD3255B18CC00896D05 /* AttachmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsView.swift; sourceTree = "<group>"; };
@@ -150,7 +154,7 @@
 		10DF2A25255482000098B832 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		10DF2A26255482000098B832 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		10DF2A27255482000098B832 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
-		10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16423DEC2BCA5D8E0C70DB0 /* Pods-RM Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.debug.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5077C1955019F4C09C0A94 /* Pods-RM Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RM Client.release.xcconfig"; path = "Target Support Files/Pods-RM Client/Pods-RM Client.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,8 +175,9 @@
 		100648ED2559C84300C7490E /* TaskDetail */ = {
 			isa = PBXGroup;
 			children = (
-				10DF2A2C2554A0550098B832 /* TaskDetailViewController.swift */,
+				10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */,
 				100648F02559C9C500C7490E /* TableDelegatesTaskDetail.swift */,
+				10351CC125614FF900951935 /* DetailTaskGoogleAds.swift */,
 			);
 			path = TaskDetail;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				109830B4255C932500A045E3 /* ImageViewZoom.swift */,
 				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
 				10739C48255FCB7500861E7E /* GetHashEmail.swift */,
+				10351CC32561502900951935 /* GoogleADS.swift */,
 			);
 			path = HelpClasses;
 			sourceTree = "<group>";
@@ -545,7 +551,7 @@
 				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
 				104FAD14255A7032006BB4B7 /* CellDescription.swift in Sources */,
 				104FAD1A255A7040006BB4B7 /* CellHistory.swift in Sources */,
-				10DF2A2D2554A0550098B832 /* TaskDetailViewController.swift in Sources */,
+				10DF2A2D2554A0550098B832 /* DetailTaskViewController.swift in Sources */,
 				10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */,
 				1048BFD7255B272A00896D05 /* CellAttachment.swift in Sources */,
 				1073757D254DB0D6006D1956 /* CustomField.swift in Sources */,
@@ -558,6 +564,7 @@
 				10DF2A2A2554820A0098B832 /* AppState.swift in Sources */,
 				10739C49255FCB7500861E7E /* GetHashEmail.swift in Sources */,
 				109830B7255C96FB00A045E3 /* OpenImage.swift in Sources */,
+				10351CC42561502900951935 /* GoogleADS.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
 				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
@@ -570,6 +577,7 @@
 				10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */,
 				1001177425600D010052AAB1 /* SplashViewController.swift in Sources */,
 				1073756E254DA79D006D1956 /* Project.swift in Sources */,
+				10351CC225614FFA00951935 /* DetailTaskGoogleAds.swift in Sources */,
 				10DF2A0B255094CF0098B832 /* _RootProjectsViewController.swift in Sources */,
 				108CB022254F6BD100BF89C4 /* StatusCell.swift in Sources */,
 				10DF2A2B2554820C0098B832 /* AppStore.swift in Sources */,

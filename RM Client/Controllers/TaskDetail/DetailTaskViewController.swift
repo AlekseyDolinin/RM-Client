@@ -1,6 +1,7 @@
 import UIKit
+import GoogleMobileAds
 
-class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate {
+class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate, GADBannerViewDelegate {
     
     var taskDetailView: TaskDetailView! {
         guard isViewLoaded else {return nil}
@@ -9,6 +10,7 @@ class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var idSelectTask = Int()
     var selectTask: Task?
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                 taskDetailView.setParametersHeader(task)
             }
         }
+        setGadBanner()
     }
     
     // авторесайз хедера таблицы

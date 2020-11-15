@@ -1,7 +1,7 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-
+    
     var tasksView: TasksView! {
         guard isViewLoaded else {return nil}
         return (view as! TasksView)
@@ -23,7 +23,6 @@ class TasksViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTasks), name: NSNotification.Name(rawValue: "reloadTasks"), object: nil)
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         

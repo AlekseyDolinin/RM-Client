@@ -534,7 +534,7 @@
                     <view key="view" contentMode="scaleToFill" id="wjP-xL-dkp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="_backgroundDark"/>
                         <viewLayoutGuide key="safeArea" id="KuB-Af-Xgd"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yyg-sw-QZ6"/>
@@ -696,11 +696,10 @@
         <!--Item-->
         <scene sceneID="hfm-2z-coq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xok-u8-Rgv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xok-u8-Rgv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="QHp-M2-t47"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uIv-ud-4l0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

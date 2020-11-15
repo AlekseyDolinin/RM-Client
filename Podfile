@@ -13,4 +13,5 @@ pod 'ReSwift'
 
 pod 'GPVideoPlayer'
 
+pod 'Google-Mobile-Ads-SDK', '~> 7.42.2'
 end
