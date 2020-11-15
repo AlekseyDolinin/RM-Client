@@ -29,8 +29,8 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        let date = Date().convertStringToDate(dataString: listFilteredTasks[indexPath.row].createdOn)
-        taskCell.createdDateLabel.text = Date().convertDateToString(date: date)
+        let date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: listFilteredTasks[indexPath.row].createdOn)
+        taskCell.createdDateLabel.text = Date().convertDateToString(type: .dateAndTimeTwo, date: date)
         
 //        // дозагрузка задач
 //        if indexPath.row == listFilteredTasks.count - 1 { // last cell

@@ -29,8 +29,8 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             cellAuthor.nameAuthorLabel.text = selectTask?.author
             
-            let createdOnDate: Date = Date().convertStringToDate(dataString: selectTask!.createdOn)
-            cellAuthor.timingLabel.text = Date().convertDateToString(date: createdOnDate)
+            let createdOnDate: Date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: selectTask!.createdOn)
+            cellAuthor.timingLabel.text = Date().convertDateToString(type: .dateAndTimeTwo, date: createdOnDate)
             
             return cellAuthor
         }

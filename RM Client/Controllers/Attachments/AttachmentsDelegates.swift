@@ -19,8 +19,8 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
         cellAttachment.createdOnLabel.text = selectTask?.attachments[indexPath.row].createdOn
         cellAttachment.previewImageView.image = selectTask?.attachments[indexPath.row].thumbnailImage
         
-        let date = Date().convertStringToDate(dataString: (selectTask?.attachments[indexPath.row].createdOn)!)
-        cellAttachment.createdOnLabel.text = Date().convertDateToString(date: date)
+        let date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: (selectTask?.attachments[indexPath.row].createdOn)!)
+        cellAttachment.createdOnLabel.text = Date().convertDateToString(type: .dateAndTimeTwo, date: date)
         
         return cellAttachment
     }

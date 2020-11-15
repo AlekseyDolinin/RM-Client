@@ -13,8 +13,8 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         projectCell.nameProjectLabel.text = listProjects[indexPath.row].name
         projectCell.idProjectLabel.text = "#\(listProjects[indexPath.row].idProject)"
         
-        let date = Date().convertStringToDate(dataString: listProjects[indexPath.row].created_on)
-        projectCell.createdProjectLabel.text = Date().convertDateToString(date: date)
+        let date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: listProjects[indexPath.row].created_on)
+        projectCell.createdProjectLabel.text = Date().convertDateToString(type: .date, date: date)
         
         if let childCountProjects = listProjects[indexPath.row].childProjects?.count {
             projectCell.countChildProject.text = String(childCountProjects)
