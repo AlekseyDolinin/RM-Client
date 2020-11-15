@@ -1,5 +1,4 @@
 import UIKit
-import GPVideoPlayer
 
 class ImageAttachmentViewController: UIViewController, ImageViewZoomDelegate {
 

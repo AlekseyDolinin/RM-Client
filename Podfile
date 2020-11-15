@@ -11,7 +11,9 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.0'
 pod 'ReSwift'
 
+
 pod 'GPVideoPlayer'
+
 
 pod 'Google-Mobile-Ads-SDK', '~> 7.42.2'
 end

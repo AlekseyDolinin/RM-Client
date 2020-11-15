@@ -1,4 +1,6 @@
 import UIKit
+import AVFoundation
+import AVKit
 
 extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -28,8 +30,8 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let filename: NSString = (self.selectTask?.attachments[indexPath.row].content_type)! as NSString
-        let pathExtention = filename.pathExtension
-        let pathPrefix = filename.deletingLastPathComponent
+        let pathExtention = (filename.pathExtension).lowercased()
+        let pathPrefix = (filename.deletingLastPathComponent).lowercased()
         
         // изображение
         if pathPrefix == "image" {
@@ -40,9 +42,17 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
         
         // видео
         if pathPrefix == "video" {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoAttachmentVC") as! VideoAttachmentViewController
-            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
-            self.present(vc, animated: true, completion: nil)
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoAttachmentVC") as! VideoAttachmentViewController
+//            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
+//            self.present(vc, animated: true, completion: nil)
+            
+            let videoURL = URL(string: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_640_3MG.mp4")
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
         }
         
         // документ

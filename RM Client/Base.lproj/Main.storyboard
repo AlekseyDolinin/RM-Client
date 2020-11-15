@@ -2156,15 +2156,10 @@
                                     <constraint firstAttribute="trailing" secondItem="Pka-En-epO" secondAttribute="trailing" id="x9a-1J-Xqw"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ITK-OE-ycC">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Ch-1L-cr8" firstAttribute="bottom" secondItem="AhN-oH-u2u" secondAttribute="bottom" id="685-KU-Fqk"/>
-                            <constraint firstItem="ITK-OE-ycC" firstAttribute="centerX" secondItem="0NC-SD-u2i" secondAttribute="centerX" id="BG6-MT-FcU"/>
-                            <constraint firstItem="ITK-OE-ycC" firstAttribute="centerY" secondItem="0NC-SD-u2i" secondAttribute="centerY" id="Ifv-8R-J0h"/>
                             <constraint firstItem="j1Y-JJ-uAs" firstAttribute="top" secondItem="AhN-oH-u2u" secondAttribute="top" id="IoD-fE-EDp"/>
                             <constraint firstItem="9Ch-1L-cr8" firstAttribute="trailing" secondItem="AhN-oH-u2u" secondAttribute="trailing" id="JMm-RG-lhk"/>
                             <constraint firstItem="AhN-oH-u2u" firstAttribute="trailing" secondItem="j1Y-JJ-uAs" secondAttribute="trailing" id="Jm0-nw-KaQ"/>
@@ -2174,8 +2169,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AhN-oH-u2u"/>
                         <connections>
+                            <outlet property="backViewForVideo" destination="9Ch-1L-cr8" id="mch-jd-HNe"/>
                             <outlet property="buttonClose" destination="ayu-24-DKO" id="kLG-GU-x3T"/>
-                            <outlet property="loader" destination="ITK-OE-ycC" id="OSP-7d-MAh"/>
                         </connections>
                     </view>
                 </viewController>

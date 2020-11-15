@@ -22,8 +22,8 @@ class AttachmentsViewController: UIViewController {
         for attachment in selectTask!.attachments {
             
             let filename: NSString = attachment.content_type! as NSString
-            let pathExtention = filename.pathExtension
-            let pathPrefix = filename.deletingLastPathComponent
+            let pathExtention = (filename.pathExtension).lowercased()
+            let pathPrefix = (filename.deletingLastPathComponent).lowercased()
             
             // изображение
             if pathPrefix == "image" {
@@ -42,19 +42,19 @@ class AttachmentsViewController: UIViewController {
                         }
                     }
                 }
-            }
+            } else
             
             // видео
             if pathPrefix == "video" {
                 attachment.thumbnailImage = Attach.type.video.image
-                self.attachmentsView.showContent()
+
+            } else {
+            // документ
+                pathExtention == "document"
+                attachment.thumbnailImage = Attach.type.document.image
             }
             
-            // документ
-            if pathExtention == "document" {
-                attachment.thumbnailImage = Attach.type.document.image
-                self.attachmentsView.showContent()
-            }
+            self.attachmentsView.showContent()
         }
     }
     

@@ -67,6 +67,15 @@ class API {
         }
     }
     
+    func getVideo(endPoint: String, completion: @escaping (Data) -> Void) {
+        let request = "https://\(user):\(password)@\(server)\(endPoint)"
+        Alamofire.request(request, method: .get).response { response in
+            if let data = response.data {
+                completion(data)
+            }
+        }
+    }
+    
 //
 //    func getInfoUser(idUser: Int, completion: @escaping (JSON) -> Void) {
 //        let request = "https://\(user):\(password)@\(server)" + "/users/\(idUser).json"

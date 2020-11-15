@@ -3,11 +3,11 @@ import UIKit
 class VideoAttachmentView: UIView {
     
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    
+    @IBOutlet weak var backViewForVideo: UIView!
     
     func configure() {
-        loader.startAnimating()
+
+        
 
     }
 
