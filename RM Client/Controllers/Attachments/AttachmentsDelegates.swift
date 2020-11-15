@@ -33,16 +33,21 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
         
         // изображение
         if pathPrefix == "image" {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailAttachmentVC") as! DetailAttachmentViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageAttachmentVC") as! ImageAttachmentViewController
             vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
             self.present(vc, animated: true, completion: nil)
         }
         
+        // видео
+        if pathPrefix == "video" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoAttachmentVC") as! VideoAttachmentViewController
+            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
+            self.present(vc, animated: true, completion: nil)
+        }
         
-        
-        
-        
-        
-        
+        // документ
+        if pathExtention == "document" {
+
+        }
     }
 }

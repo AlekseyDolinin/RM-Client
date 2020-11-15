@@ -1,11 +1,11 @@
 import UIKit
 import GPVideoPlayer
 
-class DetailAttachmentViewController: UIViewController {
+class VideoAttachmentViewController: UIViewController {
 
-    var detailAttachmentView: DetailAttachmentView! {
+    var videoAttachmentView: VideoAttachmentView! {
         guard isViewLoaded else {return nil}
-        return (view as! DetailAttachmentView)
+        return (view as! VideoAttachmentView)
     }
 
     var attachmentID = Int()
@@ -13,14 +13,17 @@ class DetailAttachmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        detailAttachmentView.configure()
-        loadImage()
+        videoAttachmentView.configure()
+        loadVideo()
     }
     
-    func loadImage() {
+    func loadVideo() {
         API.shared.getImage(endPoint: "/attachments/download/\(attachmentID)") { (image) in
-            self.setScrollViewImage(image: image)
-            self.detailAttachmentView.loader.stopAnimating()
+
+            
+            
+            
+            
         }
     }
     
@@ -28,4 +31,3 @@ class DetailAttachmentViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
-

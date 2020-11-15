@@ -1,10 +1,10 @@
 import UIKit
 
-class DetailAttachmentView: UIView {
+class VideoAttachmentView: UIView {
     
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var backViewForImage: UIView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     
     func configure() {
         loader.startAnimating()

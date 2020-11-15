@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import LocalAuthentication
 
 class StartViewController: UIViewController {
     
@@ -11,19 +12,82 @@ class StartViewController: UIViewController {
     
     static let shared = StartViewController()
     
+    var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startView.loader.stopAnimating()
+        startView.stateLabel.isHidden = true
+    }
+    
+
+    override func viewDidAppear(_ animated: Bool) {
+        
+        startView.loader.startAnimating()
+        startView.stateLabel.isHidden = false
+        
         // получение статусов задач по компании
         getStatusesTaskInCompany()
-
+        
         // получение задач пользователя
         getTasks(offset: 0)
         
+        // получение проектов пользователя
         getProjects(offset: 0)
+        
+//        authenticate()
     }
     
-    var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
+    
+    func authenticate() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself!"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                [weak self] success, authenticationError in
+                
+                DispatchQueue.main.async {
+                    if success {
+                        
+                        self?.startView.loader.startAnimating()
+                        self?.startView.stateLabel.isHidden = false
+                        
+                        // получение статусов задач по компании
+                        self?.getStatusesTaskInCompany()
+                        
+                        // получение задач пользователя
+                        self?.getTasks(offset: 0)
+                        
+                        // получение проектов пользователя
+                        self?.getProjects(offset: 0)
+                        
+                        
+                    } else {
+                        // error
+                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(ac, animated: true)
+                    }
+                }
+            }
+        } else {
+            // no biometry
+            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
+        }
+    }
+    
+    
+    
+    @IBAction func authenticateTapped(_ sender: Any) {
+
+    }
+    
     
     // получение задач пользователя
     func getTasks(offset: Int) {
