@@ -45,50 +45,25 @@ class API {
         }
     }
     
-    func getAttachmentThumbnail(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
-        let request = "https://\(user):\(password)@\(server)/attachments/thumbnail/\(idAttachment)"
-        Alamofire.request(request, method: .get).response { response in
-            DispatchQueue.main.async {
-                guard let data = response.data, let image = UIImage(data: data) else {
-                    print("error image Thumbnail")
-                    completion(Attach.type.image.image)
-                    return
-                }
-                completion(image)
-            }
-        }
-    }
     
-    func getAttachmentImage(idAttachment: Int, completion: @escaping (UIImage) -> Void) {
-        let request = "https://\(user):\(password)@\(server)/attachments/download/\(idAttachment)"
-        Alamofire.request(request).validate().downloadProgress { progress in
-            
-            //                print("totalUnitCount:\n", progress.totalUnitCount)
-            //                print("completedUnitCount:\n", progress.completedUnitCount)
-            //                print("fractionCompleted:\n", progress.fractionCompleted)
-            //                print("localizedDescription:\n", progress.localizedDescription)
-            //                print("---------------------------------------------")
-            }.response { response in
-                DispatchQueue.main.async {
-                    guard let data = response.data, let image = UIImage(data: data) else {
-                        print("error image attachmwent")
-                        completion(UIImage())
-                        return
-                    }
+    func getImage(endPoint: String, completion: @escaping (UIImage) -> Void) {
+        let request = "https://\(user):\(password)@\(server)\(endPoint)"
+        Alamofire.request(request, method: .get).response { response in
+            if let data = response.data {
+                if let image = UIImage(data: data) {
                     completion(image)
                 }
+            }
         }
     }
     
-    func getImage(link: String, completion: @escaping (UIImage) -> Void) {
-        Alamofire.request(link).validate().downloadProgress { progress in
-            }.response { response in
-            guard let data = response.data, let image = UIImage(data: data) else {
-                print("error image attachmwent")
-                completion(UIImage())
-                return
+    func getGlobalImage(link: String, completion: @escaping (UIImage) -> Void) {
+        Alamofire.request(link, method: .get).response { response in
+            if let data = response.data {
+                if let image = UIImage(data: data) {
+                    completion(image)
+                }
             }
-            completion(image)
         }
     }
     

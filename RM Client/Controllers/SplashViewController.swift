@@ -7,7 +7,27 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        print(12)
+//        //если есть записанные данные по пользователю
+//        // попытка авторизации по этим данным
+//        if UserDefaults.standard.dictionary(forKey: "userAuthData") != nil {
+//            userAuthData = UserDefaults.standard.dictionary(forKey: "userAuthData") as! [String : String]
+//            let defaultServer: String = userAuthData["server"]!
+//            let defaultUser: String = userAuthData["user"]!
+//            let defaultPassword: String = userAuthData["password"]!
+//            checkAuth(server: defaultServer, user: defaultUser, password: defaultPassword)
+//        } else {
+//            print("НЕТ ЗАПИСАНЫХ ДАННЫХ В ДЕФОЛТЕ")
+//            // показ модалки для введения данных
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "SetServerVC")
+//            navigationController?.pushViewController(vc!, animated: false)
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(11)
+        //если есть записанные данные по пользователю
+        // попытка авторизации по этим данным
         if UserDefaults.standard.dictionary(forKey: "userAuthData") != nil {
             userAuthData = UserDefaults.standard.dictionary(forKey: "userAuthData") as! [String : String]
             let defaultServer: String = userAuthData["server"]!
@@ -18,10 +38,13 @@ class SplashViewController: UIViewController {
             print("НЕТ ЗАПИСАНЫХ ДАННЫХ В ДЕФОЛТЕ")
             // показ модалки для введения данных
             let vc = storyboard?.instantiateViewController(withIdentifier: "SetServerVC")
-            navigationController?.pushViewController(vc!, animated: false)
+            vc?.modalPresentationStyle = .fullScreen
+            present(vc!, animated: true, completion: nil)
         }
     }
     
+    
+    // авторизация
     func checkAuth(server: String, user: String, password: String) {
         // проверка введенных данных по пользователю
         API.shared.authentication(server: server, user: user, password: password) { [weak self] (response) in
@@ -34,11 +57,13 @@ class SplashViewController: UIViewController {
             }
             if json.isEmpty {
                 print("ERROR AUTH")
+                // ошибка при авторизации по записанным данным
                 // показ модалки для введения данных
                 let vc = self?.storyboard?.instantiateViewController(withIdentifier: "SetServerVC")
                 self?.present(vc!, animated: true, completion: nil)
             } else {
                 // заполнение данных пользователя
+                //если авотризация по записанным данным успешна
                 self?.fillUserData(json)
             }
         }
@@ -53,7 +78,7 @@ class SplashViewController: UIViewController {
         
         let avatarLink = "https://www.gravatar.com/avatar/\(md5HexMail)?s=200"
         
-        API.shared.getImage(link: avatarLink, completion: { [weak self] (imageAvatar) in
+        API.shared.getGlobalImage(link: avatarLink, completion: { [weak self] (imageAvatar) in
             let userData = User(admin: data["admin"].boolValue,
                                 api_key: data["api_key"].stringValue,
                                 login: data["login"].stringValue,

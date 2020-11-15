@@ -26,10 +26,23 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
+        
+        let filename: NSString = (self.selectTask?.attachments[indexPath.row].content_type)! as NSString
+        let pathExtention = filename.pathExtension
+        let pathPrefix = filename.deletingLastPathComponent
+        
+        // изображение
+        if pathPrefix == "image" {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailAttachmentVC") as! DetailAttachmentViewController
-            vc.attachment = self.selectTask?.attachments[indexPath.row]
+            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
             self.present(vc, animated: true, completion: nil)
         }
+        
+        
+        
+        
+        
+        
+        
     }
 }

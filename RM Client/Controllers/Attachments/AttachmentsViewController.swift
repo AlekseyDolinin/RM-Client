@@ -14,12 +14,8 @@ class AttachmentsViewController: UIViewController {
         
         attachmentsView.tableAttachments.delegate = self
         attachmentsView.tableAttachments.dataSource = self
-        
         attachmentsView.configure()
         checkTypeAttachment()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
     }
     
     func checkTypeAttachment() {
@@ -31,22 +27,31 @@ class AttachmentsViewController: UIViewController {
             
             // изображение
             if pathPrefix == "image" {
+                
+                attachment.thumbnailImage = Attach.type.image.image
+                
                 // если есть ссылка на превью
                 if attachment.thumbnail_url != "" {
                     // скачивание превью
-                    API.shared.getAttachmentThumbnail(idAttachment: attachment.id!) { (thumbnail) in
-                        attachment.thumbnailImage = thumbnail
-                        self.attachmentsView.tableAttachments.reloadData()
+                    let id: Int = attachment.id!
+                    DispatchQueue.main.async {
+                        API.shared.getImage(endPoint: "/attachments/thumbnail/\(id)") { (thumbnail) in
+                            print(thumbnail)
+                            attachment.thumbnailImage = thumbnail
+                            self.attachmentsView.showContent()
+                        }
                     }
                 }
             }
             // документ
             if pathExtention == "document" {
                 attachment.thumbnailImage = Attach.type.document.image
+                self.attachmentsView.showContent()
             }
             // видео
             if pathPrefix == "video" {
                 attachment.thumbnailImage = Attach.type.video.image
+                self.attachmentsView.showContent()
             }
         }
     }

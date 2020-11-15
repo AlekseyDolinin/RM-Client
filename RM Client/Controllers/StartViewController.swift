@@ -24,19 +24,10 @@ class StartViewController: UIViewController {
     }
     
     var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
-
-    
-    // получение списка пользователей
-    // работает только для админов
-    func getUsersCompany() {
-        print("ПОЛУЧЕНИЕ СПИСКА ПОЛЬЗОВАТЕЛЕЙ")
-        API.shared.getJSON(endPoint: "/users") { (json) in
-            print(json)
-        }
-    }
     
     // получение задач пользователя
     func getTasks(offset: Int) {
+        startView.stateLabel.text = "Получение задач пользователя"
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)&include=attachments&",
             offset: offset,
@@ -149,9 +140,10 @@ class StartViewController: UIViewController {
     }
     
     func getProjects(offset: Int) {
-        
+        startView.stateLabel.text = "Получение проектов пользователя"
 //        var dictionaryParentsProject = [Int: Project]()
-//        var arrayChildsProject = [Project]()
+        var arrayChildProjects = [Project]()
+        
         var listProjects = [Project]()
         
         API.shared.getJSONPagination(endPoint: "/projects.json?", offset: offset, limit: 100, completion: { (json) in
@@ -171,34 +163,52 @@ class StartViewController: UIViewController {
                     name: projectData["name"].stringValue,
                     description: projectData["description"].stringValue,
                     updated_on: projectData["updated_on"].stringValue,
-                    inherit_members: projectData["inherit_members"].boolValue,
                     identifier: projectData["identifier"].stringValue,
-                    custom_fields: listCustomFields,
                     created_on: projectData["created_on"].stringValue,
-                    is_public: projectData["is_public"].boolValue,
-                    status: projectData["status"].intValue,
                     parentID: projectData["parent"]["id"].int,
-                    parentName: projectData["parent"]["name"].stringValue)
+                    parentName: projectData["parent"]["name"].string,
+                    childProjects: nil)
                 
                 // отбор родительских проектов
+                // дочерние позже будут сортироваться по родительским
                 if project.parentID == nil {
                     listProjects.append(project)
                     listProjects = listProjects.sorted(by: {$0.name < $1.name})
                     mainStore.dispatch(LoadedProject(projects: listProjects))
+                } else {
+                    arrayChildProjects.append(project)
                 }
             }
 
-//            for i in 0 ..< arrayChildsProject.count {
-//
-//                let child = arrayChildsProject[i]
-//                let parentID: Int = child.parentID!
-//
-//                dictionaryParentsProject[parentID]?.childProjects?.append(child)
-//
-//                print(dictionaryParentsProject[parentID]?.name)
-//                print(dictionaryParentsProject[parentID]?.childProjects?.count)
-//            }
-            
+            for i in 0 ..< arrayChildProjects.count {
+
+                let child = arrayChildProjects[i]
+                let childName: String = child.name
+                let parentName:String = child.parentName!
+                let parentID: Int = child.parentID!
+                
+//                print(childName)
+//                print("---")
+//                print(parentName)
+//                print(parentID)
+//                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                
+                for j in 0 ..< listProjects.count {
+                    
+                    let parent = listProjects[j]
+                    let idParent = parent.idProject
+                    
+                    if idParent == parentID {
+//                        print("совпадение")
+//                        print(child.name)
+//                        parent.childProjects?.append(child)
+                        
+                        
+//                        mainStore.dispatch(LoadedProject(projects: listProjects))
+//                        print(mainStore.state.projects[j].childProjects?.count)
+                    }
+                }
+            }
         })
     }
     

@@ -17,6 +17,11 @@ class SetServerView: UIView {
     
     func configure() {
         
+        enterButton.layer.cornerRadius = 4
+        enterButton.clipsToBounds = true
+        
+        inputServer.attributedPlaceholder = NSAttributedString(string: "example.com",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor._blue])
         setEnterButton()
         
         loader.stopAnimating()

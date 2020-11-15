@@ -22,7 +22,6 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
             projectCell.countChildProject.isHidden = true
         }
         
-        
 //        if indexPath.row == listProjects.count - 1 { // last cell
 //            print("подзагрузка")
 //            if ProjectsViewController.totalProjects > listProjects.count { // more items to fetch

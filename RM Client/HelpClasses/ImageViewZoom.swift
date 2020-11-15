@@ -38,7 +38,7 @@ open class ImageViewZoom: UIScrollView {
     
     var imageSize: CGSize = CGSize.zero
     private var pointToCenterAfterResize: CGPoint = CGPoint.zero
-    private var scaleToRestoreAfterResize: CGFloat = 1.0
+    private var scaleToRestoreAfterResize: CGFloat = 0.75
     var maxScaleFromMinScale: CGFloat = 3.0
     
     override open var frame: CGRect {

@@ -18,7 +18,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="n3u-Xm-EAo">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="OI1-KQ-DVj"/>
+                                    <constraint firstAttribute="width" constant="100" id="ljQ-mJ-lAj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" name="_backgroundDark"/>
+                        <constraints>
+                            <constraint firstItem="n3u-Xm-EAo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z0U-kK-hr3"/>
+                            <constraint firstItem="n3u-Xm-EAo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ir1-2l-pjM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -28,6 +41,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="180" height="180"/>
         <namedColor name="_backgroundDark">
             <color red="0.058823529411764705" green="0.098039215686274508" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
