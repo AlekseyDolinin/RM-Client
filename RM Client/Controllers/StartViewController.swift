@@ -20,6 +20,7 @@ class StartViewController: UIViewController {
         // получение задач пользователя
         getTasks(offset: 0)
         
+        getProjects(offset: 0)
     }
     
     var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
@@ -36,7 +37,6 @@ class StartViewController: UIViewController {
     
     // получение задач пользователя
     func getTasks(offset: Int) {
-//        self.startView.stateLabel.text = "Запрос задач пользователя"
         API.shared.getJSONPagination(
             endPoint: "/issues.json?assigned_to_id=\((mainStore.state.userData?.id)!)&include=attachments&",
             offset: offset,
@@ -113,7 +113,6 @@ class StartViewController: UIViewController {
     
     func getStatusesTaskInCompany() {
         // список статусов задач
-//        self.startView.stateLabel.text = "Запрос списка статусов"
         API.shared.getJSON(endPoint: "/issue_statuses") { (json) in
             
             var listTasksStatuses = [Status]()
@@ -148,4 +147,62 @@ class StartViewController: UIViewController {
             }
         }
     }
+    
+    func getProjects(offset: Int) {
+        
+//        var dictionaryParentsProject = [Int: Project]()
+//        var arrayChildsProject = [Project]()
+        var listProjects = [Project]()
+        
+        API.shared.getJSONPagination(endPoint: "/projects.json?", offset: offset, limit: 100, completion: { (json) in
+            
+            for i in json["projects"] {
+                let projectData = i.1
+                var listCustomFields = [CustomField]()
+                for i in projectData["custom_fields"] {
+                    let customFieldData = i.1
+                    let customField = CustomField(id: customFieldData["id"].intValue,
+                                                  name: customFieldData["name"].stringValue,
+                                                  value: customFieldData["value"].stringValue)
+                    listCustomFields.append(customField)
+                }
+                let project = Project(
+                    idProject: projectData["id"].intValue,
+                    name: projectData["name"].stringValue,
+                    description: projectData["description"].stringValue,
+                    updated_on: projectData["updated_on"].stringValue,
+                    inherit_members: projectData["inherit_members"].boolValue,
+                    identifier: projectData["identifier"].stringValue,
+                    custom_fields: listCustomFields,
+                    created_on: projectData["created_on"].stringValue,
+                    is_public: projectData["is_public"].boolValue,
+                    status: projectData["status"].intValue,
+                    parentID: projectData["parent"]["id"].int,
+                    parentName: projectData["parent"]["name"].stringValue)
+                
+                // отбор родительских проектов
+                if project.parentID == nil {
+                    listProjects.append(project)
+                    listProjects = listProjects.sorted(by: {$0.name < $1.name})
+                    mainStore.dispatch(LoadedProject(projects: listProjects))
+                }
+            }
+
+//            for i in 0 ..< arrayChildsProject.count {
+//
+//                let child = arrayChildsProject[i]
+//                let parentID: Int = child.parentID!
+//
+//                dictionaryParentsProject[parentID]?.childProjects?.append(child)
+//
+//                print(dictionaryParentsProject[parentID]?.name)
+//                print(dictionaryParentsProject[parentID]?.childProjects?.count)
+//            }
+            
+        })
+    }
+    
+    
+    
+    
 }

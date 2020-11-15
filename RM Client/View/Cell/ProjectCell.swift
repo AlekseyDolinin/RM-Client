@@ -6,6 +6,8 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var nameProjectLabel: UILabel!
     @IBOutlet weak var idProjectLabel: UILabel!
     @IBOutlet weak var createdProjectLabel: UILabel!
+    
+    @IBOutlet weak var countChildProject: UILabel!
         
     override func awakeFromNib() {
         super.awakeFromNib()

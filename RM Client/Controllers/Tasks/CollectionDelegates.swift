@@ -18,9 +18,6 @@ extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let currentColor = mainStore.state.statusTasks[indexPath.row].color
             cellStatus.backView.layer.borderColor = currentColor.cgColor
-            
-//            cellStatus.badgeView.backgroundColor = currentColor
-            
             cellStatus.badgeView.backgroundColor = currentColor.darker(by: 15)
             
             // set current Cell Status

@@ -15,7 +15,7 @@ class RootProjectsView: UIView {
     
     func configure() {
         
-        hideContent()
+//        hideContent()
     }
     
     func hideContent() {

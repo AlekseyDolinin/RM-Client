@@ -12,16 +12,24 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
         
         projectCell.nameProjectLabel.text = listProjects[indexPath.row].name
         projectCell.idProjectLabel.text = "#\(listProjects[indexPath.row].idProject)"
-        projectCell.createdProjectLabel.text = listProjects[indexPath.row].created_on
         
+        let date = Date().convertStringToDate(dataString: listProjects[indexPath.row].created_on)
+        projectCell.createdProjectLabel.text = Date().convertDateToString(date: date)
         
-        if indexPath.row == listProjects.count - 1 { // last cell
-            print("подзагрузка")
-            if ProjectsViewController.totalProjects > listProjects.count { // more items to fetch
-                offset = offset + 1
-                getProjects(offset: offset)
-            }
+        if let childCountProjects = listProjects[indexPath.row].childProjects?.count {
+            projectCell.countChildProject.text = String(childCountProjects)
+        } else {
+            projectCell.countChildProject.isHidden = true
         }
+        
+        
+//        if indexPath.row == listProjects.count - 1 { // last cell
+//            print("подзагрузка")
+//            if ProjectsViewController.totalProjects > listProjects.count { // more items to fetch
+//                offset = offset + 1
+//                getProjects(offset: offset)
+//            }
+//        }
         return projectCell
     }
     
