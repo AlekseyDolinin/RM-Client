@@ -9,6 +9,9 @@ class AttachmentsViewController: UIViewController {
     
     var selectTask: Task?
     
+    let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
+    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
+    let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,22 +28,25 @@ class AttachmentsViewController: UIViewController {
             if let fileURL = URL(string: attachment.fileName!){
                 let fileUTI = UTI(withExtension: fileURL.pathExtension)
                 switch fileUTI {
+                    
                 case .pdf:
-                    print("add PDF Options")
                     attachment.thumbnailImage = Attach.type.document.image
+                    
                 case .jpeg, .png, .tiff:
-                    print("add jpg Options")
                     attachment.thumbnailImage = Attach.type.image.image
+                    
                 case .gif:
-                    print("add gif options")
+                    attachment.thumbnailImage = Attach.type.image.image
+                    
                 case .html:
-                    print("add html options")
+                    print("html")
+                    
                 case .quickTimeMovie, .mpeg, .mp4:
-                    print("video")
                     attachment.thumbnailImage = Attach.type.video.image
+                    
                 case .docx, .doc:
-                    print("add dox options")
                     attachment.thumbnailImage = Attach.type.document.image
+                    
                 default:
                     print("default")
                 }

@@ -11,7 +11,7 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellAttachment = tableView.dequeueReusableCell(withIdentifier: "CellAttachment", for: indexPath) as! CellAttachment
-
+        
         cellAttachment.fileNameLabel.text = selectTask?.attachments[indexPath.row].fileName
         
         let KB = Convert.convertByteToMb(valueByte: (selectTask?.attachments[indexPath.row].filesize)!)
@@ -29,46 +29,54 @@ extension AttachmentsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let filename: NSString = (self.selectTask?.attachments[indexPath.row].content_type)! as NSString
-        let pathExtention = (filename.pathExtension).lowercased()
-        let pathPrefix = (filename.deletingLastPathComponent).lowercased()
-        
-        // изображение
-        if pathPrefix == "image" {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageAttachmentVC") as! ImageAttachmentViewController
-            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        // видео
-        if pathPrefix == "video" {
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VideoAttachmentVC") as! VideoAttachmentViewController
-//            vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
-//            self.present(vc, animated: true, completion: nil)
-            
-            let attachmentID: Int = (self.selectTask?.attachments[indexPath.row].id)!
-            
-            let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
-            let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
-            let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
-            
-            let linkString = "https://\(user):\(password)@\(server)/attachments/download/\(attachmentID)"
-            print(linkString)
-//            guard let url = URL(string: linkString) else { return }
-//            UIApplication.shared.open(url)
-            
-            let videoURL = URL(string: "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_5mb.mp4")
-            let player = AVPlayer(url: videoURL!)
-            let playerViewController = AVPlayerViewController()
-            playerViewController.player = player
-            self.present(playerViewController, animated: true) {
-                playerViewController.player!.play()
+        if let fileURL = URL(string: (self.selectTask?.attachments[indexPath.row].fileName!)!){
+            let fileUTI = UTI(withExtension: fileURL.pathExtension)
+            switch fileUTI {
+            case .pdf:
+                print("PDF")
+                
+            case .jpeg, .png, .tiff:
+                print("jpg")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageAttachmentVC") as! ImageAttachmentViewController
+                vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
+                vc.typeContent = "image"
+                self.present(vc, animated: true, completion: nil)
+            case .gif:
+                print("gif")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImageAttachmentVC") as! ImageAttachmentViewController
+                vc.attachmentID = (self.selectTask?.attachments[indexPath.row].id)!
+                vc.typeContent = "gif"
+                self.present(vc, animated: true, completion: nil)
+            case .html:
+                print("html")
+            case .quickTimeMovie, .mpeg, .mp4:
+                print("video")
+                //id файла
+                let attachmentID: Int = (self.selectTask?.attachments[indexPath.row].id)!
+                //ссылка на файл
+                let linkString = "https://\(user):\(password)@\(server)/attachments/\(attachmentID)"
+                
+                // открытие ссылки в браузере
+//                guard let url = URL(string: linkString) else { return }
+//                UIApplication.shared.open(url)
+                
+                // открытие ссылки в плеере
+//                let videoURL = URL(string: "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_5mb.mp4")
+                let videoURL = URL(string: linkString)?.absoluteURL
+                let player = AVPlayer(url: videoURL!)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                self.present(playerViewController, animated: true) {
+                    playerViewController.player!.play()
+                }
+                
+            case .docx, .doc:
+                print("add dox")
+                
+            default:
+                print("default")
             }
-        }
-        
-        // документ
-        if pathExtention == "document" {
-
+            self.attachmentsView.showContent()
         }
     }
 }

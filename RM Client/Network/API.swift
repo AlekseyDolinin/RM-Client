@@ -46,13 +46,11 @@ class API {
     }
     
     
-    func getImage(endPoint: String, completion: @escaping (UIImage) -> Void) {
+    func getImage(endPoint: String, completion: @escaping (Data) -> Void) {
         let request = "https://\(user):\(password)@\(server)\(endPoint)"
         Alamofire.request(request, method: .get).response { response in
             if let data = response.data {
-                if let image = UIImage(data: data) {
-                    completion(image)
-                }
+                completion(data)
             }
         }
     }

@@ -8,6 +8,7 @@ class ImageAttachmentViewController: UIViewController, ImageViewZoomDelegate {
     }
 
     var attachmentID = Int()
+    var typeContent = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +18,24 @@ class ImageAttachmentViewController: UIViewController, ImageViewZoomDelegate {
     }
     
     func loadImage() {
-        API.shared.getImage(endPoint: "/attachments/download/\(attachmentID)") { (image) in
-            self.setScrollViewImage(image: image)
+        API.shared.getImage(endPoint: "/attachments/download/\(attachmentID)") { (dataImage) in
+            
+            if self.typeContent == "image" {
+                if let image = UIImage(data: dataImage) {
+                    self.setScrollViewImage(image: image)
+                } else {
+                    print("error data image")
+                }
+            }
+            
+            if self.typeContent == "gif" {
+                if let image = UIImage.gifImageWithData(dataImage) {
+                    self.setScrollViewImage(image: image)
+                } else {
+                    print("error data gif")
+                }
+            }
+            
             self.imageAttachmentView.loader.stopAnimating()
         }
     }

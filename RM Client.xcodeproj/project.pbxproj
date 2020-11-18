@@ -20,6 +20,7 @@
 		10351CC82561A97500951935 /* ImageAttachmentViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CC72561A97500951935 /* ImageAttachmentViewController copy.swift */; };
 		10351CCA2561A9A700951935 /* VideoAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CC92561A9A700951935 /* VideoAttachmentView.swift */; };
 		10351CCC2561E4C700951935 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CCB2561E4C600951935 /* UTI.swift */; };
+		10351CCE2565B67F00951935 /* GIFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10351CCD2565B67F00951935 /* GIFAnimation.swift */; };
 		1048BFD0255A7B1500896D05 /* UIString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFCF255A7B1500896D05 /* UIString.swift */; };
 		1048BFD2255B187200896D05 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD1255B187200896D05 /* AttachmentsViewController.swift */; };
 		1048BFD4255B18CC00896D05 /* AttachmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048BFD3255B18CC00896D05 /* AttachmentsView.swift */; };
@@ -97,6 +98,7 @@
 		10351CC72561A97500951935 /* ImageAttachmentViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAttachmentViewController copy.swift"; sourceTree = "<group>"; };
 		10351CC92561A9A700951935 /* VideoAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAttachmentView.swift; sourceTree = "<group>"; };
 		10351CCB2561E4C600951935 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; };
+		10351CCD2565B67F00951935 /* GIFAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFAnimation.swift; sourceTree = "<group>"; };
 		1048BFCF255A7B1500896D05 /* UIString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIString.swift; sourceTree = "<group>"; };
 		1048BFD1255B187200896D05 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
 		1048BFD3255B18CC00896D05 /* AttachmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsView.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		109830AE255C7CDE00A045E3 /* HelpClasses */ = {
 			isa = PBXGroup;
 			children = (
+				10351CCD2565B67F00951935 /* GIFAnimation.swift */,
 				10351CCB2561E4C600951935 /* UTI.swift */,
 				109830B4255C932500A045E3 /* ImageViewZoom.swift */,
 				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
@@ -543,6 +546,7 @@
 				10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */,
 				10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */,
 				108C0011255DF43E001F5FE0 /* StartView.swift in Sources */,
+				10351CCE2565B67F00951935 /* GIFAnimation.swift in Sources */,
 				109830AD255C7CD200A045E3 /* AttachmentType.swift in Sources */,
 				104FAD122559FA5D006BB4B7 /* CellAssignedTo.swift in Sources */,
 				104FAD102559F9C0006BB4B7 /* CellAuthor.swift in Sources */,
