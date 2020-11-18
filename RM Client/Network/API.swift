@@ -74,6 +74,17 @@ class API {
         }
     }
     
+    func getPdf(link: String, completion: @escaping (URL) -> Void) {
+        
+ 
+        
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("downloadLocation:", location)
+        print(location)
+    }
+    
 //
 //    func getInfoUser(idUser: Int, completion: @escaping (JSON) -> Void) {
 //        let request = "https://\(user):\(password)@\(server)" + "/users/\(idUser).json"
