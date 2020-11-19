@@ -1,32 +1,24 @@
 import UIKit
+import WebKit
 
-class PDFAttachmentViewController: UIViewController {
+class PdfAttachmentViewController: UIViewController  {
 
     var pdfAttachmentView: PDFAttachmentView! {
         guard isViewLoaded else {return nil}
         return (view as! PDFAttachmentView)
     }
 
-    var pdfLink = String()
+    var pdfLink = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("pdfLink: \(pdfLink)")
-        
-        
-//        let url: URL! = URL(string: pdfLink)
-//        pdfAttachmentView.webView.load(URLRequest(url: url))
-        
-//        // открытие пдф в сафари
-        guard let url = URL(string: pdfLink) else { return }
-        UIApplication.shared.open(url)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-
-        
+        API.shared.getPdf(link: pdfLink) { (dataPDF) in
+            self.pdfAttachmentView.loader.stopAnimating()
+            if let decodeData: Data = Data(base64Encoded: dataPDF.base64EncodedString(), options: NSData.Base64DecodingOptions.ignoreUnknownCharacters) {
+                self.pdfAttachmentView.webView.load(decodeData, mimeType: "application/pdf", characterEncodingName: "utf-8", baseURL: URL(fileURLWithPath: ""))
+            }
+        }
     }
     
     @IBAction func closeModalView(_ sender: UIButton) {

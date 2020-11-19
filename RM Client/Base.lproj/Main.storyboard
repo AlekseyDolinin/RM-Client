@@ -2178,16 +2178,16 @@
             </objects>
             <point key="canvasLocation" x="4913" y="-1161"/>
         </scene>
-        <!--Attachment View Controller-->
+        <!--Pdf Attachment View Controller-->
         <scene sceneID="raJ-uF-zJK">
             <objects>
-                <viewController storyboardIdentifier="PDFAttachmentVC" id="cAt-ZC-AxE" customClass="PDFAttachmentViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFAttachmentVC" id="cAt-ZC-AxE" customClass="PdfAttachmentViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GxH-dO-qM1" customClass="PDFAttachmentView" customModule="RM_Client" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bze-wP-Aqh">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2235,20 +2235,15 @@
                         <constraints>
                             <constraint firstItem="Fm6-Kg-ayP" firstAttribute="centerY" secondItem="GxH-dO-qM1" secondAttribute="centerY" id="83u-wR-RYI"/>
                             <constraint firstItem="bze-wP-Aqh" firstAttribute="trailing" secondItem="MCD-4a-ebj" secondAttribute="trailing" id="DE4-1G-Kar"/>
-                            <constraint firstItem="bze-wP-Aqh" firstAttribute="top" secondItem="MCD-4a-ebj" secondAttribute="top" id="Jy4-nF-b1K"/>
                             <constraint firstItem="Fm6-Kg-ayP" firstAttribute="centerX" secondItem="GxH-dO-qM1" secondAttribute="centerX" id="Oa0-Ip-sVK"/>
-                            <constraint firstItem="bze-wP-Aqh" firstAttribute="bottom" secondItem="MCD-4a-ebj" secondAttribute="bottom" id="XFk-eV-Dk5"/>
+                            <constraint firstItem="bze-wP-Aqh" firstAttribute="bottom" secondItem="GxH-dO-qM1" secondAttribute="bottom" id="XFk-eV-Dk5"/>
                             <constraint firstItem="MMb-ls-RtV" firstAttribute="top" secondItem="MCD-4a-ebj" secondAttribute="top" id="XcM-pG-XHw"/>
                             <constraint firstItem="bze-wP-Aqh" firstAttribute="leading" secondItem="MCD-4a-ebj" secondAttribute="leading" id="YfT-y2-D79"/>
+                            <constraint firstItem="bze-wP-Aqh" firstAttribute="top" secondItem="DwI-t3-1JN" secondAttribute="bottom" id="Yfh-0I-vzM"/>
                             <constraint firstItem="MCD-4a-ebj" firstAttribute="trailing" secondItem="MMb-ls-RtV" secondAttribute="trailing" id="aKd-RC-3CE"/>
                             <constraint firstItem="MMb-ls-RtV" firstAttribute="leading" secondItem="MCD-4a-ebj" secondAttribute="leading" id="eVt-CF-Vkx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MCD-4a-ebj"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="bze-wP-Aqh"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="buttonClose" destination="c2V-FI-cNX" id="yoq-2h-Leg"/>
                             <outlet property="loader" destination="Fm6-Kg-ayP" id="vts-s2-q6J"/>

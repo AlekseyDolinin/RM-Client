@@ -74,10 +74,14 @@ class API {
         }
     }
     
-    func getPdf(link: String, completion: @escaping (URL) -> Void) {
-        
- 
-        
+    func getPdf(link: String, completion: @escaping (Data) -> Void) {
+        Alamofire.request(link, method: .get).response { response in
+            guard let pdfData = response.data else {
+                print("error pdf data")
+                return
+            }
+            completion(pdfData)
+        }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {

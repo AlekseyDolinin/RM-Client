@@ -25,7 +25,7 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(11)
+
         //если есть записанные данные по пользователю
         // попытка авторизации по этим данным
         if UserDefaults.standard.dictionary(forKey: "userAuthData") != nil {

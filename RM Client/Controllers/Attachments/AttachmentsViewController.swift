@@ -55,23 +55,6 @@ class AttachmentsViewController: UIViewController {
         }
     }
     
-//    func loadPreview() {
-//
-//            // если есть ссылка на превью
-//            if attachment.thumbnail_url != "" {
-//                // скачивание превью
-//                let id: Int = attachment.id!
-//                DispatchQueue.main.async {
-//                    API.shared.getImage(endPoint: "/attachments/thumbnail/\(id)") { (thumbnail) in
-//                        print(thumbnail)
-//                        attachment.thumbnailImage = thumbnail
-//                        self.attachmentsView.showContent()
-//                    }
-//                }
-//            }
-//    }
-    
-    
     @IBAction func back(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
