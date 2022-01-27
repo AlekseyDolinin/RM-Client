@@ -7,11 +7,16 @@ extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cellStatus = collectionView.dequeueReusableCell(withReuseIdentifier: "StatusCell", for: indexPath) as! StatusCell
         cellStatus.currentIndexFilter = currentIndexFilter
         cellStatus.indexPathRow = indexPath.row
         cellStatus.setCell(index: indexPath.row)
+        
+        
+//        var item = Parse.listTasksSort[indexPath.row]
+//        var key = Parse.listTasksStatuses[indexPath.row]
+//        cellStatus.badgeLabel.text = String(item)
+        
         return cellStatus
     }
     

@@ -39,7 +39,7 @@ class TaskDetailView: UIView {
     
     func setParametersHeader(_ task: Task) {
         
-        nameStatusLabel.text = task.status.rawValue
+        nameStatusLabel.text = task.status
         namePriorityLabel.text = task.priority
         
         for field in task.customFields {

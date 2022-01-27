@@ -14,8 +14,8 @@ import UIKit
 //}
 
 
-enum Status: String {
-    case new = "Новая"
-    case fb = "Обратная связь"
-    case none = "none"
-}
+//enum Status: String {
+//    case new = "Новая"
+//    case fb = "Обратная связь"
+//    case none = "none"
+//}

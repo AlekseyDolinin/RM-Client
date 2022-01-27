@@ -20,7 +20,7 @@ class Task {
     var parent: Int
     var updatedOn: String
     var closedOn: Bool?
-    var status: Status
+    var status: String
     var description: String
     var project: String
     var projectID: Int
@@ -44,7 +44,7 @@ class Task {
          parent: Int,
          updatedOn: String,
          closedOn: Bool?,
-         status: Status,
+         status: String,
          description: String,
          project: String,
          projectID: Int,

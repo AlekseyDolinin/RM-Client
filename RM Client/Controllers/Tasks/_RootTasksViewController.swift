@@ -57,11 +57,23 @@ class RootTasksViewController: UIViewController, UIGestureRecognizerDelegate {
         let endPoint = "/issues.json?assigned_to_id=\(Parse.user.id)&include=attachments&"
         API.shared.getJSONPagination(endPoint: endPoint, offset: offset, limit: 100, completion: { json in
             self.refreshControl.endRefreshing()
+            self.viewSelf.countAllTasks.text = String(json["issues"].count)
             self.listAllTasks = []
             for i in json["issues"].arrayValue {
                 Parse.parseTask(json: i) { task in
                     self.listAllTasks.append(task)
                     self.viewSelf.tableTasks.reloadData()
+                }
+                
+                if self.listAllTasks.count == json["issues"].count {
+                    
+                    Parse.parseTasksForStatus(tasks: self.listAllTasks) {
+                        
+                        print(Parse.listTasksSort)
+                        
+                        
+                        
+                    }
                 }
             }
         })

@@ -5,6 +5,8 @@ class Parse: NSObject {
     
     static var user: User!
     static var listTasksStatuses = [String]()
+    static var listTasksSort = [String: [Task]]()
+    
     static var listColorsStatus: [UIColor] = [._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus, ._pinkStatus, ._violetStatus, ._orangeStatus, ._greenStatus, ._yellowStatus]
     
     class func parseProject(json: JSON, completion: @escaping (Project) -> ()) {
@@ -44,26 +46,20 @@ class Parse: NSObject {
         listTasksStatuses = []
         for i in json.arrayValue {
             listTasksStatuses.append(i["name"].stringValue)
-        }
-        
-        if listTasksStatuses.count == json.count {
             completion()
         }
     }
     
     ///
     class func parseTask(json: JSON, completion: @escaping (Task) -> ()) {
-        
         var listCustomFields = [CustomField]()
         var listAttachments = [Attachment]()
-        
         for i in json["custom_fields"].arrayValue {
             let customField = CustomField(id: i["id"].intValue,
                                           name: i["name"].stringValue,
                                           value: i["value"].stringValue)
             listCustomFields.append(customField)
         }
-        
         for i in json["attachments"].arrayValue {
             let attachment = Attachment(id: i["id"].intValue,
                                         fileName: i["filename"].stringValue,
@@ -95,30 +91,22 @@ class Parse: NSObject {
                         parent: json["parent"]["id"].intValue,
                         updatedOn: json["updated_on"].stringValue,
                         closedOn: json["closed_on"].boolValue,
-                        status: Parse().parseTaskStatus(statusString: json["status"]["name"].stringValue),
+                        status: json["status"]["name"].stringValue,
                         description: json["description"].stringValue,
                         project: json["project"]["name"].stringValue,
                         projectID: json["project"]["id"].intValue,
                         attachments: listAttachments))
     }
     
-    
-    
-    func parseTaskStatus(statusString: String) -> Status {
-        switch statusString {
-        case "Новая":
-            return .new
-            
-        case "В работе":
-            return .new
-
-        case "Обратная связь":
-            return .fb
-            
-        default:
-            print("не обрабатывается: \(statusString)")
-            return .none
+    ///
+    class func parseTasksForStatus(tasks: [Task], completion: @escaping () -> ()) {
+        listTasksSort = [:]
+        for i in listTasksStatuses {
+            let tasksSorted = tasks.filter({$0.status == i})
+            let item = i: tasksSorted
+            listTasksSort.append(item)
         }
+        completion()
     }
     
 }
