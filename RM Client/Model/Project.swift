@@ -10,7 +10,6 @@ class Project {
     var parentID: Int?
     /// name родительского проекта
     var parentName: String?
-    
     var childProjects: [Project]?
     
     init(idProject: Int,
@@ -19,9 +18,10 @@ class Project {
          updated_on: String,
          identifier: String,
          created_on: String,
-         parentID: Int?,
-         parentName: String?,
-         childProjects: [Project]?){
+         parentID: Int? = nil,
+         parentName: String? = nil,
+         childProjects: [Project]? = nil
+    ){
         
         self.idProject = idProject
         self.name = name

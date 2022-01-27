@@ -6,20 +6,27 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var nameProjectLabel: UILabel!
     @IBOutlet weak var idProjectLabel: UILabel!
     @IBOutlet weak var createdProjectLabel: UILabel!
-    
     @IBOutlet weak var countChildProject: UILabel!
         
+    var project: Project!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         backView.layer.cornerRadius = 8
-        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setCell(){
+        nameProjectLabel.text = project.name
+        idProjectLabel.text = "#\(project.idProject)"
+        
+        let date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: project.created_on)
+        createdProjectLabel.text = Date().convertDateToString(type: .date, date: date)
+        
+        if let childCountProjects = project.childProjects?.count {
+            countChildProject.text = String(childCountProjects)
+        } else {
+            countChildProject.isHidden = true
+        }
     }
 
 }

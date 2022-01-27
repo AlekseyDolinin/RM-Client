@@ -2,31 +2,27 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    var menuView: MenuView! {
+    var viewSelf: MenuView! {
         guard isViewLoaded else {return nil}
         return (view as! MenuView)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-  
-        menuView.configure()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-
-
-    }
-    
-    
-    
-    @IBAction func logout(_ sender: UIButton) {
+    func logOut() {
         UserDefaults.standard.removeObject(forKey: "userAuthData")
-        UserDefaults.standard.synchronize()
-
         let vc = storyboard!.instantiateViewController(withIdentifier: "RootNC")
         UIApplication.shared.keyWindow?.rootViewController = vc
+    }
+    
+    @IBAction func logout(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Выйти из аккаунта?", message: "Для входа потребуется ввод данных для авторизации", preferredStyle: .alert)
+        let outAction = UIAlertAction(title: "LogOut", style: .destructive) { UIAlertAction in
+            self.logOut()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancel)
+        alert.addAction(outAction)
+        present(alert, animated: true)
+        
     }
 }
 

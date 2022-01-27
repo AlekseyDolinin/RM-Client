@@ -1,5 +1,5 @@
 import UIKit
-import GPVideoPlayer
+//import GPVideoPlayer
 import AVFoundation
 import AVKit
 
@@ -49,17 +49,17 @@ class VideoAttachmentViewController: UIViewController {
 //        guard let url = URL(string: linkString2) else { return }
 //        UIApplication.shared.open(url)
         
-        if let player = GPVideoPlayer.initialize(with: self.view.bounds) {
-            self.videoAttachmentView.backViewForVideo.addSubview(player)
-            let url = URL(string: linkString2)!
-//                let videoFilePath = Bundle.main.path(forResource: "video", ofType: "mp4")
-//                let url2 = URL(fileURLWithPath: videoFilePath!)
-
-            player.loadVideo(with: url)
-            player.isToShowPlaybackControls = true
-            player.isMuted = true
-            player.playVideo()
-        }
+//        if let player = GPVideoPlayer.initialize(with: self.view.bounds) {
+//            self.videoAttachmentView.backViewForVideo.addSubview(player)
+//            let url = URL(string: linkString2)!
+////                let videoFilePath = Bundle.main.path(forResource: "video", ofType: "mp4")
+////                let url2 = URL(fileURLWithPath: videoFilePath!)
+//
+//            player.loadVideo(with: url)
+//            player.isToShowPlaybackControls = true
+//            player.isMuted = true
+//            player.playVideo()
+//        }
 
         
         

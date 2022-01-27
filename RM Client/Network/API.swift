@@ -5,21 +5,28 @@ class API {
     
     static let shared = API()
     
-    let user: String = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
-    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
     let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
+    let apikey = UserDefaults.standard.dictionary(forKey: "userAuthData")!["apikey"] as! String
+    let login: String = UserDefaults.standard.dictionary(forKey: "userAuthData")!["login"] as! String
+    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
     
-    func authentication(server: String, user: String, password: String, completion: @escaping (DataResponse<Any>) -> Void) {
-        // проверка авторизации - получая данные по пользователю
-        let request = "https://\(user):\(password)@\(server)" + "/my/account.json"
-        Alamofire.request(request, method: .get).responseJSON { response in
+    
+    func auth(completion: @escaping (DataResponse<Any>) -> ()) {
+        let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
+        let request = "https://\(login):\(password)@\(server)" + "/my/account.json"
+        Alamofire.request(request, method: .get, headers: headers).responseJSON { response in
             completion(response)
         }
     }
+
+    
     
     func getJSONPagination(endPoint: String, offset: Int, limit: Int, completion: @escaping (JSON) -> Void) {
-        let request = "https://\(user):\(password)@\(server)\(endPoint)offset=\(offset)&limit=\(limit)"
-        Alamofire.request(request, method: .get).responseJSON { response in
+        
+        let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
+        let request = "https://\(login):\(password)@\(server)\(endPoint)offset=\(offset)&limit=\(limit)"
+        
+        Alamofire.request(request, method: .get, headers: headers).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON Pagination")
                 return
@@ -32,8 +39,11 @@ class API {
     }
     
     func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
-        let request = "https://\(user):\(password)@\(server)\(endPoint).json"
-        Alamofire.request(request, method: .get).responseJSON { response in
+        
+        let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
+        let request = "https://\(login):\(password)@\(server)\(endPoint).json"
+        
+        Alamofire.request(request, method: .get, headers: headers).responseJSON { response in
             if response.result.isSuccess == false {
                 print("ERROR GET JSON")
                 return
@@ -47,7 +57,7 @@ class API {
     
     
     func getImage(endPoint: String, completion: @escaping (Data) -> Void) {
-        let request = "https://\(user):\(password)@\(server)\(endPoint)"
+        let request = "https://\(login):\(password)@\(server)\(endPoint)"
         Alamofire.request(request, method: .get).response { response in
             if let data = response.data {
                 completion(data)
@@ -66,7 +76,7 @@ class API {
     }
     
     func getVideo(endPoint: String, completion: @escaping (Data) -> Void) {
-        let request = "https://\(user):\(password)@\(server)\(endPoint)"
+        let request = "https://\(login):\(password)@\(server)\(endPoint)"
         Alamofire.request(request, method: .get).response { response in
             if let data = response.data {
                 completion(data)

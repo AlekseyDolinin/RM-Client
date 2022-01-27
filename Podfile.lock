@@ -24,20 +24,18 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.8.0)"
   - GoogleUtilities/Reachability (5.8.0):
     - GoogleUtilities/Logger
-  - GPVideoPlayer (1.0.4)
+  - Kingfisher (7.0.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - ReSwift (5.0.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Google-Mobile-Ads-SDK (~> 7.42.2)
-  - GPVideoPlayer
-  - ReSwift
+  - Kingfisher (~> 7.0.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -46,9 +44,8 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
-    - GPVideoPlayer
+    - Kingfisher
     - nanopb
-    - ReSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -56,11 +53,10 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 8f4f7e793bfd3fff5b082181b54112f81b579a67
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
-  GPVideoPlayer: fcb68bdba2522f3edd3145b0f1de17423e0b30e1
+  Kingfisher: 5efc54fec3980f92354898532e562cc17f31efb4
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: ff29ed182eef5ef67ec90dca34127c1029385ef6
+PODFILE CHECKSUM: d8a6f5fb18528c740454b5b3244c84a2c683bce3
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.2

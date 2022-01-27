@@ -39,7 +39,7 @@ class TaskDetailView: UIView {
     
     func setParametersHeader(_ task: Task) {
         
-        nameStatusLabel.text = task.status
+        nameStatusLabel.text = task.status.rawValue
         namePriorityLabel.text = task.priority
         
         for field in task.customFields {
@@ -60,11 +60,11 @@ class TaskDetailView: UIView {
             idParentTask.text = "#\(task.parent)"
         }
         
-        for status in mainStore.state.statusTasks {
-            if task.status == status.name {
-                backViewStatus.backgroundColor = status.color
-            }
-        }
+//        for status in mainStore.state.statusTasks {
+//            if task.status == status.name {
+//                backViewStatus.backgroundColor = status.color
+//            }
+//        }
         
 //        print("category:\(task.category)")
 //        print("doneRatio:\(task.doneRatio)")

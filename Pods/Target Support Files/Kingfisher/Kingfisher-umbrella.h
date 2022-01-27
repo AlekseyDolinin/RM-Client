@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ReSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char ReSwiftVersionString[];
+FOUNDATION_EXPORT double KingfisherVersionNumber;
+FOUNDATION_EXPORT const unsigned char KingfisherVersionString[];
 

@@ -22,12 +22,12 @@ class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate, G
         taskDetailView.tableDetailInfoTask.delegate = self
         taskDetailView.tableDetailInfoTask.dataSource = self
         
-        for task in mainStore.state.userTasks {
-            if task.idTask == idSelectTask {
-                selectTask = task
-                taskDetailView.setParametersHeader(task)
-            }
-        }
+//        for task in mainStore.state.userTasks {
+//            if task.idTask == idSelectTask {
+//                selectTask = task
+//                taskDetailView.setParametersHeader(task)
+//            }
+//        }
         setGadBanner()
     }
     

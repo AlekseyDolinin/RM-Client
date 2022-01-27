@@ -7,22 +7,23 @@ class User {
     var login: String?
     var last_login_on: String?
     var mail: String?
-    var lastname: String?
-    var firstname: String?
-    var id: Int?
+    var lastname: String
+    var firstname: String
+    var id: Int
     var created_on: String?
-    var avatar: UIImage?
+    var avatar: String?
     
     init(admin: Bool? = nil,
          api_key: String? = nil,
          login: String? = nil,
          last_login_on: String? = nil,
          mail: String? = nil,
-         lastname: String? = nil,
-         firstname: String? = nil,
-         id: Int? = nil,
+         lastname: String,
+         firstname: String,
+         id: Int,
          created_on: String? = nil,
-         avatar: UIImage? = UIImage()){
+         avatar: String? = nil
+){
         
         self.admin = admin
         self.api_key = api_key

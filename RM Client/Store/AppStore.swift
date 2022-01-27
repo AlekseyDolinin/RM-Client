@@ -1,3 +1,3 @@
-import ReSwift
-
-var mainStore = Store<AppState>(reducer: appReducer, state: nil)
+//import ReSwift
+//
+//var mainStore = Store<AppState>(reducer: appReducer, state: nil)
