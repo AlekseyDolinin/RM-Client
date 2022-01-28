@@ -103,8 +103,7 @@ class Parse: NSObject {
         listTasksSort = [:]
         for i in listTasksStatuses {
             let tasksSorted = tasks.filter({$0.status == i})
-            let item = i: tasksSorted
-            listTasksSort.append(item)
+            listTasksSort.updateValue(tasksSorted, forKey: i)
         }
         completion()
     }

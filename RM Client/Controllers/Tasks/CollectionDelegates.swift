@@ -11,12 +11,6 @@ extension RootTasksViewController: UICollectionViewDelegate, UICollectionViewDat
         cellStatus.currentIndexFilter = currentIndexFilter
         cellStatus.indexPathRow = indexPath.row
         cellStatus.setCell(index: indexPath.row)
-        
-        
-//        var item = Parse.listTasksSort[indexPath.row]
-//        var key = Parse.listTasksStatuses[indexPath.row]
-//        cellStatus.badgeLabel.text = String(item)
-        
         return cellStatus
     }
     

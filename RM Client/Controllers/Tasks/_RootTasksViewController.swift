@@ -64,15 +64,9 @@ class RootTasksViewController: UIViewController, UIGestureRecognizerDelegate {
                     self.listAllTasks.append(task)
                     self.viewSelf.tableTasks.reloadData()
                 }
-                
                 if self.listAllTasks.count == json["issues"].count {
-                    
                     Parse.parseTasksForStatus(tasks: self.listAllTasks) {
-                        
-                        print(Parse.listTasksSort)
-                        
-                        
-                        
+                        self.selectFilterTasks()
                     }
                 }
             }
@@ -90,42 +84,9 @@ class RootTasksViewController: UIViewController, UIGestureRecognizerDelegate {
     
     ///
     func selectFilterTasks() {
-        
-//        currentColor = Parse.listColorsStatus[index]
-        
-//        print("выбрана фильтрация: \(Parse.listTasksStatuses[index].name)")
-//        //
-//        currentIndexFilter = index
-//        viewSelf.collectionStatusButton.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-        
-//        
-//        switch index {
-//        case 0:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        case 1:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        case 1:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        case 1:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        case 1:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        case 1:
-//            listCurrentTasks = listAllTasks.filter({$0.status == .new})
-//        default:
-//            break
-//        }
-        
-        
-        
-        
-        // задачи по выбранному фильтру
-//        let tasks: [Task] = mainStore.state.statusTasks[index].arrayTasks
-        
-//        let message: [String: [Task]] = ["tasks": tasks]
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTasks"), object: nil, userInfo: message)
-        
-        
+        let currentNameFilter = Parse.listTasksStatuses[currentIndexFilter]
+        self.listCurrentTasks = Parse.listTasksSort[currentNameFilter] ?? [Task]()
         viewSelf.collectionStatusButton.reloadData()
+        viewSelf.tableTasks.reloadData()
     }
 }

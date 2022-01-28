@@ -21,8 +21,11 @@ class StatusCell: UICollectionViewCell {
     }
     
     func setCell(index: Int) {
-        nameStatus.text = Parse.listTasksStatuses[index]
-        badgeLabel.text = "888"
+        let nameTab = Parse.listTasksStatuses[index]
+        
+        nameStatus.text = nameTab
+        
+        badgeLabel.text = String(Parse.listTasksSort[nameTab]?.count ?? 0)
         
         let currentColor = Parse.listColorsStatus[indexPathRow]
         backView.layer.borderColor = currentColor.cgColor

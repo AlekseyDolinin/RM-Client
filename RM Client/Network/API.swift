@@ -10,7 +10,7 @@ class API {
     let login: String = UserDefaults.standard.dictionary(forKey: "userAuthData")!["login"] as! String
     let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
     
-    
+    ///
     func auth(completion: @escaping (DataResponse<Any>) -> ()) {
         let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
         let request = "https://\(login):\(password)@\(server)" + "/my/account.json"
@@ -19,8 +19,7 @@ class API {
         }
     }
 
-    
-    
+    ///
     func getJSONPagination(endPoint: String, offset: Int, limit: Int, completion: @escaping (JSON) -> Void) {
         
         let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
@@ -38,6 +37,7 @@ class API {
         }
     }
     
+    ///
     func getJSON(endPoint: String, completion: @escaping (JSON) -> Void) {
         
         let headers: [String: String]? = apikey.isEmpty ? nil : ["X-Redmine-API-Key": apikey]
