@@ -15,19 +15,52 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var iconAttachFile: UIImageView!
     
+    var task: Task!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        backView.layer.cornerRadius = 8
-        
-        sequenceView.layer.cornerRadius = sequenceView.frame.height / 2
-        priorityView.layer.cornerRadius = priorityView.frame.height / 2
-        
+        setUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func setCell() {
+        
+        projectNameLabel.text = task.project
+        idTaskLabel.text = "#\(task.idTask): "
+        trackerLabel.text = task.tracker
+        nameTaskLabel.text = task.subject
+        nameAuthorTaskLabel.text = task.author
+        priorityLabel.text = task.priority
+        projectNameLabel.text = task.project
+        idTaskLabel.text = "#\(task.idTask): "
+        trackerLabel.text = task.tracker
+        nameTaskLabel.text = task.subject
+        
+        if task.attachments.isEmpty {
+            iconAttachFile.isHidden = true
+        } else {
+            iconAttachFile.isHidden = false
+        }
+        
+        for field in task.customFields {
+            if field.id == 1 {
+                sequenceLabel.text = String(field.value)
+            }
+        }
+        
+        let date = Date().convertStringToDate(type: .dateAndTimeOne, dataString:task.createdOn)
+        createdDateLabel.text = Date().convertDateToString(type: .dateAndTimeTwo, date: date)
+        
+    }
+    
+    
+    
+}
 
-        // Configure the view for the selected state
+extension TaskCell {
+    
+    func setUI() {
+        backView.layer.cornerRadius = 8
+        sequenceView.layer.cornerRadius = sequenceView.frame.height / 2
+        priorityView.layer.cornerRadius = priorityView.frame.height / 2
     }
 }

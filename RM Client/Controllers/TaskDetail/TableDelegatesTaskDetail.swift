@@ -18,36 +18,34 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
         let cellOther = tableView.dequeueReusableCell(withIdentifier: "CellOther", for: indexPath) as! CellOther
         
         if indexPath.row == 0 {
-            if selectTask?.description == "" {
+            if task?.description == "" {
                 cellDescription.textDescriptionLabel.text = "----------"
             } else {
-                cellDescription.textDescriptionLabel.text = selectTask?.description
+                cellDescription.textDescriptionLabel.text = task?.description
             }
             return cellDescription
         }
         
         if indexPath.row == 1 {
-            cellAuthor.nameAuthorLabel.text = selectTask?.author
-            
-            let createdOnDate: Date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: selectTask!.createdOn)
+            cellAuthor.nameAuthorLabel.text = task?.author
+            let createdOnDate: Date = Date().convertStringToDate(type: .dateAndTimeOne, dataString: task!.createdOn)
             cellAuthor.timingLabel.text = Date().convertDateToString(type: .dateAndTimeTwo, date: createdOnDate)
-            
             return cellAuthor
         }
         
         if indexPath.row == 2 {
-            cellAssignedTo.nameLabel.text = selectTask?.assignedTo
+            cellAssignedTo.nameLabel.text = task?.assignedTo
             return cellAssignedTo
         }
         
         if indexPath.row == 3 {
             // нет прикрепленных файлов
-            if (selectTask?.attachments.isEmpty)! {
+            if (task?.attachments.isEmpty)! {
                 cellFiles.titleCellLabel.text = "Файлы".uppercased()
                 cellFiles.descriptionLabel.text = "Отсутствуют"
                 cellFiles.arrowImageView.isHidden = true
             } else {
-                cellFiles.titleCellLabel.text = "Файлы (\(selectTask!.attachments.count))".uppercased()
+                cellFiles.titleCellLabel.text = "Файлы (\(task!.attachments.count))".uppercased()
                 cellFiles.descriptionLabel.isHidden = true
             }
             return cellFiles
@@ -71,32 +69,38 @@ extension TaskDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    ///
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                
+        
+        let vc = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "AttachmentsViewController") as! AttachmentsViewController
+        vc.task = task
+        self.navigationController?.pushViewController(vc, animated: true)
+        return
+        
         switch indexPath.row {
         case 2:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-            vc.selectTask = selectTask
-//            self.navigationController?.pushViewController(vc, animated: true)
+            let vc = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "AttachmentsViewController") as! AttachmentsViewController
+            vc.task = task
+            self.navigationController?.pushViewController(vc, animated: true)
         case 3:
-            if selectTask?.attachments.isEmpty == false {
+            if task?.attachments.isEmpty == false {
                 DispatchQueue.main.async { [weak self] in
                     let vc = self?.storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-                    vc.selectTask = self?.selectTask
+                    vc.task = self?.task
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         case 4:
             let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-            vc.selectTask = selectTask
+            vc.task = task
 //            self.navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-            vc.selectTask = selectTask
+            vc.task = task
 //            self.navigationController?.pushViewController(vc, animated: true)
         case 6:
             let vc = storyboard?.instantiateViewController(withIdentifier: "AttachmentsVC") as! AttachmentsViewController
-            vc.selectTask = selectTask
+            vc.task = task
 //            self.navigationController?.pushViewController(vc, animated: true)
         default:
             print("not row")

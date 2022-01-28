@@ -36,8 +36,11 @@ class SplashViewController: UIViewController {
         ///
         NotificationCenter.default.addObserver(forName: nEnter, object: nil, queue: nil) { notification in
             self.dismiss(animated: true) {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
-                self.navigationController?.pushViewController(vc!, animated: true)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
+//                self.navigationController?.pushViewController(vc!, animated: true)
+                
+                self.navigationController?.pushViewController(TabbarViewController(), animated: true)
+                
             }
         }
     }

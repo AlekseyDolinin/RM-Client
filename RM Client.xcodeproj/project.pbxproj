@@ -43,7 +43,6 @@
 		10737579254DA9EA006D1956 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737575254DA8CB006D1956 /* API.swift */; };
 		1073757B254DAE23006D1956 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757A254DAE23006D1956 /* ProjectCell.swift */; };
 		1073757D254DB0D6006D1956 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073757C254DB0D6006D1956 /* CustomField.swift */; };
-		10737581254DCC77006D1956 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737580254DCC77006D1956 /* TasksViewController.swift */; };
 		10737584254DD0CF006D1956 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737583254DD0CF006D1956 /* Task.swift */; };
 		10737586254DD20E006D1956 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737585254DD20E006D1956 /* TasksView.swift */; };
 		10737588254DD2B5006D1956 /* TableDelegatesTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10737587254DD2B5006D1956 /* TableDelegatesTasks.swift */; };
@@ -65,7 +64,7 @@
 		10DF2A1125509F8E0098B832 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02A25508DAE00BF89C4 /* ProjectsViewController.swift */; };
 		10DF2A1225509F8E0098B832 /* ProjectsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CB02D25508DAE00BF89C4 /* ProjectsDelegates.swift */; };
 		10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1525524E6D0098B832 /* _RootTasksView.swift */; };
-		10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */; };
+		10DF2A1825524F7A0098B832 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1725524F7A0098B832 /* TasksViewController.swift */; };
 		10DF2A1A255265310098B832 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A19255265310098B832 /* UIScrollView.swift */; };
 		10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1B25533D4F0098B832 /* MenuViewController.swift */; };
 		10DF2A1E255360DE0098B832 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1D255360DE0098B832 /* Date.swift */; };
@@ -73,6 +72,10 @@
 		10DF2A2D2554A0550098B832 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 		9105C39E27A2B76100EFB49D /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105C39D27A2B76100EFB49D /* LoadImage.swift */; };
+		911A51B227A3CB3A00F7450F /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911A51B127A3CB3A00F7450F /* Menu.storyboard */; };
+		911A51B427A3CC7C00F7450F /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A51B327A3CC7C00F7450F /* TabbarViewController.swift */; };
+		911A51B627A3CE8A00F7450F /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911A51B527A3CE8A00F7450F /* Projects.storyboard */; };
+		911A51B827A3CF1A00F7450F /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911A51B727A3CF1A00F7450F /* Tasks.storyboard */; };
 		9157031A27A289FA00C6B760 /* SF-Compact-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9157031827A289F500C6B760 /* SF-Compact-Text-Bold.otf */; };
 		9157031B27A289FD00C6B760 /* SF-Compact-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9157031627A289F500C6B760 /* SF-Compact-Text-Light.otf */; };
 		9157031C27A289FF00C6B760 /* SF-Compact-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9157031727A289F500C6B760 /* SF-Compact-Text-Medium.otf */; };
@@ -124,7 +127,6 @@
 		10737575254DA8CB006D1956 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1073757A254DAE23006D1956 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		1073757C254DB0D6006D1956 /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
-		10737580254DCC77006D1956 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		10737583254DD0CF006D1956 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		10737585254DD20E006D1956 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		10737587254DD2B5006D1956 /* TableDelegatesTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegatesTasks.swift; sourceTree = "<group>"; };
@@ -146,7 +148,7 @@
 		10DF2A0C2550969D0098B832 /* _RootProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootProjectsView.swift; sourceTree = "<group>"; };
 		10DF2A0E255097CD0098B832 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		10DF2A1525524E6D0098B832 /* _RootTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksView.swift; sourceTree = "<group>"; };
-		10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _RootTasksViewController.swift; sourceTree = "<group>"; };
+		10DF2A1725524F7A0098B832 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		10DF2A19255265310098B832 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		10DF2A1B25533D4F0098B832 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		10DF2A1D255360DE0098B832 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -154,6 +156,10 @@
 		10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9105C39D27A2B76100EFB49D /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
+		911A51B127A3CB3A00F7450F /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		911A51B327A3CC7C00F7450F /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		911A51B527A3CE8A00F7450F /* Projects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Projects.storyboard; sourceTree = "<group>"; };
+		911A51B727A3CF1A00F7450F /* Tasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
 		9157031627A289F500C6B760 /* SF-Compact-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Light.otf"; sourceTree = "<group>"; };
 		9157031727A289F500C6B760 /* SF-Compact-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Medium.otf"; sourceTree = "<group>"; };
 		9157031827A289F500C6B760 /* SF-Compact-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Bold.otf"; sourceTree = "<group>"; };
@@ -222,6 +228,9 @@
 			children = (
 				10737552254DA60B006D1956 /* AppDelegate.swift */,
 				10737556254DA60B006D1956 /* Main.storyboard */,
+				911A51B727A3CF1A00F7450F /* Tasks.storyboard */,
+				911A51B527A3CE8A00F7450F /* Projects.storyboard */,
+				911A51B127A3CB3A00F7450F /* Menu.storyboard */,
 				10737564254DA6CE006D1956 /* Model */,
 				10737566254DA6DB006D1956 /* Cell */,
 				10737565254DA6D6006D1956 /* View */,
@@ -270,10 +279,6 @@
 		10737566254DA6DB006D1956 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				10737589254DD30E006D1956 /* TaskCell.swift */,
-				1073757A254DAE23006D1956 /* ProjectCell.swift */,
-				108CB020254F6BD000BF89C4 /* StatusCell.swift */,
-				108CB021254F6BD000BF89C4 /* StatusCell.xib */,
 				104FAD13255A7032006BB4B7 /* CellDescription.swift */,
 				104FAD0F2559F9C0006BB4B7 /* CellAuthor.swift */,
 				104FAD112559FA5D006BB4B7 /* CellAssignedTo.swift */,
@@ -282,6 +287,10 @@
 				104FAD19255A7040006BB4B7 /* CellHistory.swift */,
 				100648F42559CED400C7490E /* CellOther.swift */,
 				1048BFD6255B272A00896D05 /* CellAttachment.swift */,
+				1073757A254DAE23006D1956 /* ProjectCell.swift */,
+				108CB020254F6BD000BF89C4 /* StatusCell.swift */,
+				108CB021254F6BD000BF89C4 /* StatusCell.xib */,
+				10737589254DD30E006D1956 /* TaskCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				1001177325600D010052AAB1 /* SplashViewController.swift */,
 				1001176D255FE83B0052AAB1 /* SetServerViewController.swift */,
 				10737574254DA8C6006D1956 /* StartViewController.swift */,
+				911A51B327A3CC7C00F7450F /* TabbarViewController.swift */,
 				10737582254DCC83006D1956 /* Tasks */,
 				100648ED2559C84300C7490E /* TaskDetail */,
 				1048BFD5255B195800896D05 /* Attachments */,
@@ -345,10 +355,9 @@
 		10737582254DCC83006D1956 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				10DF2A1725524F7A0098B832 /* _RootTasksViewController.swift */,
+				10DF2A1725524F7A0098B832 /* TasksViewController.swift */,
 				108CB01C254F475600BF89C4 /* CollectionDelegates.swift */,
 				917EC2E927A2C9500000EF5F /* TableDelegates.swift */,
-				10737580254DCC77006D1956 /* TasksViewController.swift */,
 				10737587254DD2B5006D1956 /* TableDelegatesTasks.swift */,
 			);
 			path = Tasks;
@@ -481,10 +490,13 @@
 				9157031A27A289FA00C6B760 /* SF-Compact-Text-Bold.otf in Resources */,
 				108CB023254F6BD100BF89C4 /* StatusCell.xib in Resources */,
 				9157031C27A289FF00C6B760 /* SF-Compact-Text-Medium.otf in Resources */,
+				911A51B227A3CB3A00F7450F /* Menu.storyboard in Resources */,
 				9157031B27A289FD00C6B760 /* SF-Compact-Text-Light.otf in Resources */,
 				9157031D27A28A0300C6B760 /* SF-Compact-Text-Regular.otf in Resources */,
 				1073755A254DA60D006D1956 /* Assets.xcassets in Resources */,
+				911A51B627A3CE8A00F7450F /* Projects.storyboard in Resources */,
 				10737558254DA60B006D1956 /* Main.storyboard in Resources */,
+				911A51B827A3CF1A00F7450F /* Tasks.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +566,6 @@
 				9157032627A29C9A00C6B760 /* SaveUserData.swift in Sources */,
 				1001176E255FE83B0052AAB1 /* SetServerViewController.swift in Sources */,
 				10DF2A0D2550969D0098B832 /* _RootProjectsView.swift in Sources */,
-				10737581254DCC77006D1956 /* TasksViewController.swift in Sources */,
 				10DF2A0F255097CD0098B832 /* ProjectsView.swift in Sources */,
 				104FAD14255A7032006BB4B7 /* CellDescription.swift in Sources */,
 				104FAD1A255A7040006BB4B7 /* CellHistory.swift in Sources */,
@@ -572,7 +583,7 @@
 				10739C49255FCB7500861E7E /* GetHashEmail.swift in Sources */,
 				10351CC42561502900951935 /* GoogleADS.swift in Sources */,
 				10737576254DA9D0006D1956 /* StartViewController.swift in Sources */,
-				10DF2A1825524F7A0098B832 /* _RootTasksViewController.swift in Sources */,
+				10DF2A1825524F7A0098B832 /* TasksViewController.swift in Sources */,
 				9157032227A2907C00C6B760 /* Buttons.swift in Sources */,
 				1073758C254DF5EF006D1956 /* User.swift in Sources */,
 				10737584254DD0CF006D1956 /* Task.swift in Sources */,
@@ -593,6 +604,7 @@
 				10DF2A1625524E6D0098B832 /* _RootTasksView.swift in Sources */,
 				100648F52559CED400C7490E /* CellOther.swift in Sources */,
 				10351CD22565BF7900951935 /* MenuView.swift in Sources */,
+				911A51B427A3CC7C00F7450F /* TabbarViewController.swift in Sources */,
 				1048BFDB255B2C5600896D05 /* Converters.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				109830B3255C851500A045E3 /* ImageAttachmentView.swift in Sources */,

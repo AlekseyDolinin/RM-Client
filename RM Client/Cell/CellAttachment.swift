@@ -9,7 +9,6 @@ class CellAttachment: UITableViewCell {
     @IBOutlet weak var createdOnLabel: UILabel!
     @IBOutlet weak var removeAttachmentButtun: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -18,9 +17,4 @@ class CellAttachment: UITableViewCell {
         previewImageView.image = Attach.type.file.image
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 }

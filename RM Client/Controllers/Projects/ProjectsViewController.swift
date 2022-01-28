@@ -19,6 +19,9 @@ class ProjectsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = true
+        
         viewSelf.tableProjects.delegate = self
         viewSelf.tableProjects.dataSource = self
         viewSelf.tableProjects.refreshControl = refreshControl
@@ -39,15 +42,12 @@ class ProjectsViewController: UIViewController {
             self.listProjects = []
             
             for i in json["projects"].arrayValue {
-                
                 self.viewSelf.allCountProjectLabel.text = String(json["total_count"].intValue)
-
                 
                 Parse.parseProject(json: i) { project in
                     self.listProjects.append(project)
                     self.viewSelf.tableProjects.reloadData()
                 }
-
                 
 //                // отбор родительских проектов
 //                // дочерние позже будут сортироваться по родительским

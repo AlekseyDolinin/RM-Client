@@ -3,48 +3,40 @@ import GoogleMobileAds
 
 class TaskDetailViewController: UIViewController, UIGestureRecognizerDelegate, GADBannerViewDelegate {
     
-    var taskDetailView: TaskDetailView! {
+    var viewSelf: TaskDetailView! {
         guard isViewLoaded else {return nil}
         return (view as! TaskDetailView)
     }
     
-    var idSelectTask = Int()
-    var selectTask: Task?
+    var task: Task!
     var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        taskDetailView.configure()
-        
+        viewSelf.tableDetailInfoTask.delegate = self
+        viewSelf.tableDetailInfoTask.dataSource = self
         navigationController?.interactivePopGestureRecognizer!.delegate = self
         
-        taskDetailView.tableDetailInfoTask.delegate = self
-        taskDetailView.tableDetailInfoTask.dataSource = self
-        
-//        for task in mainStore.state.userTasks {
-//            if task.idTask == idSelectTask {
-//                selectTask = task
-//                taskDetailView.setParametersHeader(task)
-//            }
-//        }
+        viewSelf.task = self.task
+        viewSelf.configure()
+
         setGadBanner()
     }
     
     // авторесайз хедера таблицы
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        guard let headerView = taskDetailView.tableDetailInfoTask.tableHeaderView else { return }
+        guard let headerView = viewSelf.tableDetailInfoTask.tableHeaderView else { return }
         let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         if headerView.frame.size.height != size.height {
             headerView.frame.size.height = size.height
-            taskDetailView.tableDetailInfoTask.tableHeaderView = headerView
-            taskDetailView.tableDetailInfoTask.layoutIfNeeded()
+            viewSelf.tableDetailInfoTask.tableHeaderView = headerView
+            viewSelf.tableDetailInfoTask.layoutIfNeeded()
         }
     }
     
     @IBAction func back(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-  
 }

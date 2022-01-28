@@ -7,11 +7,11 @@ class AttachmentsViewController: UIViewController {
         return (view as! AttachmentsView)
     }
     
-    var selectTask: Task?
+    var task: Task?
     
-    let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
-    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
-    let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
+//    let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
+//    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
+//    let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class AttachmentsViewController: UIViewController {
     }
     
     func checkTypeAttachment() {
-        for attachment in selectTask!.attachments {
+        for attachment in task!.attachments {
             
             if let fileURL = URL(string: attachment.fileName!){
                 let fileUTI = UTI(withExtension: fileURL.pathExtension)

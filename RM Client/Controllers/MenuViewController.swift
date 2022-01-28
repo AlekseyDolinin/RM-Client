@@ -7,12 +7,20 @@ class MenuViewController: UIViewController {
         return (view as! MenuView)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    ///
     func logOut() {
         UserDefaults.standard.removeObject(forKey: "userAuthData")
         let vc = storyboard!.instantiateViewController(withIdentifier: "RootNC")
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
     
+    ///
     @IBAction func logout(_ sender: UIButton) {
         let alert = UIAlertController(title: "Выйти из аккаунта?", message: "Для входа потребуется ввод данных для авторизации", preferredStyle: .alert)
         let outAction = UIAlertAction(title: "LogOut", style: .destructive) { UIAlertAction in

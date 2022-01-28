@@ -24,4 +24,3 @@ extension ProjectsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
