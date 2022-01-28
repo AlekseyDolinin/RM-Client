@@ -70,7 +70,6 @@
 		10DF2A1C25533D4F0098B832 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1B25533D4F0098B832 /* MenuViewController.swift */; };
 		10DF2A1E255360DE0098B832 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1D255360DE0098B832 /* Date.swift */; };
 		10DF2A2025536AB50098B832 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A1F25536AB40098B832 /* Attachment.swift */; };
-		10DF2A2225546CC40098B832 /* StatusTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2125546CC40098B832 /* StatusTask.swift */; };
 		10DF2A2D2554A0550098B832 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */; };
 		8534D7FD215DB5198330F293 /* Pods_RM_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */; };
 		9105C39E27A2B76100EFB49D /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105C39D27A2B76100EFB49D /* LoadImage.swift */; };
@@ -152,7 +151,6 @@
 		10DF2A1B25533D4F0098B832 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		10DF2A1D255360DE0098B832 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		10DF2A1F25536AB40098B832 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
-		10DF2A2125546CC40098B832 /* StatusTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTask.swift; sourceTree = "<group>"; };
 		10DF2A2C2554A0550098B832 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
 		33FFC88DB34BFDFD049844BC /* Pods_RM_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RM_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9105C39D27A2B76100EFB49D /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				10737565254DA6D6006D1956 /* View */,
 				10737567254DA6E1006D1956 /* Controllers */,
 				10737568254DA6F4006D1956 /* Network */,
-				10737559254DA60D006D1956 /* Assets.xcassets */,
 				1073756B254DA70C006D1956 /* Extentions */,
 				9157031E27A28B9200C6B760 /* StyleClasses */,
 				109830AE255C7CDE00A045E3 /* Utils */,
@@ -247,7 +244,6 @@
 				1073756D254DA79D006D1956 /* Project.swift */,
 				10DF2A1F25536AB40098B832 /* Attachment.swift */,
 				1073757C254DB0D6006D1956 /* CustomField.swift */,
-				10DF2A2125546CC40098B832 /* StatusTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +326,7 @@
 		1073756C254DA717006D1956 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				10737559254DA60D006D1956 /* Assets.xcassets */,
 				1073758F254F2A14006D1956 /* Fonts */,
 			);
 			path = Resourses;
@@ -378,9 +375,9 @@
 				109830B4255C932500A045E3 /* ImageViewZoom.swift */,
 				109830AC255C7CD200A045E3 /* AttachmentType.swift */,
 				10739C48255FCB7500861E7E /* GetHashEmail.swift */,
-				10351CC32561502900951935 /* GoogleADS.swift */,
 				9105C39D27A2B76100EFB49D /* LoadImage.swift */,
 				1048BFDA255B2C5600896D05 /* Converters.swift */,
+				10351CC32561502900951935 /* GoogleADS.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -599,7 +596,6 @@
 				1048BFDB255B2C5600896D05 /* Converters.swift in Sources */,
 				1073758A254DD30E006D1956 /* TaskCell.swift in Sources */,
 				109830B3255C851500A045E3 /* ImageAttachmentView.swift in Sources */,
-				10DF2A2225546CC40098B832 /* StatusTask.swift in Sources */,
 				104FAD18255A703E006BB4B7 /* CellTiming.swift in Sources */,
 				10011770255FE8780052AAB1 /* SetServerView.swift in Sources */,
 				109830B0255C84E700A045E3 /* VideoAttachmentViewController.swift in Sources */,

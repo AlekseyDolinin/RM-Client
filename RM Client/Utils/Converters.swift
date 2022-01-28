@@ -9,5 +9,4 @@ class Convert {
         let stringValue = bcf.string(fromByteCount: Int64(valueByte))
         return stringValue
     }
-  
 }

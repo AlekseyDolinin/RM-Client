@@ -1,11 +1,3 @@
-//
-//  UTI.swift
-//  fseventstool
-//
-//  Created by Matthias Keiser on 09.01.17.
-//  Copyright © 2017 Tristan Inc. All rights reserved.
-//
-
 import Foundation
 
 #if os(iOS) || os(watchOS)

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  RM Client
-//
-//  Created by Aleksey Dolinin on 31.10.2020.
-//  Copyright © 2020 Aleksey Dolinin. All rights reserved.
-//
-
 import UIKit
 import GoogleMobileAds
 

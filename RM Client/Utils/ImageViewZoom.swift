@@ -1,11 +1,3 @@
-//
-//  ImageViewZoom.swift
-//  ImageViewZoomDemo
-//
-//  Created by Amsaraj Mariappan on 15/9/2562 BE.
-//  Copyright © 2562 Amsaraj Mariyappan. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
