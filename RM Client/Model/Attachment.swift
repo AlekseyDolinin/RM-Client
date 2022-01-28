@@ -2,37 +2,35 @@ import UIKit
 
 class Attachment {
     
-    var id: Int?
-    var fileName: String?
-    var createdOn: String?
-    var thumbnail_url: String?
-    var author: String?
-    var filesize: Int?
-    var description: String?
-    var content_type: String?
-    var content_url: String?
-    var thumbnailImage: UIImage?
+    var id: Int
+    var fileName: String
+    var createdOn: String
+    var thumbnailURL: String
+    var author: String
+    var filesize: Int
+    var description: String
+    var contentType: String
+    var contentURL: String
     
-    init(id: Int? = nil,
-         fileName: String? = nil,
-         createdOn: String? = nil,
-         thumbnail_url: String? = nil,
-         author: String? = nil,
-         filesize: Int? = nil,
-         description: String? = nil,
-         content_type: String? = nil,
-         content_url: String? = nil,
-         thumbnailImage: UIImage? = nil){
+    init(id: Int,
+         fileName: String,
+         createdOn: String,
+         thumbnailURL: String,
+         author: String,
+         filesize: Int,
+         description: String,
+         contentType: String,
+         contentURL: String
+    ){
         
         self.id = id
         self.fileName = fileName
         self.createdOn = createdOn
-        self.thumbnail_url = thumbnail_url
+        self.thumbnailURL = thumbnailURL
         self.author = author
         self.filesize = filesize
         self.description = description
-        self.content_type = content_type
-        self.content_url = content_url
-        self.thumbnailImage = thumbnailImage
+        self.contentType = contentType
+        self.contentURL = contentURL
     }
 }

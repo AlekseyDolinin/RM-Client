@@ -52,25 +52,16 @@ class Parse: NSObject {
     
     ///
     class func parseTask(json: JSON, completion: @escaping (Task) -> ()) {
+        
         var listCustomFields = [CustomField]()
         var listAttachments = [Attachment]()
+        
         for i in json["custom_fields"].arrayValue {
-            let customField = CustomField(id: i["id"].intValue,
-                                          name: i["name"].stringValue,
-                                          value: i["value"].stringValue)
-            listCustomFields.append(customField)
+            listCustomFields.append(parseCustomFields(customField: i))
         }
+        
         for i in json["attachments"].arrayValue {
-            let attachment = Attachment(id: i["id"].intValue,
-                                        fileName: i["filename"].stringValue,
-                                        createdOn: i["created_on"].stringValue,
-                                        thumbnail_url: i["thumbnail_url"].stringValue,
-                                        author: i["author"]["name"].stringValue,
-                                        filesize: i["filesize"].intValue,
-                                        description: i["description"].stringValue,
-                                        content_type: i["content_type"].stringValue,
-                                        content_url: i["content_url"].stringValue)
-            listAttachments.append(attachment)
+            listAttachments.append(parseAttachment(attachment: i))
         }
         
         completion(Task(doneRatio: json["done_ratio"].intValue,
@@ -96,6 +87,26 @@ class Parse: NSObject {
                         project: json["project"]["name"].stringValue,
                         projectID: json["project"]["id"].intValue,
                         attachments: listAttachments))
+    }
+    
+    ///
+    class func parseAttachment(attachment: JSON) -> Attachment {
+        return Attachment(id: attachment["id"].intValue,
+                          fileName: attachment["filename"].stringValue,
+                          createdOn: attachment["created_on"].stringValue,
+                          thumbnailURL: attachment["thumbnail_url"].stringValue,
+                          author: attachment["author"]["name"].stringValue,
+                          filesize: attachment["filesize"].intValue,
+                          description: attachment["description"].stringValue,
+                          contentType: attachment["content_type"].stringValue,
+                          contentURL: attachment["content_url"].stringValue)
+    }
+    
+    ///
+    class func parseCustomFields(customField: JSON) -> CustomField {
+        return CustomField(id: customField["id"].intValue,
+                           name: customField["name"].stringValue,
+                           value: customField["value"].stringValue)
     }
     
     ///

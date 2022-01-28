@@ -6,9 +6,7 @@ class Project {
     var identifier: String
     var created_on: String
     var updated_on: String
-    /// id родительского проекта
     var parentID: Int?
-    /// name родительского проекта
     var parentName: String?
     var childProjects: [Project]?
     
