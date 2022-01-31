@@ -46,16 +46,6 @@ class CellAttachment: UITableViewCell {
     
     ///
     func setPreview() {
-//        print(attachment.thumbnailURL)
-//        print(attachment.contentType)
-//        print(attachment.contentURL)
-        
-        print("+++++++++++")
-//        print(attachment.contentURL.fileName())
-        print(attachment.contentURL.fileExtension())
-        
-//        previewImageView.image = Attach.type.file.image
-        
         
         switch attachment.contentURL.fileExtension() {
         case "png", "jpg", "jpeg", "svg":

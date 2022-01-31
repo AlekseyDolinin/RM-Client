@@ -16,7 +16,7 @@ class MenuViewController: UIViewController {
     ///
     func logOut() {
         UserDefaults.standard.removeObject(forKey: "userAuthData")
-        let vc = storyboard!.instantiateViewController(withIdentifier: "RootNC")
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootNC")
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
     

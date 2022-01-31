@@ -1,6 +1,9 @@
 import UIKit
+import WebKit
 
-class AttachmentsViewController: UIViewController {
+class AttachmentsViewController: UIViewController, WKNavigationDelegate {
+    
+    @IBOutlet weak var wk: CustomWebView!
     
     var attachmentsView: AttachmentsView! {
         guard isViewLoaded else {return nil}
@@ -9,17 +12,13 @@ class AttachmentsViewController: UIViewController {
     
     var task: Task?
     
-//    let user = UserDefaults.standard.dictionary(forKey: "userAuthData")!["user"] as! String
-//    let password = UserDefaults.standard.dictionary(forKey: "userAuthData")!["password"] as! String
-//    let server = UserDefaults.standard.dictionary(forKey: "userAuthData")!["server"] as! String
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        wk.navigationDelegate = self
+        
         attachmentsView.tableAttachments.delegate = self
         attachmentsView.tableAttachments.dataSource = self
-//        attachmentsView.configure()
-//        checkTypeAttachment()
     }
     
     func checkTypeAttachment() {

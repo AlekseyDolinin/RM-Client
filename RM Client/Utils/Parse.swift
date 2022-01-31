@@ -61,7 +61,7 @@ class Parse: NSObject {
         }
         
         for i in json["attachments"].arrayValue {
-            listAttachments.append(parseAttachment(attachment: i))
+            listAttachments.append(parseAttachment(json: i))
         }
         
         completion(Task(doneRatio: json["done_ratio"].intValue,
@@ -90,16 +90,17 @@ class Parse: NSObject {
     }
     
     ///
-    class func parseAttachment(attachment: JSON) -> Attachment {
-        return Attachment(id: attachment["id"].intValue,
-                          fileName: attachment["filename"].stringValue,
-                          createdOn: attachment["created_on"].stringValue,
-                          thumbnailURL: attachment["thumbnail_url"].stringValue,
-                          author: attachment["author"]["name"].stringValue,
-                          filesize: attachment["filesize"].intValue,
-                          description: attachment["description"].stringValue,
-                          contentType: attachment["content_type"].stringValue,
-                          contentURL: attachment["content_url"].stringValue)
+    class func parseAttachment(json: JSON) -> Attachment {
+//        print(json)
+        return Attachment(id: json["id"].intValue,
+                          fileName: json["filename"].stringValue,
+                          createdOn: json["created_on"].stringValue,
+                          thumbnailURL: json["thumbnail_url"].stringValue,
+                          author: json["author"]["name"].stringValue,
+                          filesize: json["filesize"].intValue,
+                          description: json["description"].stringValue,
+                          contentType: json["content_type"].stringValue,
+                          contentURL: json["content_url"].stringValue)
     }
     
     ///
