@@ -1031,75 +1031,65 @@
             <point key="canvasLocation" x="1811.25" y="76.056338028169009"/>
         </scene>
         <!--Attachment View Controller-->
-        <scene sceneID="uiA-dz-1MP">
+        <scene sceneID="xve-74-aI6">
             <objects>
-                <viewController storyboardIdentifier="PDFAttachmentVC" id="7Vx-WH-iwn" customClass="AttachmentViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bfF-We-Do1" customClass="AttachmentView" customModule="RM_Client" customModuleProvider="target">
+                <viewController storyboardIdentifier="AttachmentViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8IB-Ul-J2W" customClass="AttachmentViewController" customModule="RM_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lkx-SK-aP4" customClass="AttachmentView" customModule="RM_Client" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKV-h9-4Jo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zZ-Pb-32j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-lh-y3c">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mL1-HX-sH0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8w-Ha-xwW">
-                                        <rect key="frame" x="0.0" y="-56" width="320" height="100"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="d70-Sj-8EO"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-aM-8zd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-wD-SOb">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="wxh-Z9-8Te"/>
+                                            <constraint firstAttribute="width" constant="44" id="WXZ-FX-i4d"/>
                                         </constraints>
-                                        <state key="normal" image="closeIcon"/>
+                                        <state key="normal" image="backIcon"/>
                                         <connections>
-                                            <action selector="back:" destination="epJ-TP-aTC" eventType="touchUpInside" id="wak-2H-yFf"/>
-                                            <action selector="closeModalView:" destination="7Vx-WH-iwn" eventType="touchUpInside" id="SDS-9J-wNL"/>
+                                            <action selector="closeModalView:" destination="8IB-Ul-J2W" eventType="touchUpInside" id="AlL-89-rzm"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.098039215690000001" blue="0.16862745100000001" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="0tq-aM-8zd" firstAttribute="leading" secondItem="5ZI-lh-y3c" secondAttribute="leading" id="J7z-uB-lTe"/>
-                                    <constraint firstAttribute="bottom" secondItem="i8w-Ha-xwW" secondAttribute="bottom" id="TbI-U0-KYm"/>
-                                    <constraint firstItem="0tq-aM-8zd" firstAttribute="top" secondItem="5ZI-lh-y3c" secondAttribute="top" id="TuL-pR-4C8"/>
-                                    <constraint firstAttribute="height" constant="44" id="ebK-8M-c11"/>
-                                    <constraint firstItem="i8w-Ha-xwW" firstAttribute="leading" secondItem="5ZI-lh-y3c" secondAttribute="leading" id="hLr-x6-3rT"/>
-                                    <constraint firstAttribute="bottom" secondItem="0tq-aM-8zd" secondAttribute="bottom" id="lfR-ZC-kmr"/>
-                                    <constraint firstAttribute="trailing" secondItem="i8w-Ha-xwW" secondAttribute="trailing" id="uVz-b8-QIg"/>
+                                    <constraint firstItem="pCy-wD-SOb" firstAttribute="leading" secondItem="mL1-HX-sH0" secondAttribute="leading" id="JY2-Pl-w0U"/>
+                                    <constraint firstItem="pCy-wD-SOb" firstAttribute="top" secondItem="mL1-HX-sH0" secondAttribute="top" id="M8u-r3-Tao"/>
+                                    <constraint firstAttribute="bottom" secondItem="pCy-wD-SOb" secondAttribute="bottom" id="ibY-Kk-Ryl"/>
+                                    <constraint firstAttribute="height" constant="44" id="mev-0m-CVr"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="OXy-DA-4wb"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eDD-Xa-3S5"/>
+                        <color key="backgroundColor" name="_backgroundDark"/>
                         <constraints>
-                            <constraint firstItem="vKV-h9-4Jo" firstAttribute="top" secondItem="i8w-Ha-xwW" secondAttribute="bottom" id="0Oa-aa-aAW"/>
-                            <constraint firstItem="vKV-h9-4Jo" firstAttribute="bottom" secondItem="bfF-We-Do1" secondAttribute="bottom" id="G2l-kd-KXs"/>
-                            <constraint firstItem="5ZI-lh-y3c" firstAttribute="leading" secondItem="OXy-DA-4wb" secondAttribute="leading" id="XPz-xe-uzu"/>
-                            <constraint firstItem="5ZI-lh-y3c" firstAttribute="top" secondItem="OXy-DA-4wb" secondAttribute="top" id="adB-yu-SOx"/>
-                            <constraint firstItem="OXy-DA-4wb" firstAttribute="trailing" secondItem="5ZI-lh-y3c" secondAttribute="trailing" id="e1h-TZ-S8Z"/>
-                            <constraint firstItem="vKV-h9-4Jo" firstAttribute="leading" secondItem="OXy-DA-4wb" secondAttribute="leading" id="gA3-1f-KFQ"/>
-                            <constraint firstItem="vKV-h9-4Jo" firstAttribute="trailing" secondItem="OXy-DA-4wb" secondAttribute="trailing" id="y3W-6w-EOF"/>
+                            <constraint firstItem="mL1-HX-sH0" firstAttribute="leading" secondItem="eDD-Xa-3S5" secondAttribute="leading" id="Mzp-D4-0Fx"/>
+                            <constraint firstItem="4zZ-Pb-32j" firstAttribute="top" secondItem="eDD-Xa-3S5" secondAttribute="top" id="Q5C-eP-TZT"/>
+                            <constraint firstItem="mL1-HX-sH0" firstAttribute="top" secondItem="eDD-Xa-3S5" secondAttribute="top" id="RmX-rM-wsj"/>
+                            <constraint firstItem="4zZ-Pb-32j" firstAttribute="leading" secondItem="eDD-Xa-3S5" secondAttribute="leading" id="ZES-sh-CVZ"/>
+                            <constraint firstItem="4zZ-Pb-32j" firstAttribute="bottom" secondItem="eDD-Xa-3S5" secondAttribute="bottom" id="gBX-DJ-coH"/>
+                            <constraint firstItem="mL1-HX-sH0" firstAttribute="trailing" secondItem="eDD-Xa-3S5" secondAttribute="trailing" id="qXF-fm-BP3"/>
+                            <constraint firstItem="4zZ-Pb-32j" firstAttribute="trailing" secondItem="eDD-Xa-3S5" secondAttribute="trailing" id="veA-Db-J3o"/>
                         </constraints>
                         <connections>
-                            <outlet property="buttonClose" destination="0tq-aM-8zd" id="Jif-kN-9r3"/>
-                            <outlet property="webView" destination="vKV-h9-4Jo" id="RdI-ao-Cyq"/>
+                            <outlet property="buttonClose" destination="pCy-wD-SOb" id="ygE-JQ-2ag"/>
+                            <outlet property="webView" destination="4zZ-Pb-32j" id="Iew-gf-YsO"/>
                         </connections>
                     </view>
+                    <size key="freeformSize" width="320" height="568"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ejG-NN-TX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGn-Em-jmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526" y="76"/>
+            <point key="canvasLocation" x="2572.5" y="76.056338028169009"/>
         </scene>
     </scenes>
     <resources>
@@ -1107,7 +1097,6 @@
         <image name="att_File" width="50" height="50"/>
         <image name="attachIcon" width="18" height="18"/>
         <image name="backIcon" width="44" height="44"/>
-        <image name="closeIcon" width="44" height="44"/>
         <image name="nextIcon" width="44" height="44"/>
         <image name="removeIcon" width="50" height="50"/>
         <namedColor name="_backgroundDark">
