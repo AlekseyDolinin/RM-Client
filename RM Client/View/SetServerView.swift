@@ -35,34 +35,6 @@ class SetServerView: UIView {
         enterButton.alpha = 1.0
     }
     
-    
-    
-//    func configure() {
-//
-//        enterButton.layer.cornerRadius = 4
-//        enterButton.clipsToBounds = true
-//
-//        inputServer.attributedPlaceholder = NSAttributedString(string: "example.com",
-//                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor._blue])
-////        setEnterButton()
-//
-//        loader.stopAnimating()
-////        enterButton.isEnabled = false
-//    }
-    
-//    func setEnterButton() {
-//
-//        enterButton.setTitle(titleEnterButton, for: .normal)
-//
-//        // normal
-//        enterButton.setTitleColor(._backgroundDark, for: .normal)
-//        enterButton.setBackgroundColor(._blue, for: .normal)
-//
-//        // disabled
-//        enterButton.setTitleColor(._blue, for: .disabled)
-//        enterButton.setBackgroundColor(._backgroundNormal, for: .disabled)
-//    }
-    
     ///
     @IBAction func focusInput(_ sender: UIButton) {
         switch sender.restorationIdentifier {

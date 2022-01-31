@@ -11,18 +11,6 @@ class AttachmentsView: UIView {
         super.awakeFromNib()
         setUI()
     }
-    
-    func configure() {
-        titleLabel.text = "Файлы"
-//        tableAttachments.isHidden = true
-//        loader.startAnimating()
-    }
-
-    func showContent() {
-//        tableAttachments.reloadData()
-//        tableAttachments.isHidden = false
-//        loader.stopAnimating()
-    }
 }
 
 

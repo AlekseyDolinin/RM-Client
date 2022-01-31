@@ -8,15 +8,8 @@ class RootProjectsView: UIView {
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var scrollVew: UIScrollView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var allCountProjectLabel: UILabel!
-    
-    
-    func configure() {
-        
-//        hideContent()
-    }
     
     func hideContent() {
         viewTop.alpha = 0
